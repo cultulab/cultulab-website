@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de Cookies de CultuLab - Cómo utilizamos las cookies en nuestro sitio web">
+    <title>Política de Cookies - CultuLab</title>
+    <style>
+        :root {
+            --azul-primario: #004e8d;
+            --azul-secundario: #44b3e8;
+            --beige-secundario: #a89467;
+            --blanco: #ffffff;
+            --gris-neutro: #333333;
+            --gris-claro: #f8f9fa;
+            --gris-border: #e0e0e0;
+            --verde-exito: #4CAF50;
+            --naranja-alerta: #FF9800;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--gris-neutro);
+            background-color: var(--blanco);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .cookies-header {
+            background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%);
+            color: var(--blanco);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .cookies-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--blanco);
+        }
+        
+        .cookies-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Content */
+        .cookies-content {
+            padding: 60px 0;
+            background: var(--gris-claro);
+        }
+        
+        .cookies-section {
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,78,141,.1);
+            margin-bottom: 2rem;
+        }
+        
+        .cookies-section h2 {
+            color: var(--azul-primario);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--azul-secundario);
+        }
+        
+        .cookies-section h3 {
+            color: var(--azul-primario);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.3rem;
+        }
+        
+        .cookies-section h4 {
+            color: var(--azul-primario);
+            margin: 1.5rem 0 0.8rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .cookies-section p {
+            margin-bottom: 1rem;
+            color: var(--gris-neutro);
+        }
+        
+        .cookies-section ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .cookies-section li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+        
+        .highlight-box {
+            background-color: rgba(168, 148, 103, 0.1);
+            padding: 1.5rem;
+            border-left: 4px solid var(--beige-secundario);
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .info-box {
+            background-color: rgba(68, 179, 232, 0.1);
+            padding: 1.5rem;
+            border-left: 4px solid var(--azul-secundario);
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .warning-box {
+            background-color: rgba(255, 152, 0, 0.1);
+            padding: 1.5rem;
+            border-left: 4px solid var(--naranja-alerta);
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        /* Footer */
+        .cookies-footer {
+            background: var(--gris-neutro);
+            color: var(--blanco);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .cookies-footer a {
+            color: var(--azul-secundario);
+            text-decoration: none;
+        }
+        
+        .cookies-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: var(--azul-primario);
+            color: var(--blanco);
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: background-color 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #003d6f;
+            text-decoration: none;
+        }
+        
+        /* Table styles */
+        .cookies-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        
+        .cookies-table th,
+        .cookies-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gris-border);
+        }
+        
+        .cookies-table th {
+            background-color: var(--gris-claro);
+            color: var(--azul-primario);
+            font-weight: 600;
+        }
+        
+        .cookies-table tr:hover {
+            background-color: rgba(0, 78, 141, 0.05);
+        }
+        
+        .last-updated {
+            background: var(--azul-primario);
+            color: var(--blanco);
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .cookie-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Cookie type badges */
+        .cookie-type {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        
+        .type-essential {
+            background: var(--verde-exito);
+            color: var(--blanco);
+        }
+        
+        .type-analytics {
+            background: var(--azul-secundario);
+            color: var(--blanco);
+        }
+        
+        .type-marketing {
+            background: var(--beige-secundario);
+            color: var(--blanco);
+        }
+        
+        .type-functional {
+            background: var(--naranja-alerta);
+            color: var(--blanco);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cookies-header {
+                padding: 40px 0;
+            }
+            
+            .cookies-header h1 {
+                font-size: 2rem;
+            }
+            
+            .cookies-content {
+                padding: 40px 0;
+            }
+            
+            .cookies-section {
+                padding: 2rem;
+            }
+            
+            .cookies-table {
+                font-size: 0.9rem;
+            }
+            
+            .cookies-table th,
+            .cookies-table td {
+                padding: 8px 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .cookies-section {
+                padding: 1.5rem;
+            }
+            
+            .cookies-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .cookies-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+        
+        .accordion {
+            background-color: var(--gris-claro);
+            cursor: pointer;
+            padding: 1.2rem;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--azul-primario);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        .accordion:hover {
+            background-color: rgba(0, 78, 141, 0.1);
+        }
+        
+        .accordion:after {
+            content: '▼';
+            float: right;
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .accordion.active:after {
+            transform: rotate(-180deg);
+        }
+        
+        .panel {
+            padding: 0 1.2rem;
+            background-color: var(--blanco);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .panel.active {
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="cookies-header">
+        <div class="container">
+            <div class="cookie-icon">🍪</div>
+            <h1>Política de Cookies</h1>
+            <p>Información sobre cómo utilizamos cookies en nuestro sitio web</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="cookies-content">
+        <div class="container">
+            <div class="last-updated">
+                Última actualización: 15 de Enero, 2025
+            </div>
+
+            <div class="cookies-section">
+                <h2>1. ¿Qué son las Cookies?</h2>
+                <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo (ordenador, tablet o móvil) cuando visitas un sitio web. Permiten que el sitio web recuerde tus acciones y preferencias durante un período de tiempo, para que no tengas que volver a configurarlas cada vez que regreses al sitio o navegues de una página a otra.</p>
+                
+                <div class="info-box">
+                    <p><strong>En CultuLab:</strong> Utilizamos cookies para mejorar tu experiencia de navegación, analizar el uso del sitio y ofrecerte contenido relevante. Respetamos tu privacidad y te damos control total sobre las cookies que aceptas.</p>
+                </div>
+            </div>
+
+            <div class="cookies-section">
+                <h2>2. Tipos de Cookies que Utilizamos</h2>
+                
+                <h3>2.1. Cookies Esenciales <span class="cookie-type type-essential">Necesarias</span></h3>
+                <p>Estas cookies son necesarias para que el sitio web funcione correctamente y no se pueden desactivar.</p>
+                <ul>
+                    <li><strong>Cookies de sesión:</strong> Mantienen tu sesión activa mientras navegas</li>
+                    <li><strong>Cookies de seguridad:</strong> Protegen contra accesos no autorizados</li>
+                    <li><strong>Cookies de preferencias:</strong> Recuerdan tus preferencias de idioma y región</li>
+                </ul>
+
+                <h3>2.2. Cookies Analíticas <span class="cookie-type type-analytics">Opcionales</span></h3>
+                <p>Nos ayudan a entender cómo los visitantes interactúan con nuestro sitio web.</p>
+                <ul>
+                    <li><strong>Google Analytics:</strong> Mide el tráfico y comportamiento de usuarios</li>
+                    <li><strong>Métricas de rendimiento:</strong> Analizan velocidad y funcionamiento del sitio</li>
+                    <li><strong>Mapas de calor:</strong> Identifican áreas más visitadas del sitio</li>
+                </ul>
+
+                <h3>2.3. Cookies de Marketing <span class="cookie-type type-marketing">Opcionales</span></h3>
+                <p>Se utilizan para mostrar anuncios relevantes y medir la efectividad de campañas.</p>
+                <ul>
+                    <li><strong>Google Ads:</strong> Seguimiento de conversiones publicitarias</li>
+                    <li><strong>Redes sociales:</strong> Permiten compartir contenido en plataformas sociales</li>
+                    <li><strong>Remarketing:</strong> Muestran anuncios basados en tu navegación previa</li>
+                </ul>
+
+                <h3>2.4. Cookies Funcionales <span class="cookie-type type-functional">Opcionales</span></h3>
+                <p>Mejoran la funcionalidad del sitio y personalizan tu experiencia.</p>
+                <ul>
+                    <li><strong>Preferencias de usuario:</strong> Guardan configuraciones personalizadas</li>
+                    <li><strong>Chat en vivo:</strong> Permiten la comunicación en tiempo real</li>
+                    <li><strong>Videos embebidos:</strong> Facilitan la reproducción de contenido multimedia</li>
+                </ul>
+            </div>
+
+            <div class="cookies-section">
+                <h2>3. Cookies Específicas que Usamos</h2>
+                
+                <table class="cookies-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Proveedor</th>
+                            <th>Propósito</th>
+                            <th>Duración</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>_ga</td>
+                            <td>Google Analytics</td>
+                            <td>Distinguir usuarios únicos</td>
+                            <td>2 años</td>
+                            <td><span class="cookie-type type-analytics">Analítica</span></td>
+                        </tr>
+                        <tr>
+                            <td>_gid</td>
+                            <td>Google Analytics</td>
+                            <td>Distinguir usuarios</td>
+                            <td>24 horas</td>
+                            <td><span class="cookie-type type-analytics">Analítica</span></td>
+                        </tr>
+                        <tr>
+                            <td>_gat</td>
+                            <td>Google Analytics</td>
+                            <td>Limitar tasa de solicitudes</td>
+                            <td>1 minuto</td>
+                            <td><span class="cookie-type type-analytics">Analítica</span></td>
+                        </tr>
+                        <tr>
+                            <td>session_id</td>
+                            <td>CultuLab</td>
+                            <td>Mantener sesión activa</td>
+                            <td>Sesión</td>
+                            <td><span class="cookie-type type-essential">Esencial</span></td>
+                        </tr>
+                        <tr>
+                            <td>cookie_consent</td>
+                            <td>CultuLab</td>
+                            <td>Guardar preferencias de cookies</td>
+                            <td>1 año</td>
+                            <td><span class="cookie-type type-essential">Esencial</span></td>
+                        </tr>
+                        <tr>
+                            <td>_fbp</td>
+                            <td>Facebook</td>
+                            <td>Publicidad y remarketing</td>
+                            <td>3 meses</td>
+                            <td><span class="cookie-type type-marketing">Marketing</span></td>
+                        </tr>
+                        <tr>
+                            <td>NID</td>
+                            <td>Google</td>
+                            <td>Personalización de anuncios</td>
+                            <td>6 meses</td>
+                            <td><span class="cookie-type type-marketing">Marketing</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="cookies-section">
+                <h2>4. Cómo Gestionar tus Cookies</h2>
+                
+                <div class="highlight-box">
+                    <p><strong>Control total:</strong> Tienes derecho a aceptar o rechazar cookies en cualquier momento. Puedes cambiar tus preferencias a través de la configuración de tu navegador o nuestro panel de consentimiento.</p>
+                </div>
+
+                <h3>4.1. A través de tu Navegador</h3>
+                
+                <button class="accordion">Google Chrome</button>
+                <div class="panel">
+                    <ol>
+                        <li>Haz clic en los tres puntos en la esquina superior derecha</li>
+                        <li>Selecciona "Configuración"</li>
+                        <li>Ve a "Privacidad y seguridad" > "Cookies y otros datos de sitios"</li>
+                        <li>Elige tus preferencias o bloquea cookies específicas</li>
+                    </ol>
+                </div>
+
+                <button class="accordion">Mozilla Firefox</button>
+                <div class="panel">
+                    <ol>
+                        <li>Haz clic en el menú (tres líneas horizontales)</li>
+                        <li>Selecciona "Opciones" o "Preferencias"</li>
+                        <li>Ve a "Privacidad y seguridad"</li>
+                        <li>En "Cookies y datos del sitio", configura tus preferencias</li>
+                    </ol>
+                </div>
+
+                <button class="accordion">Safari</button>
+                <div class="panel">
+                    <ol>
+                        <li>Ve a "Preferencias" en el menú Safari</li>
+                        <li>Haz clic en la pestaña "Privacidad"</li>
+                        <li>Selecciona tus preferencias sobre cookies</li>
+                        <li>Puedes bloquear todas las cookies o permitir solo las del sitio actual</li>
+                    </ol>
+                </div>
+
+                <button class="accordion">Microsoft Edge</button>
+                <div class="panel">
+                    <ol>
+                        <li>Haz clic en los tres puntos en la esquina superior derecha</li>
+                        <li>Selecciona "Configuración"</li>
+                        <li>Ve a "Cookies y permisos del sitio"</li>
+                        <li>Selecciona "Cookies y datos del sitio" y configura</li>
+                    </ol>
+                </div>
+
+                <h3 style="margin-top: 2rem;">4.2. Cookies de Terceros</h3>
+                <p>Puedes optar por no participar en cookies de terceros específicas:</p>
+                <ul>
+                    <li><strong>Google Analytics:</strong> <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Complemento de inhabilitación</a></li>
+                    <li><strong>Google Ads:</strong> <a href="https://adssettings.google.com/" target="_blank" rel="noopener">Configuración de anuncios</a></li>
+                    <li><strong>Facebook:</strong> <a href="https://www.facebook.com/settings?tab=ads" target="_blank" rel="noopener">Configuración de anuncios</a></li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><strong>Nota importante:</strong> Bloquear o eliminar cookies puede afectar tu experiencia de navegación y algunas funcionalidades del sitio pueden no estar disponibles.</p>
+                </div>
+            </div>
+
+            <div class="cookies-section">
+                <h2>5. Cookies de Terceros</h2>
+                <p>Utilizamos servicios de terceros que pueden establecer sus propias cookies. Estas empresas tienen sus propias políticas de privacidad:</p>
+                
+                <table class="cookies-table">
+                    <thead>
+                        <tr>
+                            <th>Servicio</th>
+                            <th>Propósito</th>
+                            <th>Política de Privacidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Google Analytics</td>
+                            <td>Análisis de tráfico web</td>
+                            <td><a href="https://policies.google.com/privacy" target="_blank">Ver política</a></td>
+                        </tr>
+                        <tr>
+                            <td>Google Ads</td>
+                            <td>Publicidad personalizada</td>
+                            <td><a href="https://policies.google.com/technologies/ads" target="_blank">Ver política</a></td>
+                        </tr>
+                        <tr>
+                            <td>Facebook Pixel</td>
+                            <td>Seguimiento de conversiones</td>
+                            <td><a href="https://www.facebook.com/privacy/explanation" target="_blank">Ver política</a></td>
+                        </tr>
+                        <tr>
+                            <td>LinkedIn Insight</td>
+                            <td>Analytics profesional</td>
+                            <td><a href="https://www.linkedin.com/legal/privacy-policy" target="_blank">Ver política</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="cookies-section">
+                <h2>6. Duración de las Cookies</h2>
+                
+                <h3>Cookies de Sesión</h3>
+                <p>Se eliminan automáticamente cuando cierras tu navegador. Las utilizamos para:</p>
+                <ul>
+                    <li>Mantener tu sesión activa durante la navegación</li>
+                    <li>Recordar productos en tu carrito de compra</li>
+                    <li>Garantizar la seguridad de tu navegación</li>
+                </ul>
+
+                <h3>Cookies Persistentes</h3>
+                <p>Permanecen en tu dispositivo durante un período específico o hasta que las elimines manualmente. Las utilizamos para:</p>
+                <ul>
+                    <li>Recordar tus preferencias entre visitas</li>
+                    <li>Analizar patrones de uso a largo plazo</li>
+                    <li>Mejorar continuamente nuestros servicios</li>
+                </ul>
+            </div>
+
+            <div class="cookies-section">
+                <h2>7. Actualización de esta Política</h2>
+                <p>Podemos actualizar esta Política de Cookies periódicamente para reflejar cambios en las cookies que utilizamos o por otros motivos operativos, legales o regulatorios.</p>
+                
+                <p>Te notificaremos sobre cambios importantes mediante:</p>
+                <ul>
+                    <li>Un aviso destacado en nuestro sitio web</li>
+                    <li>Actualización de la fecha "Última actualización" en la parte superior</li>
+                    <li>Una solicitud renovada de consentimiento si es necesario</li>
+                </ul>
+                
+                <div class="info-box">
+                    <p>Te recomendamos revisar esta política periódicamente para mantenerte informado sobre cómo utilizamos las cookies.</p>
+                </div>
+            </div>
+
+            <div class="cookies-section">
+                <h2>8. Contacto</h2>
+                <p>Si tienes preguntas sobre nuestra Política de Cookies o cómo gestionamos tus preferencias, contáctanos:</p>
+                
+                <div class="highlight-box">
+                    <p><strong>CultuLab SAS</strong><br>
+                    Email: privacidad@cultulab.co<br>
+                    Teléfono: +57 300 123 4567<br>
+                    Dirección: Valledupar, Cesar, Colombia</p>
+                    
+                    <p style="margin-top: 1rem;"><strong>También puedes consultar:</strong><br>
+                    <a href="privacidad.html">Política de Privacidad</a> | 
+                    <a href="terminos.html">Términos y Condiciones</a></p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html" class="back-button">← Volver al Sitio Principal</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cookies-footer">
+        <div class="container">
+            <p>&copy; 2025 CultuLab SAS. Todos los derechos reservados.</p>
+            <p><a href="../index.html">Inicio</a> | <a href="privacidad.html">Política de Privacidad</a> | <a href="terminos.html">Términos y Condiciones</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordions = document.getElementsByClassName('accordion');
+            
+            for (let i = 0; i < accordions.length; i++) {
+                accordions[i].addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const panel = this.nextElementSibling;
+                    
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                        panel.classList.remove('active');
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + 'px';
+                        panel.classList.add('active');
+                    }
+                });
+            }
+            
+            console.log('Página de Política de Cookies cargada correctamente');
+        });
+    </script>
+</body>
+</html>
