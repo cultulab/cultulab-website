@@ -1,0 +1,584 @@
+/* ==========================================
+   VARIABLES DE COLOR - CultuLab
+   ========================================== */
+:root {
+    --azul-primario: #004e8d;
+    --azul-secundario: #44b3e8;
+    --beige-secundario: #a89467;
+    --blanco: #ffffff;
+    --gris-neutro: #333333;
+    --azul-hover: #003d6f;
+    --beige-hover: #8f7a52;
+}
+
+/* ==========================================
+   RESET Y BASE
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--gris-neutro);
+    overflow-x: hidden;
+    background-color: var(--blanco);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================
+   TIPOGRAFÍA
+   ========================================== */
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 1rem;
+    color: var(--azul-primario);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 1.5rem;
+    color: var(--azul-primario);
+    font-weight: 700;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.3rem, 3vw, 1.5rem);
+    margin-bottom: 1rem;
+    color: var(--azul-primario);
+    font-weight: 600;
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+    color: var(--azul-primario);
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: var(--gris-neutro);
+}
+
+.highlight {
+    color: var(--beige-secundario);
+    font-weight: 600;
+}
+
+/* ==========================================
+   BOTONES
+   ========================================== */
+.btn {
+    font-family: 'Montserrat', sans-serif;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 5px;
+    transition: all .3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+}
+
+.btn-primary {
+    background-color: var(--azul-primario);
+    color: var(--blanco);
+}
+
+.btn-primary:hover {
+    background-color: var(--azul-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 78, 141, .3);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--azul-primario);
+    border: 2px solid var(--azul-primario);
+}
+
+.btn-secondary:hover {
+    background-color: var(--azul-primario);
+    color: var(--blanco);
+}
+
+.btn-accent {
+    background-color: var(--beige-secundario);
+    color: var(--blanco);
+}
+
+.btn-accent:hover {
+    background-color: var(--beige-hover);
+}
+
+.cta-buttons {
+    margin: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero {
+    background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%);
+    color: var(--blanco);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 78, 141, .2);
+}
+
+.hero h1,
+.hero h2,
+.hero h3 {
+    color: var(--blanco);
+}
+
+.hero .slogan {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--beige-secundario);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    max-width: 850px;
+    margin: 0 auto 2rem;
+    color: var(--blanco);
+    line-height: 1.7;
+}
+
+/* ==========================================
+   SECCIONES
+   ========================================== */
+section {
+    padding: 80px 0;
+}
+
+section:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* ABOUT */
+.about {
+    background: linear-gradient(to bottom, var(--blanco), #f8f9fa);
+    text-align: center;
+}
+
+.about .mission-box {
+    background: var(--blanco);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 78, 141, .1);
+    max-width: 900px;
+    margin: 2rem auto;
+    border-left: 5px solid var(--azul-secundario);
+}
+
+/* PROBLEMA */
+.problema {
+    background: var(--blanco);
+}
+
+.consecuencias {
+    background-color: #f8f9fa;
+}
+
+/* SOLUCIÓN */
+.solucion {
+    background: linear-gradient(135deg, #f8f9fa 0%, var(--blanco) 100%);
+    border-top: 3px solid var(--azul-secundario);
+}
+
+/* VALORES */
+.valores {
+    background: var(--blanco);
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.valor-item {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, var(--azul-primario), var(--azul-secundario));
+    color: var(--blanco);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 3px 15px rgba(0, 78, 141, .2);
+    transition: transform .3s;
+}
+
+.valor-item:hover {
+    transform: translateY(-5px);
+}
+
+/* METODOLOGÍA */
+.metodologia {
+    background-color: #f8f9fa;
+}
+
+/* PLANES */
+.planes {
+    background: linear-gradient(to bottom, var(--blanco), #f8f9fa);
+    padding: 100px 0;
+}
+
+/* ==========================================
+   GRID Y CARDS
+   ========================================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--blanco);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 78, 141, .1);
+    transition: all .3s ease;
+    border-left: 4px solid transparent;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 78, 141, .2);
+    border-left-color: var(--azul-secundario);
+}
+
+/* PLAN CARDS */
+.plan-card {
+    border-top: 5px solid var(--azul-primario);
+    position: relative;
+    padding-top: 3rem;
+}
+
+.plan-card::before {
+    font-family: 'Montserrat', sans-serif;
+    content: attr(data-plan);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--azul-primario);
+    color: var(--blanco);
+    padding: .5rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: .9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 10px 10px 0 0;
+}
+
+.plan-card.featured {
+    border-top-color: var(--beige-secundario);
+    box-shadow: 0 6px 30px rgba(168, 148, 103, .2);
+}
+
+.plan-card.featured::before {
+    background: linear-gradient(135deg, var(--beige-secundario), var(--azul-secundario));
+}
+
+.plan-card h3 {
+    margin-top: .5rem;
+    color: var(--azul-primario);
+}
+
+.plan-card ul {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+}
+
+.plan-card ul li {
+    padding: .5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--gris-neutro);
+    line-height: 1.5;
+}
+
+.plan-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--azul-secundario);
+    font-weight: 700;
+}
+
+.plan-badge {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--beige-secundario);
+    color: var(--blanco);
+    padding: .3rem .8rem;
+    border-radius: 20px;
+    font-size: .85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin: .5rem 0;
+}
+
+/* ==========================================
+   BENEFICIOS Y TESTIMONIOS
+   ========================================== */
+.beneficios {
+    background-color: var(--blanco);
+}
+
+.testimonio {
+    text-align: center;
+    font-style: italic;
+    background: linear-gradient(135deg, #f8f9fa, var(--blanco));
+    border-left: 4px solid var(--beige-secundario);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonio p {
+    color: var(--gris-neutro);
+    font-size: 1.1rem;
+    flex-grow: 1;
+}
+
+.testimonio cite {
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    margin-top: 1.5rem;
+    font-weight: 700;
+    color: var(--azul-primario);
+    font-style: normal;
+    font-size: .95rem;
+}
+
+/* ESTADÍSTICAS */
+.estadistica {
+    text-align: center;
+    background: var(--blanco);
+    border-radius: 12px;
+    border: 3px solid var(--azul-secundario);
+}
+
+.estadistica h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: var(--beige-secundario);
+    font-weight: 700;
+}
+
+.estadistica p {
+    color: var(--azul-primario);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* ==========================================
+   PRUEBA SOCIAL Y CTAs
+   ========================================== */
+.prueba-social {
+    background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%);
+    color: var(--blanco);
+}
+
+.prueba-social h3 {
+    color: var(--blanco);
+}
+
+.cta-primario {
+    background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%);
+    color: var(--blanco);
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 78, 141, .3);
+}
+
+.cta-primario h2,
+.cta-primario p {
+    color: var(--blanco);
+}
+
+.cta-secundario {
+    text-align: center;
+    background: linear-gradient(to bottom, #f8f9fa, var(--blanco));
+    padding: 60px 0;
+    border-top: 2px solid var(--beige-secundario);
+}
+
+.cta-secundario h3 {
+    color: var(--azul-primario);
+}
+
+.contacto-channels {
+    margin: 1.5rem 0;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contacto-channels a {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--azul-primario);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color .3s;
+    font-size: 1.1rem;
+}
+
+.contacto-channels a:hover {
+    color: var(--azul-secundario);
+    text-decoration: underline;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.footer {
+    background: linear-gradient(135deg, var(--azul-primario) 0%, #003d6f 100%);
+    color: var(--blanco);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer h3 {
+    color: var(--blanco);
+    margin-bottom: 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: left;
+}
+
+.footer a {
+    color: var(--azul-secundario);
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color .3s;
+}
+
+.footer a:hover {
+    color: var(--beige-secundario);
+    text-decoration: underline;
+}
+
+.footer p {
+    color: var(--blanco);
+}
+
+/* ==========================================
+   ELEMENTOS DECORATIVOS
+   ========================================== */
+.accent-divider {
+    height: 4px;
+    background: linear-gradient(90deg, var(--azul-primario), var(--azul-secundario), var(--beige-secundario));
+    margin: 60px auto;
+    max-width: 200px;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.2rem;
+    color: var(--gris-neutro);
+    line-height: 1.7;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 0;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .planes {
+        padding: 60px 0;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contacto-channels {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .valores-grid {
+        grid-template-columns: 1fr;
+    }
+}

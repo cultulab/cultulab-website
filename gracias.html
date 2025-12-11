@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gracias por contactar a CultuLab - Nos pondremos en contacto pronto">
+    <title>¡Gracias por tu interés! - CultuLab</title>
+    <style>
+        :root {
+            --azul-primario: #004e8d;
+            --azul-secundario: #44b3e8;
+            --beige-secundario: #a89467;
+            --blanco: #ffffff;
+            --gris-neutro: #333333;
+            --gris-claro: #f8f9fa;
+            --verde-exito: #4CAF50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--gris-neutro);
+            background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .thank-you-card {
+            background: var(--blanco);
+            padding: 4rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .thank-you-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--azul-primario), var(--beige-secundario), var(--azul-secundario));
+        }
+        
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--verde-exito);
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: bounceIn 0.8s ease-out;
+        }
+        
+        .success-icon::after {
+            content: '✓';
+            color: var(--blanco);
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--azul-primario);
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--beige-secundario);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            color: var(--gris-neutro);
+        }
+        
+        .next-steps {
+            background: var(--gris-claro);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2.5rem 0;
+            text-align: left;
+            border-left: 4px solid var(--beige-secundario);
+        }
+        
+        .next-steps h3 {
+            color: var(--azul-primario);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .next-steps ol {
+            margin-left: 1.5rem;
+        }
+        
+        .next-steps li {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, var(--gris-claro), var(--blanco));
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border: 2px solid var(--azul-secundario);
+        }
+        
+        .contact-info h3 {
+            color: var(--azul-primario);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--blanco);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .contact-item a {
+            color: var(--azul-primario);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: var(--azul-secundario);
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2.5rem 0 1rem;
+        }
+        
+        .btn {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background: var(--azul-primario);
+            color: var(--blanco);
+        }
+        
+        .btn-primary:hover {
+            background: #003d6f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,78,141,0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--azul-primario);
+            border: 2px solid var(--azul-primario);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--azul-primario);
+            color: var(--blanco);
+        }
+        
+        .countdown {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: var(--gris-claro);
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
+        .countdown-text {
+            font-size: 0.9rem;
+            color: var(--gris-neutro);
+        }
+        
+        .timer {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--beige-secundario);
+            margin-top: 0.5rem;
+        }
+        
+        .social-share {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gris-claro);
+        }
+        
+        .social-share p {
+            margin-bottom: 1rem;
+            color: var(--gris-neutro);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blanco);
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px);
+        }
+        
+        .linkedin { background: #0077b5; }
+        .whatsapp { background: #25D366; }
+        .email { background: var(--azul-primario); }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(76, 175, 80, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-card {
+                padding: 3rem 2rem;
+                margin: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .contact-details {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .thank-you-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .success-icon {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .success-icon::after {
+                font-size: 2.5rem;
+            }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--beige-secundario);
+            border-radius: 50%;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="thank-you-card">
+            <div class="success-icon pulse"></div>
+            
+            <h1>¡Gracias por tu interés!</h1>
+            <p class="subtitle">Tu mensaje ha sido enviado correctamente</p>
+            
+            <div class="message">
+                <p>Hemos recibido tu información y nuestro equipo se pondrá en contacto contigo en menos de <strong>24 horas hábiles</strong>.</p>
+                <p>Mientras tanto, te invitamos a explorar más sobre nuestros servicios y metodología.</p>
+            </div>
+
+            <div class="next-steps">
+                <h3>¿Qué sigue ahora?</h3>
+                <ol>
+                    <li><strong>Revisión de tu solicitud:</strong> Nuestro equipo especializado analizará tus necesidades</li>
+                    <li><strong>Llamada de diagnóstico:</strong> Te contactaremos para una sesión gratuita de 30 minutos</li>
+                    <li><strong>Propuesta personalizada:</strong> Recibirás una cotización ajustada a tu presupuesto</li>
+                    <li><strong>Inicio del programa:</strong> Comenzaremos a trabajar en fortalecer tu cultura organizacional</li>
+                </ol>
+            </div>
+
+            <div class="contact-info">
+                <h3>¿Necesitas atención inmediata?</h3>
+                <p>Contáctanos directamente a través de estos canales:</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <a href="https://wa.me/573001234567" target="_blank">WhatsApp</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <a href="mailto:contacto@cultulab.co">Email</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <a href="tel:+573001234567">Llamada</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="countdown">
+                <div class="countdown-text">Te contactaremos antes de:</div>
+                <div class="timer" id="countdown-timer">24:00:00</div>
+            </div>
+
+            <div class="btn-group">
+                <a href="../index.html" class="btn btn-primary">Volver al Inicio</a>
+                <a href="#resources" class="btn btn-secondary" onclick="showResources()">Recursos Gratuitos</a>
+            </div>
+
+            <div class="social-share">
+                <p>¿Conoces a alguien que también podría beneficiarse de nuestros servicios?</p>
+                <div class="social-links">
+                    <a href="#" class="social-link linkedin" onclick="shareOnLinkedIn()">
+                        <span>in</span>
+                    </a>
+                    <a href="#" class="social-link whatsapp" onclick="shareOnWhatsApp()">
+                        <span>📱</span>
+                    </a>
+                    <a href="#" class="social-link email" onclick="shareByEmail()">
+                        <span>✉️</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Countdown timer
+        function startCountdown() {
+            const timerElement = document.getElementById('countdown-timer');
+            let timeLeft = 24 * 60 * 60; // 24 hours in seconds
+            
+            function updateTimer() {
+                const hours = Math.floor(timeLeft / 3600);
+                const minutes = Math.floor((timeLeft % 3600) / 60);
+                const seconds = timeLeft % 60;
+                
+                timerElement.textContent = 
+                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    setTimeout(updateTimer, 1000);
+                } else {
+                    timerElement.textContent = '¡Tiempo cumplido!';
+                    timerElement.style.color = '#4CAF50';
+                }
+            }
+            
+            updateTimer();
+        }
+
+        // Show additional resources
+        function showResources() {
+            const resourcesHTML = `
+                <div class="next-steps" id="resources-section" style="margin-top: 2rem; animation: fadeIn 0.5s ease-in;">
+                    <h3>📚 Recursos Gratuitos para Ti</h3>
+                    <ul>
+                        <li><strong>Guía PDF:</strong> "5 Estrategias para Reducir la Rotación"</li>
+                        <li><strong>Plantilla:</strong> Diagnóstico Rápido de Clima Laboral</li>
+                        <li><strong>Webinar Grabado:</strong> Cultura Organizacional para PyMEs</li>
+                        <li><strong>Checklist:</strong> Implementación de Bienestar Laboral</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-style: italic;">Estos recursos llegarán a tu email en los próximos minutos.</p>
+                </div>
+            `;
+            
+            const existingResources = document.getElementById('resources-section');
+            if (!existingResources) {
+                document.querySelector('.btn-group').insertAdjacentHTML('afterend', resourcesHTML);
+            }
+        }
+
+        // Social sharing functions
+        function shareOnLinkedIn() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('Acabo de contactar a CultuLab para fortalecer nuestra cultura organizacional. ¡Servicios excelentes para empresas!');
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+        }
+
+        function shareOnWhatsApp() {
+            const text = encodeURIComponent('Te recomiendo CultuLab para mejorar la cultura organizacional de tu empresa. Servicios profesionales y resultados medibles. 🌟');
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+        }
+
+        function shareByEmail() {
+            const subject = encodeURIComponent('Recomendación: CultuLab - Cultura Organizacional');
+            const body = encodeURIComponent(`Hola,
+
+Te recomiendo contactar a CultuLab para fortalecer la cultura organizacional de tu empresa. 
+
+Ofrecen:
+✅ Programas accesibles para PyMEs
+✅ Reducción de rotación comprobada
+✅ Bienestar laboral real
+✅ Resultados medibles
+
+Página web: https://cultulab.co
+
+¡Vale la pena conocerlos!`);
+
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        }
+
+        // Create confetti effect
+        function createConfetti() {
+            const card = document.querySelector('.thank-you-card');
+            const colors = ['#004e8d', '#44b3e8', '#a89467', '#4CAF50'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '-10px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animation = `confettiFall ${Math.random() * 3 + 2}s linear forwards`;
+                confetti.style.setProperty('--x-end', (Math.random() - 0.5) * 200 + 'px');
+                
+                card.appendChild(confetti);
+                
+                // Remove confetti after animation
+                setTimeout(() => {
+                    if (confetti.parentNode) {
+                        confetti.parentNode.removeChild(confetti);
+                    }
+                }, 5000);
+            }
+        }
+
+        // Add confetti animation to CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes confettiFall {
+                0% {
+                    opacity: 1;
+                    transform: translate(0, 0) rotate(0deg);
+                }
+                100% {
+                    opacity: 0;
+                    transform: translate(var(--x-end), 600px) rotate(360deg);
+                }
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            startCountdown();
+            createConfetti();
+            
+            // Track conversion in analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-YOUR_CONVERSION_ID',
+                    'value': 1.0,
+                    'currency': 'COP'
+                });
+            }
+            
+            console.log('Página de agradecimiento cargada - Conversión registrada');
+        });
+
+        // Auto-redirect after 30 seconds (optional)
+        setTimeout(() => {
+            // window.location.href = '../index.html'; // Descomentar si se desea redirección automática
+        }, 30000);
+    </script>
+</body>
+</html>
