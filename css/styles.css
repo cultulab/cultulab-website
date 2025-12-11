@@ -309,14 +309,7 @@ section:nth-child(even) {
     border-radius: 10px 10px 0 0;
 }
 
-.plan-card.featured {
-    border-top-color: var(--beige-secundario);
-    box-shadow: 0 6px 30px rgba(168, 148, 103, .2);
-}
-
-.plan-card.featured::before {
-    background: linear-gradient(135deg, var(--beige-secundario), var(--azul-secundario));
-}
+/* ELIMINADO: Los estilos especiales de .plan-card.featured para que todos los planes se vean iguales */
 
 .plan-card h3 {
     margin-top: .5rem;
