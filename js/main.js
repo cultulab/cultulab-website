@@ -9,7 +9,7 @@
 
 function agendarLlamada() {
     // Reemplazar con tu enlace de Calendly real
-    window.location.href = 'https://calendly.com/cultulab/llamada-diagnostico-gratuita';
+    window.location.href = 'https://calendly.com/cultulab-comercial/30min';
 }
 
 function cotizarPrograma() {
@@ -79,5 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 });
+
 
 console.log('✅ Main.js cargado correctamente');
