@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Checklist de Bienestar y Cultura Organizacional - Identifica el estado de tu equipo con CultuLab.">
+    <title>Diagnóstico de Bienestar - CultuLab</title>
+
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .header-shadow {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .bg-gradient-site {
+            background: linear-gradient(135deg, #004e8d 0%, #44b3e8 100%);
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: #004e8d;
+            border-color: #004e8d;
+        }
+
+        .card-animation {
+            transition: all 0.3s ease;
+        }
+
+        .card-animation:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white sticky top-0 z-50 header-shadow">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../img/logo.jpg" alt="CultuLab Logo" width="140">
+                </a>
+            </div>
+            <div class="flex gap-4">
+                <a href="../index.html"
+                    class="hidden md:block text-gray-600 hover:text-blue-700 font-semibold py-2">Volver al Inicio</a>
+                <button onclick="window.parent.agendarLlamada()"
+                    class="bg-[#004e8d] text-white px-5 py-2 rounded-lg font-bold hover:bg-blue-800 transition">Agendar
+                    Llamada</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 p-4 md:p-8">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Header Card -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-6 border-t-4 border-[#004e8d]">
+                <div class="flex flex-col md:flex-row items-start gap-4 mb-4">
+                    <div class="bg-gradient-to-br from-blue-600 to-blue-400 p-3 rounded-xl shadow-lg">
+                        <i data-lucide="trending-up" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div
+                            class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-2 uppercase tracking-tight">
+                            🎁 Recurso Gratuito para Empresas
+                        </div>
+                        <h1 class="text-3xl font-extrabold text-gray-900 mb-2 leading-tight">
+                            Diagnóstico de Bienestar y Cultura Organizacional
+                        </h1>
+                        <p class="text-gray-600 text-lg">
+                            ¿Tu equipo está bien… o solo aguantando?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-5 border border-blue-100 mt-4">
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        En menos de <strong>3 minutos</strong>, identifica si tu empresa presenta señales reales de
+                        desgaste cultural antes de que se convierta en rotación o baja productividad.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm font-semibold">
+                        <div class="flex items-center gap-2 text-gray-700">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>
+                            Fuga de Talento
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-700">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>
+                            Clima Emocional
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-700">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>
+                            Pertenencia
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div id="categories-container" class="space-y-6 mb-8">
+                <!-- Se inyectará por JS -->
+            </div>
+
+            <!-- Results Section (Visible when 1+ checked) -->
+            <div id="results-section"
+                class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border-2 transition-all duration-500">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                    <div class="bg-blue-600 p-2 rounded-lg">
+                        <i data-lucide="microscope" class="w-6 h-6 text-white"></i>
+                    </div>
+                    🔍 Interpretación de Resultados
+                </h2>
+
+                <div id="interpretation-box" class="rounded-xl p-6 border-2 mb-6 shadow-sm">
+                    <div class="flex items-start gap-4">
+                        <div id="interpretation-icon-container" class="p-3 bg-white rounded-full shadow-md">
+                            <i id="interpretation-icon" class="w-12 h-12"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-col md:flex-row md:items-center gap-2 mb-2">
+                                <h3 id="interpretation-level" class="text-2xl font-bold uppercase tracking-wide"></h3>
+                                <span id="alert-count"
+                                    class="bg-white px-3 py-1 rounded-full text-sm font-bold shadow-sm border border-gray-100"></span>
+                            </div>
+                            <p id="interpretation-recommendation" class="text-lg font-bold mb-3"></p>
+                            <p id="interpretation-description" class="text-gray-700 leading-relaxed"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-5 mb-8 border border-gray-100">
+                    <h4 class="font-bold text-gray-900 mb-3">Guía de Evaluación:</h4>
+                    <div class="space-y-3 text-sm text-gray-700">
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded-full bg-green-500"></span>
+                            <span class="font-bold text-green-700 min-w-[100px]">0-4 alertas:</span>
+                            <span>Cultura estable → enfoque preventivo.</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded-full bg-yellow-500"></span>
+                            <span class="font-bold text-yellow-700 min-w-[100px]">5-12 alertas:</span>
+                            <span>Riesgo medio → se requiere intervención puntual.</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded-full bg-red-500"></span>
+                            <span class="font-bold text-red-700 min-w-[100px]">13-20 alertas:</span>
+                            <span>Intervención prioritaria urgente.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div id="cta-box"
+                    class="hidden bg-gradient-to-r from-blue-700 to-blue-500 rounded-2xl p-8 text-white shadow-2xl relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 opacity-10">
+                        <i data-lucide="rocket" class="w-40 h-40"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-xl font-bold mb-4 flex items-center gap-2">
+                            💡 La rotación no aparece de la nada.
+                        </p>
+                        <p class="mb-6 text-blue-50 leading-relaxed text-lg">
+                            Más allá del número de alertas, lo importante es cómo afecta esto a tus objetivos de
+                            negocio. Agendemos una sesión para analizar estos puntos estratégicamente.
+                        </p>
+                        <button onclick="window.parent.agendarLlamada()"
+                            class="bg-white text-blue-700 font-extrabold py-4 px-8 rounded-xl shadow-lg hover:bg-gray-100 transition-transform hover:scale-105 active:scale-95 flex items-center gap-3">
+                            <i data-lucide="calendar" class="w-5 h-5"></i>
+                            Agenda tu Sesión Estratégica Gratuita
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Site Footer Integration -->
+            <div class="text-center mt-12 mb-8">
+                <p class="text-gray-500 text-sm">
+                    © 2025 <strong>CultuLab SAS</strong> • Personas que crecen, empresas que avanzan.
+                </p>
+                <div class="flex justify-center gap-4 mt-2">
+                    <a href="privacidad.html" class="text-gray-400 hover:text-blue-600 text-xs">Privacidad</a>
+                    <a href="terminos.html" class="text-gray-400 hover:text-blue-600 text-xs">Términos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const categories = [
+            {
+                id: 'clima',
+                icon: 'users',
+                title: 'Clima emocional y energía del equipo',
+                impact: 'Desgaste emocional → baja productividad → renuncias silenciosas',
+                items: [
+                    'Desmotivación general o apatía visible',
+                    'Quejas constantes o actitud defensiva entre compañeros',
+                    'Falta de entusiasmo incluso ante logros importantes',
+                    'Sensación de "solo cumplir" (presentismo)'
+                ]
+            },
+            {
+                id: 'comunicacion',
+                icon: 'message-circle',
+                title: 'Comunicación interna y confianza',
+                impact: 'Baja seguridad psicológica → errores costosos y desconexión',
+                items: [
+                    'Las personas evitan opinar o corregir en reuniones',
+                    'Los errores se ocultan por miedo a represalias',
+                    'Hay malentendidos frecuentes que causan retrabajo',
+                    'Todo depende de la gerencia para poder avanzar'
+                ]
+            },
+            {
+                id: 'compromiso',
+                icon: 'heart',
+                title: 'Compromiso y pertenencia',
+                impact: 'Pérdida de talento clave y conocimiento crítico',
+                items: [
+                    'Alta rotación o intención manifiesta de renuncia',
+                    'Poco orgullo por pertenecer a la empresa',
+                    'Bajo interés en iniciativas internas no obligatorias',
+                    'El trabajo se percibe únicamente como un sueldo'
+                ]
+            },
+            {
+                id: 'liderazgo',
+                icon: 'award',
+                title: 'Liderazgo y coherencia cultural',
+                impact: 'Desconfianza generalizada y cultura reactiva',
+                items: [
+                    'Falta de coherencia: lo que se dice no es lo que se hace',
+                    'No hay feedback claro ni constructivo de líderes',
+                    'No se reconocen esfuerzos, solo se señalan fallas',
+                    'El liderazgo actúa solo cuando hay crisis crítica'
+                ]
+            },
+            {
+                id: 'bienestar',
+                icon: 'clock',
+                title: 'Bienestar integral y sostenibilidad',
+                impact: 'Burnout, ausentismo y caída drástica del rendimiento',
+                items: [
+                    'Jornadas extensas normalizadas como "prueba de compromiso"',
+                    'Estrés constante y tensión en el ambiente',
+                    'Bajo uso de vacaciones por "mucha carga laboral"',
+                    'Ausentismo frecuente por motivos de salud y fatiga'
+                ]
+            }
+        ];
+
+        let checkedState = {};
+
+        function initChecklist() {
+            const container = document.getElementById('categories-container');
+            categories.forEach((cat, index) => {
+                const catElement = document.createElement('div');
+                catElement.className = 'bg-white rounded-xl shadow-md overflow-hidden card-animation border border-gray-100';
+                catElement.innerHTML = `
+                    <div class="bg-gradient-to-r from-[#004e8d] to-[#44b3e8] p-4">
+                        <div class="flex items-center gap-3 text-white">
+                            <div class="bg-white bg-opacity-20 p-2 rounded-lg">
+                                <i data-lucide="${cat.icon}" class="w-6 h-6"></i>
+                            </div>
+                            <h2 class="text-lg md:text-xl font-bold font-montserrat">
+                                ${index + 1}. ${cat.title}
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs font-bold text-gray-500 mb-4 uppercase tracking-widest">
+                            MARCA SI OCURRE CON FRECUENCIA:
+                        </p>
+                        <div class="space-y-3 mb-6">
+                            ${cat.items.map((item, i) => `
+                                <label class="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 cursor-pointer transition-all border border-transparent hover:border-gray-100">
+                                    <div class="relative flex items-center justify-center">
+                                        <input type="checkbox" onchange="toggleItem('${cat.id}', ${i})" class="w-6 h-6 rounded border-gray-300 text-[#004e8d] focus:ring-[#004e8d] transition-all cursor-pointer">
+                                    </div>
+                                    <span class="text-gray-700 text-sm md:text-base select-none leading-tight pt-0.5">${item}</span>
+                                </label>
+                            `).join('')}
+                        </div>
+                        <div class="bg-red-50 border-l-4 border-[#a89467] p-4 rounded-r-lg">
+                            <p class="text-xs md:text-sm text-gray-800 leading-relaxed font-semibold">
+                                <span class="text-[#004e8d] font-extrabold">📌 IMPACTO EN TU NEGOCIO:</span> ${cat.impact}
+                            </p>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(catElement);
+            });
+            lucide.createIcons();
+            updateResults(); // Inicial en 0
+        }
+
+        function toggleItem(catId, index) {
+            const key = `${catId}-${index}`;
+            checkedState[key] = !checkedState[key];
+            updateResults();
+        }
+
+        function updateResults() {
+            const totalAlerts = Object.values(checkedState).filter(v => v).length;
+            const resSection = document.getElementById('results-section');
+            const scoreCount = document.getElementById('alert-count');
+            const levelTitle = document.getElementById('interpretation-level');
+            const recText = document.getElementById('interpretation-recommendation');
+            const descText = document.getElementById('interpretation-description');
+            const icon = document.getElementById('interpretation-icon');
+            const iconBox = document.getElementById('interpretation-box');
+            const ctaBox = document.getElementById('cta-box');
+
+            scoreCount.innerText = `${totalAlerts} Alertas Detectadas`;
+
+            let config = {
+                level: 'Cultura Estable',
+                color: 'text-green-600',
+                bg: 'bg-green-50',
+                border: 'border-green-200',
+                lucide: 'check-circle-2',
+                rec: 'Enfoque preventivo recomendado',
+                desc: 'Tu organización muestra señales positivas. Mantén el monitoreo continuo para prevenir el desgaste cultural.'
+            };
+
+            if (totalAlerts > 4 && totalAlerts <= 12) {
+                config = {
+                    level: 'Riesgo Medio',
+                    color: 'text-yellow-600',
+                    bg: 'bg-yellow-50',
+                    border: 'border-yellow-300',
+                    lucide: 'alert-triangle',
+                    rec: 'Intervención estratégica necesaria',
+                    desc: 'Se detectan señales de alerta que requieren atención. Es momento de actuar antes de que afecten la rentabilidad.'
+                };
+            } else if (totalAlerts > 12) {
+                config = {
+                    level: 'Prioridad Alta',
+                    color: 'text-red-600',
+                    bg: 'bg-red-50',
+                    border: 'border-red-300',
+                    lucide: 'x-circle',
+                    rec: 'Acción urgente en cultura y liderazgo',
+                    desc: 'Tu organización presenta múltiples señales críticas. Se requiere un plan de acción inmediato para retener talento.'
+                };
+            }
+
+            // Aplicar estilos
+            levelTitle.innerText = config.level;
+            levelTitle.className = `text-2xl font-black ${config.color} uppercase tracking-wide`;
+            recText.innerText = config.rec;
+            recText.className = `text-lg font-bold ${config.color} mb-3 uppercase text-sm tracking-tight`;
+            descText.innerText = config.desc;
+            icon.setAttribute('data-lucide', config.lucide);
+            icon.className = `w-12 h-12 ${config.color}`;
+            iconBox.className = `rounded-2xl p-6 border-2 mb-6 shadow-sm transition-all duration-300 ${config.bg} ${config.border}`;
+
+            // Mostrar CTA si hay 5+ alertas
+            if (totalAlerts >= 5) {
+                ctaBox.classList.remove('hidden');
+            } else {
+                ctaBox.classList.add('hidden');
+            }
+
+            lucide.createIcons();
+        }
+
+        window.onload = initChecklist;
+    </script>
+
+</body>
+
+</html>

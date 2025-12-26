@@ -42,10 +42,8 @@ function solicitarPropuestaWhatsApp() {
     window.open(`https://wa.me/573012699885?text=${encodeURIComponent(mensaje)}`, '_blank');
 }
 
-function descargarChecklist() {
-    alert("🚀 ¡Gracias por tu interés! El Checklist de Bienestar se está preparando. En un momento se abrirá el PDF de muestra.");
-    window.open('https://www.google.com/search?q=checklist+bienestar+laboral+pdf', '_blank');
-}
+// La función anterior de descarga de checklist ha sido reemplazada 
+// por la página interactiva en /pages/checklist.html
 
 // ==========================================
 // SMOOTH SCROLL - Navegación interna
