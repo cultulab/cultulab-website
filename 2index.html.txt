@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CultuLab: Fortalecemos la cultura organizacional de Empresas en Colombia. Programas accesibles de bienestar que reducen rotación y elevan compromiso. Personas que crecen, empresas que avanzan.">
+    <meta name="keywords" content="bienestar corporativo Empresas, cultura organizacional Colombia, reducción rotación, retención talento, programas bienestar empresarial">
+    <meta property="og:title" content="CultuLab - Personas que crecen, empresas que avanzan">
+    <meta property="og:description" content="Fortalecemos la cultura organizacional de Empresas. Bienestar accesible, sostenible y medible.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#004e8d">
+    <title>CultuLab - Cultura Organizacional para Empresas | Bienestar y Retención</title>
+    
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Google Analytics Config -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', {
+        'debug_mode': true // Cambiar a false en producción
+      });
+    </script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="slogan">Personas que crecen, empresas que avanzan</div>
+            <h1>Fortalece tu cultura organizacional sin que el presupuesto sea una barrera</h1>
+            <p>Programas accesibles de bienestar, formación y comunicación interna que reducen rotación y elevan el compromiso real.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="agendarLlamada()">Agenda tu llamada diagnóstico</button>
+                <button class="btn btn-accent" onclick="cotizarPrograma()">Conoce nuestros planes</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acerca de Nosotros -->
+    <section class="about">
+        <div class="container">
+            <h2>Quiénes somos</h2>
+            <p class="section-subtitle">CultuLab es una empresa colombiana especializada en fortalecer la cultura organizacional de empresas. Creemos que el verdadero crecimiento empresarial comienza con las personas.</p>
+            
+            <div class="mission-box">
+                <h3>Nuestra Misión</h3>
+                <p>Fortalecer la cultura organizacional de empresas mediante programas de bienestar y desarrollo humano diseñados para generar impacto real, crear experiencias que mejoren la conexión entre equipos, reduzcan la rotación de personal y eleven el compromiso genuino del talento.</p>
+            </div>
+
+            <div class="mission-box">
+                <h3>Nuestra Visión</h3>
+                <p>En cinco años, consolidarnos como la empresa referente en soluciones de bienestar y cultura organizacional para empresas en Colombia, ofreciendo un modelo accesible, medible y sostenible que eleve la satisfacción y retención del talento.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problema Section -->
+    <section class="problema">
+        <div class="container">
+            <h2>Los desafíos reales que enfrentan las empresas</h2>
+            <p class="section-subtitle">Sabemos lo que cuesta perder talento. No solo en dinero, sino en estabilidad, conocimiento y motivación del equipo.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h4>💸 Alta rotación de personal</h4>
+                    <p>Reemplazar a un colaborador cuesta entre <strong>30% y 50% de su salario anual</strong>, sin contar el tiempo perdido en selección e inducción.</p>
+                </div>
+                <div class="card">
+                    <h4>📉 Falta de programas estructurados</h4>
+                    <p>Muchas empresas quieren cuidar a su gente, pero no tienen el tiempo ni los recursos para diseñar estrategias de bienestar sostenibles.</p>
+                </div>
+                <div class="card">
+                    <h4>🔇 Baja comunicación interna</h4>
+                    <p>La desconexión afecta el clima laboral, el desempeño y la sensación de pertenencia de los equipos.</p>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:3rem;padding:2rem;background:linear-gradient(135deg,#f8f9fa,var(--blanco));border-radius:10px;border-left:5px solid var(--beige-secundario)">
+                <h3 style="color:var(--azul-primario);margin-bottom:1rem">La verdad incómoda:</h3>
+                <p style="font-size:1.3rem;color:var(--gris-neutro);font-weight:600">Retener es más rentable que reemplazar</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solución Section -->
+    <section class="solucion">
+        <div class="container">
+            <h2>Nuestra Solución: Bienestar real, cultura sostenible</h2>
+            <p class="section-subtitle">No vendemos actividades aisladas. Diseñamos programas completos que combinan bienestar, desarrollo humano y comunicación interna para construir culturas que retengan talento.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h4>🌱 Bienestar laboral</h4>
+                    <p>Actividades, jornadas, celebraciones, obsequios corporativos y beneficios que hacen que tu equipo se sienta valorado.</p>
+                </div>
+                <div class="card">
+                    <h4>📚 Desarrollo humano</h4>
+                    <p>Formaciones clave: finanzas personales, ventas, coaching, inteligencia emocional, comunicación asertiva y habilidades blandas.</p>
+                </div>
+                <div class="card">
+                    <h4>💬 Comunicación interna</h4>
+                    <p>Campañas, mensajes, piezas gráficas, efemérides y estrategias de conexión que fortalecen el sentido de pertenencia.</p>
+                </div>
+                <div class="card">
+                    <h4>🏢 Cultura organizacional</h4>
+                    <p>Lineamientos, valores, rituales, prácticas y acompañamiento estratégico con líderes y gerencia.</p>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:3rem">
+                <p style="font-size:1.2rem;color:var(--azul-primario);font-weight:600">Todo con un enfoque sostenible, medible y accesible para empresas</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valores Corporativos -->
+    <section class="valores">
+        <div class="container">
+            <h2>Nuestros Valores</h2>
+            <p class="section-subtitle">Estos principios guían cada programa, cada taller y cada interacción con nuestros clientes.</p>
+            
+            <div class="valores-grid">
+                <div class="valor-item">Integridad</div>
+                <div class="valor-item">Responsabilidad</div>
+                <div class="valor-item">Trabajo en Equipo</div>
+                <div class="valor-item">Accesibilidad</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planes / Paquetes -->
+    <section class="planes">
+        <div class="container">
+            <h2>Nuestros Programas</h2>
+            <p class="section-subtitle">Tres niveles de acompañamiento diseñados para que cada empresa encuentre la solución que necesita, sin importar su presupuesto.</p>
+            
+            <div class="grid">
+                <!-- Plan 1: Conexión -->
+                <div class="card plan-card" data-plan="Plan Conexión">
+                    <h3>Bienestar que sí se siente</h3>
+                    <p class="plan-badge">Ideal para iniciar sin gran inversión</p>
+                    
+                    <p style="margin-top:1.5rem;font-weight:600;color:var(--azul-primario)">¿Qué incluye?</p>
+                    <ul>
+                        <li>Diagnóstico inicial de clima y bienestar (rápido – 15 ítems)</li>
+                        <li>1 actividad de bienestar mensual (psicología, manejo del estrés, pausas activas, mini talleres, sesiones virtuales)</li>
+                        <li>1 taller mensual (finanzas, ventas, coaching, crecimiento personal)</li>
+                        <li>Comunicación interna básica (4 piezas mensuales: mensajes, piezas gráficas, efemérides)</li>
+                        <li>Informe mensual de impacto (participación, percepción y próximos pasos)</li>
+                        <li>Obsequios corporativos (brandeo de marca en los regalos)</li>
+                    </ul>
+
+                    <p style="margin-top:1.5rem;font-weight:700;color:var(--beige-secundario)">Beneficio clave:</p>
+                    <p>Introduce el bienestar sin fricción y crea señales claras de cuidado y acompañamiento.</p>
+                    
+                    <div style="margin-top:2rem;padding:1rem;background:linear-gradient(135deg,#f8f9fa,var(--blanco));border-radius:8px;text-align:center">
+                        <p style="font-size:1.8rem;font-weight:700;color:var(--azul-primario);margin:0">$45.000 COP</p>
+                        <p style="font-size:.9rem;color:var(--gris-neutro);margin:.3rem 0 0 0">por persona / sin obsequio</p>
+                    </div>
+                </div>
+
+                <!-- Plan 2: Acción (DESTACADO) -->
+                <div class="card plan-card featured" data-plan="Plan Acción - Más Popular">
+                    <h3>Cultura que conecta</h3>
+                    <p class="plan-badge">Ideal para integrar bienestar + formación</p>
+                    
+                    <p style="margin-top:1.5rem;font-weight:600;color:var(--azul-primario)">Todo lo del Plan Conexión, MÁS:</p>
+                    <ul>
+                        <li>1 actividad mensual adicional (bienestar + desarrollo humano)</li>
+                        <li>Campañas de comunicación interna temáticas (bienestar, liderazgo, valores)</li>
+                        <li>Activación mensual para clima laboral (retos, dinámicas, cápsulas educativas)</li>
+                        <li>Sesión de Feedback (1 sesión mensual)</li>
+                        <li>Informe mensual de impacto (con métricas y recomendaciones)</li>
+                        <li>Obsequios corporativos (brandeo de marca en los regalos)</li>
+                    </ul>
+
+                    <p style="margin-top:1.5rem;font-weight:700;color:var(--beige-secundario)">Beneficio clave:</p>
+                    <p>Crea hábitos de bienestar, fortalece la comunicación interna y mejora el clima de forma continua.</p>
+                    
+                    <div style="margin-top:2rem;padding:1rem;background:linear-gradient(135deg,var(--beige-secundario),var(--azul-secundario));border-radius:8px;text-align:center">
+                        <p style="font-size:1.8rem;font-weight:700;color:var(--blanco);margin:0">$70.000 COP</p>
+                        <p style="font-size:.9rem;color:var(--blanco);margin:.3rem 0 0 0;opacity:.95">por persona / sin obsequio</p>
+                    </div>
+                </div>
+
+                <!-- Plan 3: Evolución -->
+                <div class="card plan-card" data-plan="Plan Evolución">
+                    <h3>Cultura que transforma</h3>
+                    <p class="plan-badge">Programa completo de retención y cultura</p>
+                    
+                    <p style="margin-top:1.5rem;font-weight:600;color:var(--azul-primario)">Todo lo del Plan Acción, MÁS:</p>
+                    <ul>
+                        <li>Diseño de un Plan de Cultura Organizacional (valores, prácticas, rituales)</li>
+                        <li>Medición avanzada (clima, satisfacción, engagement, rotación)</li>
+                        <li>Programa de formación humana (4 módulos)</li>
+                        <li>Gestión de bienestar físico y emocional con aliados externos</li>
+                    </ul>
+
+                    <p style="margin-top:1.5rem;font-weight:700;color:var(--beige-secundario)">Beneficio clave:</p>
+                    <p>Transformación cultural real y medible, enfocada en retención, compromiso y experiencia del colaborador.</p>
+                    
+                    <div style="margin-top:2rem;padding:1rem;background:linear-gradient(135deg,#f8f9fa,var(--blanco));border-radius:8px;text-align:center">
+                        <p style="font-size:1.8rem;font-weight:700;color:var(--azul-primario);margin:0">$200.000 COP</p>
+                        <p style="font-size:.9rem;color:var(--gris-neutro);margin:.3rem 0 0 0">por persona / sin obsequio</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:2.5rem;padding:1.5rem;background:#f8f9fa;border-radius:10px">
+                <p style="font-size:1rem;color:var(--gris-neutro);margin:0">💡 <strong>Los precios incluyen:</strong> Diseño, ejecución, logística y seguimiento mensual</p>
+                <p style="font-size:.9rem;color:var(--gris-neutro);margin:.5rem 0 0 0">Los obsequios corporativos se cotizan por separado según necesidad</p>
+            </div>
+
+            <div class="cta-buttons" style="margin-top:3rem">
+                <button class="btn btn-primary" onclick="cotizarPrograma()">Solicitar cotización personalizada</button>
+                <button class="btn btn-secondary" onclick="agendarLlamada()">Hablar con un asesor</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="beneficios">
+        <div class="container">
+            <h2>¿Por qué elegir CultuLab?</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4>🎯 Enfoque humano + estratégico</h4>
+                    <p>No hacemos actividades por hacer. Todo tiene un propósito medible.</p>
+                </div>
+                <div class="card">
+                    <h4>💼 Diseñado para empresas</h4>
+                    <p>Soluciones accesibles sin sacrificar calidad ni impacto.</p>
+                </div>
+                <div class="card">
+                    <h4>📊 Programas medibles</h4>
+                    <p>Indicadores claros de retención, clima, satisfacción y compromiso.</p>
+                </div>
+                <div class="card">
+                    <h4>🤝 Acompañamiento continuo</h4>
+                    <p>No te dejamos solo. Trabajamos contigo, no para ti.</p>
+                </div>
+                <div class="card">
+                    <h4>⏱️ Ahorro de tiempo y recursos</h4>
+                    <p>Nos encargamos de todo: diseño, logística, ejecución y medición.</p>
+                </div>
+                <div class="card">
+                    <h4>🌱 Cultura sostenible</h4>
+                    <p>Acciones que perduran, no fuegos artificiales de un día.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Casos de Éxito -->
+    <section class="casos-exito" style="background:#f8f9fa">
+        <div class="container">
+            <h2>Empresas que ya están fortaleciendo su cultura</h2>
+            <p class="section-subtitle">Historias reales de equipos que decidieron invertir en su gente.</p>
+            
+            <div class="grid">
+                <div class="card testimonio">
+                    <p>"Reducimos la rotación en un 40% en seis meses. El equipo se siente escuchado y eso cambió todo. CultuLab nos ayudó a estructurar lo que sabíamos que necesitábamos pero no sabíamos cómo implementar."</p>
+                    <cite>Laura G., Gerente de Talento Humano<br>Empresa de Tecnología</cite>
+                </div>
+                <div class="card testimonio">
+                    <p>"Antes el bienestar era solo un día del trabajador. Ahora es parte de nuestra cultura. Los talleres de finanzas personales fueron un hit y nuestros números de compromiso subieron un 35%."</p>
+                    <cite>Andrés M., CEO<br>Retail - 45 colaboradores</cite>
+                </div>
+                <div class="card testimonio">
+                    <p>"Finalmente tenemos una estrategia clara de retención. Y lo mejor: funciona. La inversión se paga sola cuando dejas de gastar en reclutar cada mes."</p>
+                    <cite>Carla P., Directora de Operaciones<br>Logística - 80 colaboradores</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prueba Social -->
+    <section class="prueba-social">
+        <div class="container">
+            <h3>Resultados que hablan por sí solos</h3>
+            <div class="grid">
+                <div class="card estadistica">
+                    <h4>-35%</h4>
+                    <p>Reducción promedio de rotación en empresas que completan nuestro programa anual</p>
+                </div>
+                <div class="card estadistica">
+                    <h4>+42%</h4>
+                    <p>Aumento en índices de compromiso medidos antes y después de la intervención</p>
+                </div>
+                <div class="card estadistica">
+                    <h4>9 de 10</h4>
+                    <p>Clientes renuevan su programa al año siguiente porque ven resultados reales</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Primario -->
+    <section class="cta-primario">
+        <div class="container">
+            <h2>Hablemos de cómo fortalecer tu cultura organizacional</h2>
+            <p style="font-size:1.2rem;margin:1.5rem 0">No necesitas un presupuesto millonario ni esperar seis meses para empezar a cuidar a tu gente.</p>
+            <p>Agenda una llamada de diagnóstico gratuita de 30 minutos y recibe una propuesta personalizada.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="agendarLlamada()">Agendar llamada diagnóstico</button>
+                <button class="btn btn-accent" onclick="solicitarPropuesta()">Solicitar propuesta por email</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Secundario -->
+    <section class="cta-secundario">
+        <div class="container">
+            <h3>¿Tienes preguntas? Estamos aquí</h3>
+            <div class="contacto-channels">
+                <a href="https://wa.me/573012699885" target="_blank" rel="noopener noreferrer">
+                    📲 WhatsApp: 3012699885
+                </a>
+                <a href="mailto:cultulab.comercial@gmail.com">
+                    📧 Email: cultulab.comercial@gmail.com
+                </a>
+            </div>
+            <p style="margin-top:1rem;color:var(--gris-neutro)">Respondemos en menos de 24 horas. Estamos para ayudarte a dar el primer paso.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h3>CultuLab - Personas que crecen, empresas que avanzan</h3>
+            
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h4 style="color:var(--azul-secundario);margin-bottom:1rem">Contacto</h4>
+                    <p>📍 Medellín, Antioquia, Colombia</p>
+                    <p>📞 <a href="https://wa.me/573012699885">+57 301 269 9885</a></p>
+                    <p>📧 <a href="mailto:cultulab.comercial@gmail.com">cultulab.comercial@gmail.com</a></p>
+                </div>
+                
+                <div class="quick-links">
+                    <h4 style="color:var(--azul-secundario);margin-bottom:1rem">Enlaces Rápidos</h4>
+                    <p><a href="#planes">Nuestros Programas</a></p>
+                    <p><a href="#about">Quiénes Somos</a></p>
+                    <p><a href="#beneficios">Por Qué Elegirnos</a></p>
+                    <p><a href="#contacto">Contacto</a></p>
+                </div>
+                
+                <div class="social-links">
+                    <h4 style="color:var(--azul-secundario);margin-bottom:1rem">Síguenos</h4>
+                    <p>
+                        <a href="https://www.linkedin.com/in/cultulab" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
+                        <a href="https://instagram.com/cultu.lab" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    </p>
+                    <p style="margin-top:1.5rem">
+                        <a href="https://wa.me/573012699885" target="_blank" rel="noopener noreferrer">💬 WhatsApp Business</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="accent-divider" style="background:linear-gradient(90deg,var(--azul-secundario),var(--beige-secundario),var(--azul-secundario));margin:40px auto 30px"></div>
+            
+            <div class="legal-links" style="margin-top:2rem;font-size:.9rem">
+                <a href="pages/privacidad.html">Política de Privacidad</a> | 
+                <a href="pages/terminos.html">Términos y Condiciones</a> | 
+                <a href="pages/cookies.html">Política de Cookies</a>
+            </div>
+            
+            <p style="margin-top:1.5rem;font-size:.9rem;opacity:.9">© 2025 CultuLab. Todos los derechos reservados.</p>
+            <p style="font-size:.85rem;opacity:.8;margin-top:.5rem">Fortaleciendo la cultura organizacional de empresas en Colombia</p>
+        </div>
+    </footer>
+
+    <!-- Scripts al FINAL del body -->
+    <script src="js/analytics.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

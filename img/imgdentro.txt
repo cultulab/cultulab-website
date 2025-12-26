@@ -1,0 +1,4 @@
+── logo.png              # Logo de CultuLab
+│   ├── hero-bg.jpg           # Imagen de fondo hero (opcional)
+│   ├── favicon.ico           # Ícono del navegador
+│   └── og-image.jpg          # Imagen para redes sociales

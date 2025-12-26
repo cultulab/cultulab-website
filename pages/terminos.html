@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Términos y Condiciones de CultuLab - Reglas y condiciones para el uso de nuestros servicios">
+    <title>Términos y Condiciones - CultuLab</title>
+    <style>
+        :root {
+            --azul-primario: #004e8d;
+            --azul-secundario: #44b3e8;
+            --beige-secundario: #a89467;
+            --blanco: #ffffff;
+            --gris-neutro: #333333;
+            --gris-claro: #f8f9fa;
+            --gris-border: #e0e0e0;
+            --verde-exito: #4CAF50;
+            --rojo-alerta: #f44336;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--gris-neutro);
+            background-color: var(--blanco);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .terms-header {
+            background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%);
+            color: var(--blanco);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .terms-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--blanco);
+        }
+        
+        .terms-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Content */
+        .terms-content {
+            padding: 60px 0;
+            background: var(--gris-claro);
+        }
+        
+        .terms-section {
+            background: var(--blanco);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,78,141,.1);
+            margin-bottom: 2rem;
+        }
+        
+        .terms-section h2 {
+            color: var(--azul-primario);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--azul-secundario);
+        }
+        
+        .terms-section h3 {
+            color: var(--azul-primario);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.3rem;
+        }
+        
+        .terms-section h4 {
+            color: var(--azul-primario);
+            margin: 1.5rem 0 0.8rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .terms-section p {
+            margin-bottom: 1rem;
+            color: var(--gris-neutro);
+        }
+        
+        .terms-section ul, .terms-section ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .terms-section li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+        
+        .terms-section li strong {
+            color: var(--azul-primario);
+        }
+        
+        .highlight-box {
+            background-color: rgba(168, 148, 103, 0.1);
+            padding: 1.5rem;
+            border-left: 4px solid var(--beige-secundario);
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .warning-box {
+            background-color: rgba(244, 67, 54, 0.1);
+            padding: 1.5rem;
+            border-left: 4px solid var(--rojo-alerta);
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .success-box {
+            background-color: rgba(76, 175, 80, 0.1);
+            padding: 1.5rem;
+            border-left: 4px solid var(--verde-exito);
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, var(--gris-claro), var(--blanco));
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--gris-border);
+            margin-top: 2rem;
+        }
+        
+        /* Footer */
+        .terms-footer {
+            background: var(--gris-neutro);
+            color: var(--blanco);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .terms-footer a {
+            color: var(--azul-secundario);
+            text-decoration: none;
+        }
+        
+        .terms-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: var(--azul-primario);
+            color: var(--blanco);
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: background-color 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #003d6f;
+            text-decoration: none;
+        }
+        
+        /* Table styles */
+        .terms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        
+        .terms-table th,
+        .terms-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gris-border);
+        }
+        
+        .terms-table th {
+            background-color: var(--gris-claro);
+            color: var(--azul-primario);
+            font-weight: 600;
+        }
+        
+        .terms-table tr:hover {
+            background-color: rgba(0, 78, 141, 0.05);
+        }
+        
+        .last-updated {
+            background: var(--azul-primario);
+            color: var(--blanco);
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        /* Numbered sections */
+        .section-number {
+            display: inline-block;
+            background: var(--azul-primario);
+            color: var(--blanco);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .terms-header {
+                padding: 40px 0;
+            }
+            
+            .terms-header h1 {
+                font-size: 2rem;
+            }
+            
+            .terms-content {
+                padding: 40px 0;
+            }
+            
+            .terms-section {
+                padding: 2rem;
+            }
+            
+            .terms-table {
+                font-size: 0.9rem;
+            }
+            
+            .terms-table th,
+            .terms-table td {
+                padding: 8px 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .terms-section {
+                padding: 1.5rem;
+            }
+            
+            .terms-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .terms-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+        
+        /* Definition lists */
+        .definition-list {
+            margin: 1.5rem 0;
+        }
+        
+        .definition-term {
+            font-weight: 600;
+            color: var(--azul-primario);
+            margin-bottom: 0.5rem;
+        }
+        
+        .definition-description {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--azul-secundario);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="terms-header">
+        <div class="container">
+            <h1>Términos y Condiciones</h1>
+            <p>Condiciones generales para el uso de nuestros servicios y sitio web</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="terms-content">
+        <div class="container">
+            <div class="last-updated">
+                Última actualización: 15 de Enero, 2025
+            </div>
+
+            <div class="terms-section">
+                <h2><span class="section-number">1</span> Aceptación de los Términos</h2>
+                <p>Al acceder y utilizar los servicios de <strong>CultuLab SAS</strong> ("CultuLab", "nosotros", "nuestro"), usted ("Cliente", "Usuario") acepta estar legalmente vinculado por estos Términos y Condiciones. Si no está de acuerdo con alguna parte de estos términos, no podrá utilizar nuestros servicios.</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Información de la Empresa:</strong><br>
+                    <strong>Razón Social:</strong> CultuLab SAS<br>
+                    <strong>NIT:</strong> 901.234.567-8<br>
+                    <strong>Dirección:</strong> Valledupar, Cesar, Colombia<br>
+                    <strong>Email:</strong> legal@cultulab.co</p>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <h2><span class="section-number">2</span> Definiciones</h2>
+                
+                <div class="definition-list">
+                    <div class="definition-term">Servicios</div>
+                    <div class="definition-description">Programas de bienestar organizacional, consultoría en cultura empresarial, talleres de desarrollo humano y servicios relacionados ofrecidos por CultuLab.</div>
+                    
+                    <div class="definition-term">Contenido</div>
+                    <div class="definition-description">Materiales, recursos, documentos, presentaciones y cualquier información proporcionada como parte de los Servicios.</div>
+                    
+                    <div class="definition-term">Propiedad Intelectual</div>
+                    <div class="definition-description">Derechos sobre metodologías, materiales, marcas, logos y cualquier creación intelectual de CultuLab.</div>
+                    
+                    <div class="definition-term">Confidencialidad</div>
+                    <div class="definition-description">Información no pública compartida entre las partes durante la prestación de los Servicios.</div>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <h2><span class="section-number">3</span> Servicios Ofrecidos</h2>
+                
+                <h3>3.1. Descripción de Servicios</h3>
+                <p>CultuLab ofrece servicios de consultoría en cultura organizacional que incluyen pero no se limitan a:</p>
+                <ul>
+                    <li>Programas de bienestar laboral</li>
+                    <li>Talleres de desarrollo humano y habilidades blandas</li>
+                    <li>Consultoría en comunicación interna</li>
+                    <li>Estrategias de retención de talento</li>
+                    <li>Diagnósticos de clima organizacional</li>
+                    <li>Acompañamiento en transformación cultural</li>
+                </ul>
+
+                <h3>3.2. Personalización de Servicios</h3>
+                <p>Los servicios se adaptan a las necesidades específicas de cada cliente mediante:</p>
+                <ul>
+                    <li>Diagnóstico inicial personalizado</li>
+                    <li>Propuesta de servicios ajustada al presupuesto</li>
+                    <li>Flexibilidad en la implementación</li>
+                    <li>Acompañamiento continuo</li>
+                </ul>
+
+                <div class="success-box">
+                    <p><strong>Nota:</strong> Todos nuestros servicios incluyen medición de impacto y reportes de seguimiento para garantizar resultados tangibles.</p>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <h2><span class="section-number">4</span> Proceso de Contratación</h2>
+                
+                <h3>4.1. Solicitud de Servicios</h3>
+                <p>El proceso de contratación incluye las siguientes etapas:</p>
+                <ol>
+                    <li><strong>Contacto inicial:</strong> Solicitud a través de nuestro sitio web, email o teléfono</li>
+                    <li><strong>Llamada de diagnóstico:</strong> Sesión gratuita de 30 minutos para entender necesidades</li>
+                    <li><strong>Propuesta personalizada:</strong> Envío de cotización detallada</li>
+                    <li><strong>Firma de contrato:</strong> Formalización del acuerdo</li>
+                    <li><strong>Pago inicial:</strong> Según términos acordados</li>
+                    <li><strong>Inicio de servicios:</strong> Implementación según cronograma</li>
+                </ol>
+
+                <h3>4.2. Modificaciones al Servicio</h3>
+                <p>Las modificaciones a los servicios contratados deben ser:</p>
+                <ul>
+                    <li>Solicitadas por escrito</li>
+                    <li>Aprobadas por ambas partes</li>
+                    <li>Reflejadas en adenda al contrato</li>
+                    <li>Ajustadas en términos de precio y plazo cuando corresponda</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2><span class="section-number">5</span> Precios y Pagos</h2>
+                
+                <h3>5.1. Estructura de Precios</h3>
+                <p>Nuestros precios se determinan basados en:</p>
+                <ul>
+                    <li>Alcance y complejidad del proyecto</li>
+                    <li>Número de colaboradores involucrados</li>
+                    <li>Duración del programa</li>
+                    <li>Recursos y materiales requeridos</li>
+                </ul>
+
+                <h3>5.2. Condiciones de Pago</h3>
+                <table class="terms-table">
+                    <thead>
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Condiciones</th>
+                            <th>Plazos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pago Inicial</td>
+                            <td>30% - 50% del valor total</td>
+                            <td>Antes del inicio de servicios</td>
+                        </tr>
+                        <tr>
+                            <td>Pagos Parciales</td>
+                            <td>Según hitos del proyecto</td>
+                            <td>Facturación mensual o por hitos</td>
+                        </tr>
+                        <tr>
+                            <td>Pago Final</td>
+                            <td>Saldo restante</td>
+                            <td>Al finalizar el proyecto</td>
+                        </tr>
+                        <tr>
+                            <td>Facturación</td>
+                            <td>Factura electrónica</td>
+                            <td>Dentro de los 5 días hábiles</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="warning-box">
+                    <p><strong>Importante:</strong> El incumplimiento en los pagos puede resultar en la suspensión temporal de los servicios hasta regularizar la situación.</p>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <h2><span class="section-number">6</span> Propiedad Intelectual</h2>
+                
+                <h3>6.1. Derechos de CultuLab</h3>
+                <p>CultuLab conserva todos los derechos de propiedad intelectual sobre:</p>
+                <ul>
+                    <li>Metodologías y frameworks propios</li>
+                    <li>Materiales de formación y capacitación</li>
+                    <li>Herramientas de diagnóstico y evaluación</li>
+                    <li>Contenido del sitio web y materiales de marketing</li>
+                    <li>Marcas, logos e identidad corporativa</li>
+                </ul>
+
+                <h3>6.2. Licencia de Uso</h3>
+                <p>Al contratar nuestros servicios, el Cliente recibe una licencia limitada, no exclusiva e intransferible para:</p>
+                <ul>
+                    <li>Utilizar los materiales proporcionados dentro de su organización</li>
+                    <li>Implementar las metodologías aprendidas</li>
+                    <li>Utilizar herramientas y recursos para uso interno</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><strong>Restricciones:</strong> Queda prohibida la reproducción, distribución o comercialización de nuestros materiales sin autorización expresa por escrito.</p>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <h2><span class="section-number">7</span> Confidencialidad</h2>
+                
+                <h3>7.1. Información Confidencial</h3>
+                <p>Ambas partes se comprometen a mantener la confidencialidad de:</p>
+                <ul>
+                    <li>Información comercial sensible</li>
+                    <li>Estrategias empresariales</li>
+                    <li>Datos de clientes y colaboradores</li>
+                    <li>Metodologías y procesos internos</li>
+                    <li>Cualquier información marcada como confidencial</li>
+                </ul>
+
+                <h3>7.2. Duración de la Confidencialidad</h3>
+                <p>La obligación de confidencialidad permanece vigente durante:</p>
+                <ul>
+                    <li>La duración del contrato de servicios</li>
+                    <li>3 años después de la finalización del contrato</li>
+                    <li>Indefinidamente para secretos comerciales</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2><span class="section-number">8</span> Limitación de Responsabilidad</h2>
+                
+                <h3>8.1. Alcance de los Servicios</h3>
+                <p>CultuLab proporciona servicios de consultoría y asesoría. Los resultados específicos dependen de:</p>
+                <ul>
+                    <li>Compromiso y participación del cliente</li>
+                    <li>Implementación de recomendaciones</li>
+                    <li>Contexto organizacional específico</li>
+                    <li>Factores externos fuera de nuestro control</li>
+                </ul>
+
+                <h3>8.2. Exclusiones de Responsabilidad</h3>
+                <p>CultuLab no será responsable por:</p>
+                <ul>
+                    <li>Resultados comerciales específicos no alcanzados</li>
+                    <li>Decisiones tomadas por el cliente basadas en nuestras recomendaciones</li>
+                    <li>Eventos de fuerza mayor o caso fortuito</li>
+                    <li>Uso indebido de la información proporcionada</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Máximo de Responsabilidad:</strong> En ningún caso la responsabilidad total de CultuLab excederá el monto total pagado por el cliente por los servicios en cuestión.</p>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <h2><span class="section-number">9</span> Cancelación y Reembolsos</h2>
+                
+                <h3>9.1. Cancelación por el Cliente</h3>
+                <p>El cliente puede cancelar los servicios sujeto a:</p>
+                <table class="terms-table">
+                    <thead>
+                        <tr>
+                            <th>Plazo de Cancelación</th>
+                            <th>Reembolso</th>
+                            <th>Condiciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>15+ días antes del inicio</td>
+                            <td>100% del pago inicial</td>
+                            <td>Menos costos administrativos (5%)</td>
+                        </tr>
+                        <tr>
+                            <td>8-14 días antes del inicio</td>
+                            <td>50% del pago inicial</td>
+                            <td>Materiales preparados no reembolsables</td>
+                        </tr>
+                        <tr>
+                            <td>0-7 días antes del inicio</td>
+                            <td>25% del pago inicial</td>
+                            <td>Recursos ya asignados no reembolsables</td>
+                        </tr>
+                        <tr>
+                            <td>Después del inicio</td>
+                            <td>No reembolsable</td>
+                            <td>Prorrateo por servicios no prestados</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>9.2. Cancelación por CultuLab</h3>
+                <p>Nos reservamos el derecho de cancelar servicios en casos de:</p>
+                <ul>
+                    <li>Incumplimiento de pagos</li>
+                    <li>Comportamiento inapropiado del cliente</li>
+                    <li>Violación de términos de uso</li>
+                    <li>Causas de fuerza mayor</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2><span class="section-number">10</span> Garantías y Soporte</h2>
+                
+                <h3>10.1. Garantía de Servicio</h3>
+                <p>CultuLab garantiza que:</p>
+                <ul>
+                    <li>Los servicios se prestarán con estándares profesionales</li>
+                    <li>El personal asignado cuenta con la capacitación adecuada</li>
+                    <li>Los materiales cumplen con estándares de calidad</li>
+                    <li>Se respetarán los plazos acordados</li>
+                </ul>
+
+                <h3>10.2. Soporte Post-Servicio</h3>
+                <p>Incluimos como parte de nuestros servicios:</p>
+                <ul>
+                    <li>Soporte por email durante 30 días después de finalizado el servicio</li>
+                    <li>Clarificaciones sobre materiales entregados</li>
+                    <li>Asesoría en implementación inicial</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2><span class="section-number">11</span> Ley Aplicable y Jurisdicción</h2>
+                
+                <h3>11.1. Legislación Aplicable</h3>
+                <p>Estos términos se rigen por las leyes de la República de Colombia. Cualquier disputa será resuelta en los tribunales competentes de Valledupar, Cesar.</p>
+
+                <h3>11.2. Resolución de Conflictos</h3>
+                <p>En caso de disputa, las partes acuerdan:</p>
+                <ol>
+                    <li>Negociación directa entre las partes (15 días)</li>
+                    <li>Mediación ante centro de arbitraje (30 días)</li>
+                    <li>Procedimiento judicial ante tribunales competentes</li>
+                </ol>
+            </div>
+
+            <div class="terms-section">
+                <h2><span class="section-number">12</span> Modificaciones de los Términos</h2>
+                
+                <p>CultuLab se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento. Las modificaciones serán efectivas cuando se publiquen en nuestro sitio web. El uso continuado de nuestros servicios después de dichas modificaciones constituye la aceptación de los nuevos términos.</p>
+
+                <div class="contact-info">
+                    <p><strong>Para consultas sobre estos términos:</strong><br>
+                    Email: legal@cultulab.co<br>
+                    Teléfono: +57 300 123 4567<br>
+                    Horario de atención: Lunes a Viernes 8:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html" class="back-button">← Volver al Sitio Principal</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="terms-footer">
+        <div class="container">
+            <p>&copy; 2025 CultuLab SAS. Todos los derechos reservados.</p>
+            <p><a href="../index.html">Inicio</a> | <a href="privacidad.html">Política de Privacidad</a> | <a href="cookies.html">Política de Cookies</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll para enlaces internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Mostrar última fecha de visita a términos
+            const lastVisit = localStorage.getItem('lastTermsVisit');
+            const currentDate = new Date().toLocaleDateString();
+            
+            if (lastVisit !== currentDate) {
+                console.log('Primera visita a términos hoy');
+                localStorage.setItem('lastTermsVisit', currentDate);
+            }
+            
+            console.log('Página de Términos y Condiciones cargada correctamente');
+        });
+    </script>
+</body>
+</html>

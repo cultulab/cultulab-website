@@ -1,0 +1,68 @@
+// Funciones de conversión
+        function agendarLlamada() {
+            // Reemplazar con tu enlace de Calendly real
+            window.location.href = 'https://calendly.com/cultulab/llamada-diagnostico-gratuita';
+        }
+        
+        function cotizarPrograma() {
+            window.location.href = 'mailto:contacto@cultulab.co?subject=Solicitud%20de%20Cotización%20-%20CultuLab&body=Hola%20equipo%20CultuLab,%0D%0A%0D%0AEstoy%20interesado%20en%20conocer%20más%20sobre%20sus%20programas%20de%20cultura%20organizacional.%0D%0A%0D%0AInformación%20de%20mi%20empresa:%0D%0A%0D%0A-%20Nombre%20de%20la%20empresa:%0D%0A-%20Número%20de%20colaboradores:%0D%0A-%20Industria/Sector:%0D%0A-%20Principal%20desafío%20actual:%0D%0A-%20Plan%20de%20interés%20(Conexión%20/%20Acción%20/%20Evolución):%0D%0A%0D%0ADatos%20de%20contacto:%0D%0A-%20Nombre:%0D%0A-%20Cargo:%0D%0A-%20Teléfono:%0D%0A-%20Email:%0D%0A%0D%0AGracias.';
+        }
+        
+        function solicitarPropuesta() {
+            window.location.href = 'mailto:contacto@cultulab.co?subject=Solicitud%20de%20Propuesta%20Personalizada%20-%20CultuLab&body=Hola%20equipo%20CultuLab,%0D%0A%0D%0AMe%20gustaría%20recibir%20una%20propuesta%20personalizada%20para%20fortalecer%20la%20cultura%20organizacional%20de%20mi%20empresa.%0D%0A%0D%0ADatos%20de%20la%20empresa:%0D%0A-%20Razón%20social:%0D%0A-%20Tamaño%20del%20equipo:%0D%0A-%20Ubicación:%0D%0A-%20Sector:%0D%0A%0D%0ADesafíos%20actuales:%0D%0A(Ej:%20alta%20rotación,%20bajo%20compromiso,%20falta%20de%20comunicación%20interna,%20etc.)%0D%0A%0D%0AMis%20datos:%0D%0A-%20Nombre%20completo:%0D%0A-%20Cargo:%0D%0A-%20Teléfono:%0D%0A-%20Email:%0D%0A%0D%0AQuedo%20atento.%0D%0AGracias.';
+        }
+
+        // Smooth scroll para navegación interna
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if(target) {
+                        target.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                        });
+                    }
+                });
+            });
+
+            // Añadir IDs a las secciones para navegación
+            const sections = {
+                '.planes': 'planes',
+                '.about': 'about',
+                '.beneficios': 'beneficios',
+                '.cta-secundario': 'contacto'
+            };
+
+            Object.entries(sections).forEach(([selector, id]) => {
+                const element = document.querySelector(selector);
+                if(element) element.id = id;
+            });
+        });
+
+        // Animación sutil al hacer scroll (opcional)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Aplicar animación a las tarjetas
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
