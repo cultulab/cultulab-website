@@ -2,13 +2,14 @@
    VARIABLES DE COLOR - CultuLab
    ========================================== */
 :root {
-    --azul-primario: #004e8d;
-    --azul-secundario: #44b3e8;
-    --beige-secundario: #a89467;
+    --azul-primario: #0A2647;
+    --azul-secundario: #D7B47A;
+    --beige-secundario: #D7B47A;
     --blanco: #ffffff;
-    --gris-neutro: #333333;
-    --azul-hover: #003d6f;
-    --beige-hover: #8f7a52;
+    --gris-neutro: #475569;
+    --azul-hover: #07192f;
+    --beige-hover: #c4a169;
+    --fondo-crema: #F7F4F0;
 }
 
 /* ==========================================
@@ -95,11 +96,11 @@
 }
 
 body {
-    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--gris-neutro);
     overflow-x: hidden;
-    background-color: var(--blanco);
+    background-color: var(--fondo-crema);
 }
 
 .container {
@@ -245,12 +246,12 @@ strong {
    HERO SECTION
    ========================================== */
 .hero {
-    background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%);
+    background: linear-gradient(135deg, #0A2647 0%, #163E6E 100%);
     color: var(--blanco);
     padding: 100px 0;
     text-align: center;
     position: relative;
-    box-shadow: 0 4px 20px rgba(0, 78, 141, .2);
+    box-shadow: 0 4px 20px rgba(10, 38, 71, .2);
 }
 
 .hero h1,
@@ -307,7 +308,7 @@ section {
 }
 
 section:nth-child(even) {
-    background-color: #f8f9fa;
+    background-color: #FAF8F5;
 }
 
 /* ABOUT */
@@ -862,6 +863,134 @@ section:nth-child(even) {
 }
 
 /* ==========================================
+   NUEVOS ESTILOS CORPORATIVOS B2B
+   ========================================== */
+.destacado-verdad {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9fa, var(--blanco));
+    border-radius: 10px;
+    border-left: 5px solid var(--beige-secundario);
+}
+.destacado-verdad h3 {
+    color: var(--azul-primario);
+    margin-bottom: 1rem;
+}
+.destacado-verdad p {
+    font-size: 1.3rem;
+    color: var(--gris-neutro);
+    font-weight: 600;
+    margin: 0;
+}
+
+.solucion-footer {
+    text-align: center;
+    margin-top: 3rem;
+}
+.solucion-footer p {
+    font-size: 1.2rem;
+    color: var(--azul-primario);
+    font-weight: 600;
+    margin: 0;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Card overrides for pricing cards */
+.recruitment-card { border-top: 5px solid #00BCD4 !important; }
+.payroll-card { border-top: 5px solid #FF6B35 !important; }
+.fractional-card { border-top: 5px solid #7B2CBF !important; }
+.learning-card { border-top: 5px solid #4CAF50 !important; }
+
+/* Plan badges */
+.badge-recruitment { background: linear-gradient(135deg, #00BCD4, #00ACC1) !important; color: white !important; }
+.badge-payroll { background: linear-gradient(135deg, #FF6B35, #F7931E) !important; color: white !important; }
+.badge-fractional { background: linear-gradient(135deg, #7B2CBF, #9D4EDD) !important; color: white !important; }
+.badge-learning { background: linear-gradient(135deg, #4CAF50, #43A047) !important; color: white !important; }
+
+.section-include-title {
+    margin-top: 1.5rem;
+    font-weight: 600;
+    color: var(--azul-primario);
+}
+
+.benefit-key {
+    margin-top: 1.5rem;
+    font-weight: 700;
+}
+.key-recruitment { color: #00BCD4; }
+.key-payroll { color: #FF6B35; }
+.key-fractional { color: #7B2CBF; }
+.key-learning { color: #4CAF50; }
+
+/* Pricing Boxes */
+.pricing-box {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+}
+.box-recruitment {
+    background: linear-gradient(135deg, #00BCD4, #00ACC1);
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+}
+.box-payroll {
+    background: linear-gradient(135deg, #FF6B35, #F7931E);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+.box-fractional {
+    background: linear-gradient(135deg, #7B2CBF, #9D4EDD);
+    box-shadow: 0 4px 15px rgba(123, 44, 191, 0.3);
+}
+.box-learning {
+    background: linear-gradient(135deg, #4CAF50, #43A047);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.pricing-box .price-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white !important;
+    margin: 0;
+    line-height: 1.1;
+}
+.pricing-box .price-period {
+    font-size: .95rem;
+    color: white !important;
+    margin: .3rem 0 0 0;
+    opacity: .95;
+    font-weight: 600;
+}
+.pricing-box .price-notes {
+    font-size: .8rem;
+    color: white !important;
+    margin: .2rem 0 0 0;
+    opacity: .85;
+}
+
+.precios-nota {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+.precios-nota p {
+    font-size: 0.95rem;
+    color: var(--gris-neutro);
+    margin: 0;
+}
+.precios-nota strong {
+    color: var(--azul-primario);
+}
+
+/* ==========================================
    RESPONSIVE
    ========================================== */
 @media (max-width: 768px) {
@@ -877,7 +1006,7 @@ section:nth-child(even) {
         padding: 60px 0;
     }
 
-    .grid {
+    .grid, .grid-4 {
         grid-template-columns: 1fr;
     }
 

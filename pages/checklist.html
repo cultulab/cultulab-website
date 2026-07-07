@@ -4,15 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Checklist de Bienestar y Cultura Organizacional - Identifica el estado de tu equipo con CultuLab.">
-    <title>Diagnóstico de Bienestar - CultuLab</title>
+    <meta name="description" content="Diagnóstico de Gestión Humana y Clima Laboral - Identifica el estado de tu equipo con CultuLab.">
+    <title>Diagnóstico de Gestión Humana - CultuLab</title>
 
-    <!-- Google Fonts - Montserrat -->
+    <!-- Google Fonts - Montserrat & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,26 +18,40 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Scripts del sitio -->
-    <script src="../js/main.js"></script>
-
     <style>
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: #F7F4F0;
+            color: #475569;
             scroll-behavior: smooth;
         }
 
-        .header-shadow {
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
         }
 
-        .bg-gradient-site {
-            background: linear-gradient(135deg, #004e8d 0%, #44b3e8 100%);
+        .text-institucional {
+            color: #0A2647;
         }
 
-        input[type="checkbox"]:checked {
-            background-color: #004e8d;
-            border-color: #004e8d;
+        .bg-institucional {
+            background-color: #0A2647;
+        }
+
+        .border-institucional {
+            border-color: #0A2647;
+        }
+
+        .bg-beige-premium {
+            background-color: #D7B47A;
+        }
+
+        .text-beige-premium {
+            color: #D7B47A;
+        }
+
+        .border-beige-premium {
+            border-color: #D7B47A;
         }
 
         .card-animation {
@@ -48,71 +60,71 @@
 
         .card-animation:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(10, 38, 71, 0.05);
         }
     </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body>
 
     <!-- Header -->
-    <header class="bg-white sticky top-0 z-50 header-shadow">
+    <header class="bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="logo">
-                <a href="../index.html">
-                    <img src="../img/logo.jpg" alt="CultuLab Logo" width="140">
+                <a href="../index.html" class="text-2xl font-extrabold text-institucional tracking-tight flex items-center gap-1">
+                    Cultu<span class="text-beige-premium">Lab</span>
                 </a>
             </div>
-            <div class="flex gap-4">
-                <a href="../index.html"
-                    class="hidden md:block text-gray-600 hover:text-blue-700 font-semibold py-2 transition-colors">Volver
-                    al Inicio</a>
-                <button onclick="agendarLlamada()"
-                    class="bg-[#004e8d] text-white px-5 py-2 rounded-lg font-bold hover:bg-blue-800 transition shadow-md">Agendar
-                    Llamada</button>
+            <div class="flex gap-4 items-center">
+                <a href="../index.html" class="hidden md:block text-gray-500 hover:text-institucional font-semibold py-2 transition-colors">
+                    Volver al Inicio
+                </a>
+                <a href="https://wa.me/573012699885?text=Hola%20CultuLab,%20deseo%20agendar%20un%20diagnostico%20de%20Gestion%20Humana" 
+                   target="_blank"
+                   class="bg-institucional text-white px-5 py-2.5 rounded-lg font-bold hover:opacity-90 transition shadow-md text-sm border border-beige-premium">
+                    Agendar Llamada
+                </a>
             </div>
         </div>
     </header>
 
-    <div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 p-4 md:p-8">
+    <div class="min-h-screen p-4 md:p-8">
         <div class="max-w-4xl mx-auto">
 
             <!-- Header Card -->
-            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-6 border-t-4 border-[#004e8d]">
+            <div class="bg-white rounded-2xl shadow-sm p-6 md:p-8 mb-6 border-t-4 border-beige-premium">
                 <div class="flex flex-col md:flex-row items-start gap-4 mb-4">
-                    <div class="bg-gradient-to-br from-blue-600 to-blue-400 p-3 rounded-xl shadow-lg">
-                        <i data-lucide="trending-up" class="w-8 h-8 text-white"></i>
+                    <div class="bg-institucional p-3 rounded-xl shadow-md border border-beige-premium">
+                        <i data-lucide="trending-up" class="w-8 h-8 text-beige-premium"></i>
                     </div>
                     <div class="flex-1">
-                        <div
-                            class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-2 uppercase tracking-tight">
+                        <div class="inline-block bg-[#F7F4F0] text-institucional text-xs font-bold px-3 py-1 rounded-full mb-2 uppercase tracking-wide border border-gray-100">
                             🎁 Recurso Gratuito para Empresas
                         </div>
-                        <h1 class="text-3xl font-extrabold text-gray-900 mb-2 leading-tight">
-                            Diagnóstico de Bienestar y Cultura Organizacional
+                        <h1 class="text-3xl font-extrabold text-institucional mb-2 leading-tight">
+                            Diagnóstico de Gestión Humana y Clima Laboral
                         </h1>
-                        <p class="text-gray-600 text-lg">
-                            ¿Tu equipo está bien… o solo aguantando?
+                        <p class="text-gray-500 text-lg">
+                            ¿Tu equipo está en su mejor nivel… o hay problemas invisibles?
                         </p>
                     </div>
                 </div>
 
-                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-5 border border-blue-100 mt-4">
+                <div class="bg-[#F7F4F0] rounded-xl p-5 border border-gray-200 mt-4">
                     <p class="text-gray-700 leading-relaxed mb-4">
-                        En menos de <strong>3 minutos</strong>, identifica si tu empresa presenta señales reales de
-                        desgaste cultural antes de que se convierta en rotación o baja productividad.
+                        En menos de <strong>3 minutos</strong>, identifica si tu empresa presenta señales reales de desgaste administrativo o de clima antes de que afecte tu productividad y rentabilidad.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm font-semibold">
-                        <div class="flex items-center gap-2 text-gray-700">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>
+                        <div class="flex items-center gap-2 text-institucional">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-beige-premium"></i>
                             Fuga de Talento
                         </div>
-                        <div class="flex items-center gap-2 text-gray-700">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>
+                        <div class="flex items-center gap-2 text-institucional">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-beige-premium"></i>
                             Clima Emocional
                         </div>
-                        <div class="flex items-center gap-2 text-gray-700">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>
+                        <div class="flex items-center gap-2 text-institucional">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-beige-premium"></i>
                             Pertenencia
                         </div>
                     </div>
@@ -124,72 +136,96 @@
                 <!-- Se inyectará por JS -->
             </div>
 
-            <!-- Results Section (Visible when 1+ checked) -->
-            <div id="results-section"
-                class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border-2 transition-all duration-500">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                    <div class="bg-blue-600 p-2 rounded-lg">
-                        <i data-lucide="microscope" class="w-6 h-6 text-white"></i>
+            <!-- Action Button to Get Diagnosis -->
+            <div class="text-center my-10">
+                <button onclick="intentarVerResultados()"
+                        class="bg-institucional text-white text-lg font-bold py-4 px-8 rounded-xl shadow-lg hover:opacity-90 transition-transform hover:scale-105 active:scale-95 border border-beige-premium">
+                    Obtener Resultados del Diagnóstico ➔
+                </button>
+            </div>
+
+            <!-- Lead Capture Modal (Hidden by default) -->
+            <div id="lead-modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden p-4">
+                <div class="bg-white rounded-2xl max-w-lg w-full p-6 md:p-8 shadow-2xl relative border-t-4 border-beige-premium">
+                    <button onclick="cerrarModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                    <h3 class="text-2xl font-bold text-institucional mb-2">¡Casi listo!</h3>
+                    <p class="text-gray-500 mb-6 text-sm">
+                        Ingresa los siguientes datos para calcular tu reporte personalizado y sugerirte el plan de acción ideal para tu equipo en Colombia.
+                    </p>
+                    
+                    <form id="lead-form" onsubmit="procesarFormulario(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-institucional mb-1">Nombre Completo</label>
+                            <input type="text" id="lead-name" required placeholder="Ej. Carlos Mendoza" 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-beige-premium text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-institucional mb-1">Nombre de la Empresa</label>
+                            <input type="text" id="lead-company" required placeholder="Ej. Logística S.A.S." 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-beige-premium text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-institucional mb-1">Correo Electrónico</label>
+                            <input type="email" id="lead-email" required placeholder="Ej. gerente@logistica.com" 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-beige-premium text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-institucional mb-1">Celular / WhatsApp</label>
+                            <input type="tel" id="lead-phone" required placeholder="Ej. 3012699885" 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-beige-premium text-sm">
+                        </div>
+                        <button type="submit" 
+                                class="w-full bg-institucional text-white py-4 rounded-xl font-bold hover:opacity-90 transition border border-beige-premium mt-6">
+                            Ver Resultados ➔
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Results Section (Hidden until Lead Form is submitted) -->
+            <div id="results-section" class="bg-white rounded-2xl shadow-sm p-6 md:p-8 border border-gray-200 transition-all duration-500 hidden">
+                <h2 class="text-2xl font-bold text-institucional mb-6 flex items-center gap-3">
+                    <div class="bg-institucional p-2 rounded-lg border border-beige-premium">
+                        <i data-lucide="microscope" class="w-6 h-6 text-beige-premium"></i>
                     </div>
                     🔍 Interpretación de Resultados
                 </h2>
 
-                <div id="interpretation-box" class="rounded-xl p-6 border-2 mb-6 shadow-sm">
-                    <div class="flex items-start gap-4">
-                        <div id="interpretation-icon-container" class="p-3 bg-white rounded-full shadow-md">
+                <div id="interpretation-box" class="rounded-xl p-6 border mb-6 shadow-sm">
+                    <div class="flex items-start gap-4 flex-col md:flex-row">
+                        <div id="interpretation-icon-container" class="p-3 bg-white rounded-full shadow-sm border border-gray-100">
                             <i id="interpretation-icon" class="w-12 h-12"></i>
                         </div>
                         <div class="flex-1">
                             <div class="flex flex-col md:flex-row md:items-center gap-2 mb-2">
                                 <h3 id="interpretation-level" class="text-2xl font-bold uppercase tracking-wide"></h3>
-                                <span id="alert-count"
-                                    class="bg-white px-3 py-1 rounded-full text-sm font-bold shadow-sm border border-gray-100"></span>
+                                <span id="alert-count" class="bg-[#F7F4F0] px-3 py-1 rounded-full text-xs font-bold border border-gray-100 text-institucional"></span>
                             </div>
-                            <p id="interpretation-recommendation" class="text-lg font-bold mb-3"></p>
-                            <p id="interpretation-description" class="text-gray-700 leading-relaxed"></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 rounded-xl p-5 mb-8 border border-gray-100">
-                    <h4 class="font-bold text-gray-900 mb-3">Guía de Evaluación:</h4>
-                    <div class="space-y-3 text-sm text-gray-700">
-                        <div class="flex items-center gap-2">
-                            <span class="w-4 h-4 rounded-full bg-green-500"></span>
-                            <span class="font-bold text-green-700 min-w-[100px]">0-4 alertas:</span>
-                            <span>Cultura estable → enfoque preventivo.</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="w-4 h-4 rounded-full bg-yellow-500"></span>
-                            <span class="font-bold text-yellow-700 min-w-[100px]">5-12 alertas:</span>
-                            <span>Riesgo medio → se requiere intervención puntual.</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="w-4 h-4 rounded-full bg-red-500"></span>
-                            <span class="font-bold text-red-700 min-w-[100px]">13-20 alertas:</span>
-                            <span>Intervención prioritaria urgente.</span>
+                            <p id="interpretation-recommendation" class="text-lg font-bold mb-3 text-institucional"></p>
+                            <p id="interpretation-description" class="text-gray-600 leading-relaxed"></p>
+                            <div id="services-recommendation" class="mt-4 pt-4 border-t border-gray-100">
+                                <h4 class="font-bold text-institucional mb-2">Recomendación Estratégica CultuLab:</h4>
+                                <div id="suggested-services-list" class="text-sm text-gray-600"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Call to Action -->
-                <div id="cta-box"
-                    class="hidden bg-gradient-to-r from-blue-700 to-blue-500 rounded-2xl p-8 text-white shadow-2xl relative overflow-hidden">
-                    <div class="absolute -right-10 -bottom-10 opacity-10">
-                        <i data-lucide="rocket" class="w-40 h-40"></i>
-                    </div>
+                <div id="cta-box" class="bg-institucional rounded-2xl p-6 md:p-8 text-white shadow-lg relative overflow-hidden border border-beige-premium">
                     <div class="relative z-10">
-                        <p class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <p class="text-xl font-bold mb-4 flex items-center gap-2 text-beige-premium">
                             💡 La rotación no aparece de la nada.
                         </p>
-                        <p class="mb-6 text-blue-50 leading-relaxed text-lg">
-                            Más allá del número de alertas, lo importante es cómo afecta esto a tus objetivos de
-                            negocio. Agendemos una sesión para analizar estos puntos estratégicamente.
+                        <p class="mb-6 text-gray-200 leading-relaxed text-base">
+                            Más allá del número de alertas, lo importante es cómo afecta esto a la rentabilidad de tu negocio. Agendemos una sesión estratégica gratuita de 15 minutos en donde analizaremos estos resultados.
                         </p>
-                        <button onclick="agendarLlamada()"
-                            class="bg-white text-blue-700 font-extrabold py-4 px-8 rounded-xl shadow-lg hover:bg-gray-100 transition-transform hover:scale-105 active:scale-95 flex items-center gap-3">
-                            <i data-lucide="calendar" class="w-5 h-5"></i>
-                            Agenda tu Sesión Estratégica Gratuita
+                        <button onclick="agendarLlamadaWhatsApp()"
+                                class="bg-white text-institucional font-extrabold py-4 px-8 rounded-xl shadow-md hover:bg-gray-50 transition-transform hover:scale-105 active:scale-95 flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-beige-premium"></i>
+                            Agendar Diagnóstico Gratuito vía WhatsApp
                         </button>
                     </div>
                 </div>
@@ -197,134 +233,190 @@
 
             <!-- Site Footer Integration -->
             <div class="text-center mt-12 mb-8">
-                <p class="text-gray-500 text-sm">
-                    © 2025 <strong>CultuLab SAS</strong> • Personas que crecen, empresas que avanzan.
+                <p class="text-gray-400 text-sm">
+                    © 2026 <strong>CultuLab S.A.S.</strong> • Personas que crecen, empresas que avanzan.
                 </p>
                 <div class="flex justify-center gap-4 mt-2">
-                    <a href="privacidad.html" class="text-gray-400 hover:text-blue-600 text-xs">Privacidad</a>
-                    <a href="terminos.html" class="text-gray-400 hover:text-blue-600 text-xs">Términos</a>
+                    <a href="privacidad.html" class="text-gray-400 hover:text-institucional text-xs">Privacidad</a>
+                    <a href="terminos.html" class="text-gray-400 hover:text-institucional text-xs">Términos</a>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        const categories = [
+        const questions = [
             {
-                id: 'clima',
-                icon: 'users',
-                title: 'Clima emocional y energía del equipo',
-                impact: 'Desgaste emocional → baja productividad → renuncias silenciosas',
-                items: [
-                    'Desmotivación general o apatía visible',
-                    'Quejas constantes o actitud defensiva entre compañeros',
-                    'Falta de entusiasmo incluso ante logros importantes',
-                    'Sensación de "solo cumplir" (presentismo)'
-                ]
+                id: 'q1',
+                category: 'reclutamiento',
+                icon: 'user-plus',
+                title: 'Dificultad para cubrir vacantes clave',
+                question: '¿Hemos tenido puestos vacantes por más de 30 días, o personas contratadas que se retiran antes de cumplir 90 días en la empresa?',
+                study: 'La Society for Human Resource Management (SHRM) revela que el costo real de reemplazar a un empleado equivale a entre el 50% y el 75% de su salario anual en tiempo de inducción, pérdida de productividad y costos de selección.',
+                service: 'Reclutamiento de Talento'
             },
             {
-                id: 'comunicacion',
-                icon: 'message-circle',
-                title: 'Comunicación interna y confianza',
-                impact: 'Baja seguridad psicológica → errores costosos y desconexión',
-                items: [
-                    'Las personas evitan opinar o corregir en reuniones',
-                    'Los errores se ocultan por miedo a represalias',
-                    'Hay malentendidos frecuentes que causan retrabajo',
-                    'Todo depende de la gerencia para poder avanzar'
-                ]
+                id: 'q2',
+                category: 'reclutamiento',
+                icon: 'search',
+                title: 'Tiempo excesivo en procesos de selección',
+                question: '¿Los líderes de área o gerencia dedican más de 10 horas al mes a filtrar hojas de vida y realizar entrevistas no efectivas?',
+                study: 'Investigaciones de Glassdoor demuestran que el tiempo promedio para cubrir una vacante profesional es de 24 días, restando enfoque estratégico a los directores de área.',
+                service: 'Reclutamiento de Talento'
             },
             {
-                id: 'compromiso',
-                icon: 'heart',
-                title: 'Compromiso y pertenencia',
-                impact: 'Pérdida de talento clave y conocimiento crítico',
-                items: [
-                    'Alta rotación o intención manifiesta de renuncia',
-                    'Poco orgullo por pertenecer a la empresa',
-                    'Bajo interés en iniciativas internas no obligatorias',
-                    'El trabajo se percibe únicamente como un sueldo'
-                ]
+                id: 'q3',
+                category: 'payroll',
+                icon: 'file-text',
+                title: 'Liquidación de nómina manual o informal',
+                question: '¿Gestionamos la nómina en hojas de cálculo o dependemos de un tercero sin automatización de nómina electrónica integrada ante la DIAN?',
+                study: 'La DIAN sanciona fuertemente los errores y demoras en el reporte de nómina electrónica. Un sistema automatizado elimina el riesgo de sanciones tributarias al 100%.',
+                service: 'Payroll & Compliance'
             },
             {
-                id: 'liderazgo',
+                id: 'q4',
+                category: 'payroll',
+                icon: 'shield-alert',
+                title: 'Inconsistencias en pagos de seguridad social',
+                question: '¿Hemos tenido errores o demoras en la liquidación de horas extras, novedades de seguridad social o planillas PILA?',
+                study: 'El Workforce Institute señala que el 49% de los trabajadores colombianos buscarían otro empleo tras solo dos errores en el pago de su nómina.',
+                service: 'Payroll & Compliance'
+            },
+            {
+                id: 'q5',
+                category: 'fractional',
+                icon: 'briefcase',
+                title: 'Ausencia de onboarding y roles claros',
+                question: '¿Carecemos de un proceso estructurado de inducción (onboarding) y de manuales de cargos actualizados para cada colaborador?',
+                study: 'Un estudio de Gallup descubrió que las empresas con un onboarding sólido aumentan la retención de nuevos talentos en un 82% y la productividad en más de un 70%.',
+                service: 'Fractional HR'
+            },
+            {
+                id: 'q6',
+                category: 'fractional',
                 icon: 'award',
-                title: 'Liderazgo y coherencia cultural',
-                impact: 'Desconfianza generalizada y cultura reactiva',
-                items: [
-                    'Falta de coherencia: lo que se dice no es lo que se hace',
-                    'No hay feedback claro ni constructivo de líderes',
-                    'No se reconocen esfuerzos, solo se señalan fallas',
-                    'El liderazgo actúa solo cuando hay crisis crítica'
-                ]
+                title: 'Falta de dirección estratégica en RRHH',
+                question: '¿Tomamos decisiones de personal de manera puramente reactiva (ante renuncias o crisis) por no contar con un Director de RRHH experto?',
+                study: 'Un Director de RRHH de tiempo completo cuesta más de $9.000.000 COP al mes. El Fractional HR te brinda esa misma dirección estratégica por solo una fracción del costo.',
+                service: 'Fractional HR'
             },
             {
-                id: 'bienestar',
-                icon: 'clock',
-                title: 'Bienestar integral y sostenibilidad',
-                impact: 'Burnout, ausentismo y caída drástica del rendimiento',
-                items: [
-                    'Jornadas extensas normalizadas como "prueba de compromiso"',
-                    'Estrés constante y tensión en el ambiente',
-                    'Bajo uso de vacaciones por "mucha carga laboral"',
-                    'Ausentismo frecuente por motivos de salud y fatiga'
-                ]
+                id: 'q7',
+                category: 'fractional',
+                icon: 'trending-up',
+                title: 'Falta de evaluación de desempeño o clima',
+                question: '¿Carecemos de herramientas de medición de clima laboral y de sistemas formales de evaluación de rendimiento y feedback?',
+                study: 'Harvard Business Review indica que las empresas que evalúan el desempeño de manera estructurada y continua incrementan su rentabilidad operativa en un 15% anual.',
+                service: 'Fractional HR'
+            },
+            {
+                id: 'q8',
+                category: 'learning',
+                icon: 'message-square',
+                title: 'Problemas de comunicación y clima',
+                question: '¿Identificamos malentendidos frecuentes, fallas en la comunicación asertiva o falta de sinergia entre departamentos?',
+                study: 'Deloitte estima que las fallas de comunicación y la desconexión interna reducen la productividad corporativa en un 20% anual.',
+                service: 'Learning & Development (L&D)'
+            },
+            {
+                id: 'q9',
+                category: 'learning',
+                icon: 'users',
+                title: 'Líderes sin formación en habilidades blandas',
+                question: '¿Nuestros jefes o coordinadores carecen de capacitación formal en liderazgo situacional, inteligencia emocional y feedback constructivo?',
+                study: 'Según Dale Carnegie, un liderazgo poco capacitado para motivar a su equipo causa hasta el 80% de las renuncias voluntarias en las empresas.',
+                service: 'Learning & Development (L&D)'
+            },
+            {
+                id: 'q10',
+                category: 'learning',
+                icon: 'dollar-sign',
+                title: 'Brechas en habilidades comerciales y ventas',
+                question: '¿El equipo comercial o de atención al cliente presenta dificultades para cerrar ventas, asertividad o manejo de la frustración?',
+                study: 'McKinsey demuestra que los equipos comerciales bajo formación continua logran un incremento sostenido de hasta el 18% en cumplimiento de cuotas de ventas.',
+                service: 'Learning & Development (L&D)'
             }
         ];
 
         let checkedState = {};
+        let isLeadCaptured = false;
 
         function initChecklist() {
             const container = document.getElementById('categories-container');
-            categories.forEach((cat, index) => {
-                const catElement = document.createElement('div');
-                catElement.className = 'bg-white rounded-xl shadow-md overflow-hidden card-animation border border-gray-100';
-                catElement.innerHTML = `
-                    <div class="bg-gradient-to-r from-[#004e8d] to-[#44b3e8] p-4">
+            questions.forEach((q, index) => {
+                const qElement = document.createElement('div');
+                qElement.className = 'bg-white rounded-xl overflow-hidden card-animation border border-gray-200 mb-4';
+                qElement.innerHTML = `
+                    <div class="bg-institucional p-4 border-b border-beige-premium">
                         <div class="flex items-center gap-3 text-white">
-                            <div class="bg-white bg-opacity-20 p-2 rounded-lg">
-                                <i data-lucide="${cat.icon}" class="w-6 h-6"></i>
+                            <div class="bg-white bg-opacity-10 p-2 rounded-lg border border-beige-premium border-opacity-30">
+                                <i data-lucide="${q.icon}" class="w-6 h-6 text-beige-premium"></i>
                             </div>
-                            <h2 class="text-lg md:text-xl font-bold font-montserrat">
-                                ${index + 1}. ${cat.title}
+                            <h2 class="text-lg md:text-xl font-bold">
+                                Pregunta ${index + 1}: ${q.title}
                             </h2>
                         </div>
                     </div>
                     <div class="p-6">
-                        <p class="text-xs font-bold text-gray-500 mb-4 uppercase tracking-widest">
-                            MARCA SI OCURRE CON FRECUENCIA:
+                        <p class="text-gray-800 text-base md:text-lg mb-6 leading-relaxed font-semibold">
+                            ${q.question}
                         </p>
-                        <div class="space-y-3 mb-6">
-                            ${cat.items.map((item, i) => `
-                                <label class="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 cursor-pointer transition-all border border-transparent hover:border-gray-100">
-                                    <div class="relative flex items-center justify-center">
-                                        <input type="checkbox" onchange="toggleItem('${cat.id}', ${i})" class="w-6 h-6 rounded border-gray-300 text-[#004e8d] focus:ring-[#004e8d] transition-all cursor-pointer">
-                                    </div>
-                                    <span class="text-gray-700 text-sm md:text-base select-none leading-tight pt-0.5">${item}</span>
-                                </label>
-                            `).join('')}
+                        <div class="flex gap-4 mb-6">
+                            <label class="flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border border-gray-200 hover:bg-gray-50 cursor-pointer transition-all select-none">
+                                <input type="radio" name="q-${q.id}" onchange="toggleItem('${q.id}', true)" class="w-5 h-5 text-institucional focus:ring-institucional cursor-pointer">
+                                <span class="font-bold text-gray-700">Sí, nos ocurre</span>
+                            </label>
+                            <label class="flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border border-gray-200 hover:bg-gray-50 cursor-pointer transition-all select-none">
+                                <input type="radio" name="q-${q.id}" onchange="toggleItem('${q.id}', false)" checked class="w-5 h-5 text-gray-400 focus:ring-gray-400 cursor-pointer">
+                                <span class="font-bold text-gray-500">No, bajo control</span>
+                            </label>
                         </div>
-                        <div class="bg-red-50 border-l-4 border-[#a89467] p-4 rounded-r-lg">
-                            <p class="text-xs md:text-sm text-gray-800 leading-relaxed font-semibold">
-                                <span class="text-[#004e8d] font-extrabold">📌 IMPACTO EN TU NEGOCIO:</span> ${cat.impact}
+                        <div class="bg-[#F7F4F0] border-l-4 border-beige-premium p-4 rounded-r-lg">
+                            <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                                <span class="text-institucional font-bold">📌 Respaldo del Estudio:</span> ${q.study}
                             </p>
                         </div>
                     </div>
                 `;
-                container.appendChild(catElement);
+                container.appendChild(qElement);
             });
             lucide.createIcons();
-            updateResults(); // Inicial en 0
         }
 
-        function toggleItem(catId, index) {
-            const key = `${catId}-${index}`;
-            checkedState[key] = !checkedState[key];
-            updateResults();
+        function toggleItem(qId, val) {
+            checkedState[qId] = val;
         }
 
-        function updateResults() {
-            const totalAlerts = Object.values(checkedState).filter(v => v).length;
+        function intentarVerResultados() {
+            if (isLeadCaptured) {
+                mostrarResultadosFisicos();
+            } else {
+                document.getElementById('lead-modal').classList.remove('hidden');
+            }
+        }
+
+        function cerrarModal() {
+            document.getElementById('lead-modal').classList.add('hidden');
+        }
+
+        function procesarFormulario(e) {
+            e.preventDefault();
+            const name = document.getElementById('lead-name').value;
+            const company = document.getElementById('lead-company').value;
+            const email = document.getElementById('lead-email').value;
+            const phone = document.getElementById('lead-phone').value;
+
+            if (name && company && email && phone) {
+                // Guardar en localStorage para evitar re-preguntar
+                localStorage.setItem('cultulab_lead', JSON.stringify({ name, company, email, phone }));
+                isLeadCaptured = true;
+                cerrarModal();
+                mostrarResultadosFisicos();
+            }
+        }
+
+        function mostrarResultadosFisicos() {
+            const totalAlerts = Object.keys(checkedState).filter(k => checkedState[k]).length;
             const resSection = document.getElementById('results-section');
             const scoreCount = document.getElementById('alert-count');
             const levelTitle = document.getElementById('interpretation-level');
@@ -332,7 +424,6 @@
             const descText = document.getElementById('interpretation-description');
             const icon = document.getElementById('interpretation-icon');
             const iconBox = document.getElementById('interpretation-box');
-            const ctaBox = document.getElementById('cta-box');
 
             scoreCount.innerText = `${totalAlerts} Alertas Detectadas`;
 
@@ -343,10 +434,10 @@
                 border: 'border-green-200',
                 lucide: 'check-circle-2',
                 rec: 'Enfoque preventivo recomendado',
-                desc: 'Tu organización muestra señales positivas. Mantén el monitoreo continuo para prevenir el desgaste cultural.'
+                desc: 'Tu organización muestra señales positivas y estables. Mantén el monitoreo continuo para prevenir el desgaste cultural.'
             };
 
-            if (totalAlerts > 4 && totalAlerts <= 12) {
+            if (totalAlerts >= 3 && totalAlerts <= 6) {
                 config = {
                     level: 'Riesgo Medio',
                     color: 'text-yellow-600',
@@ -354,17 +445,17 @@
                     border: 'border-yellow-300',
                     lucide: 'alert-triangle',
                     rec: 'Intervención estratégica necesaria',
-                    desc: 'Se detectan señales de alerta que requieren atención. Es momento de actuar antes de que afecten la rentabilidad.'
+                    desc: 'Se detectan algunas señales de alerta en la gestión del talento. Es momento de actuar antes de que afecten la productividad.'
                 };
-            } else if (totalAlerts > 12) {
+            } else if (totalAlerts > 6) {
                 config = {
                     level: 'Prioridad Alta',
                     color: 'text-red-600',
                     bg: 'bg-red-50',
                     border: 'border-red-300',
                     lucide: 'x-circle',
-                    rec: 'Acción urgente en cultura y liderazgo',
-                    desc: 'Tu organización presenta múltiples señales críticas. Se requiere un plan de acción inmediato para retener talento.'
+                    rec: 'Acción urgente en gestión humana',
+                    desc: 'Tu organización presenta múltiples debilidades críticas en su estructura de personal. Se requiere un plan de acción inmediato.'
                 };
             }
 
@@ -372,23 +463,101 @@
             levelTitle.innerText = config.level;
             levelTitle.className = `text-2xl font-black ${config.color} uppercase tracking-wide`;
             recText.innerText = config.rec;
-            recText.className = `text-lg font-bold ${config.color} mb-3 uppercase text-sm tracking-tight`;
             descText.innerText = config.desc;
             icon.setAttribute('data-lucide', config.lucide);
             icon.className = `w-12 h-12 ${config.color}`;
             iconBox.className = `rounded-2xl p-6 border-2 mb-6 shadow-sm transition-all duration-300 ${config.bg} ${config.border}`;
 
-            // Mostrar CTA si hay 5+ alertas
-            if (totalAlerts >= 5) {
-                ctaBox.classList.remove('hidden');
+            // Recopilar categorías específicas con alertas
+            const alertsByCategory = {
+                reclutamiento: questions.filter(q => q.category === 'reclutamiento' && checkedState[q.id]).length,
+                payroll: questions.filter(q => q.category === 'payroll' && checkedState[q.id]).length,
+                fractional: questions.filter(q => q.category === 'fractional' && checkedState[q.id]).length,
+                learning: questions.filter(q => q.category === 'learning' && checkedState[q.id]).length
+            };
+
+            let maxAlerts = 0;
+            let priorityCategory = '';
+            
+            Object.entries(alertsByCategory).forEach(([category, count]) => {
+                if (count > maxAlerts) {
+                    maxAlerts = count;
+                    priorityCategory = category;
+                }
+            });
+
+            const serviceDetails = {
+                reclutamiento: {
+                    name: "Reclutamiento y Selección de Talento",
+                    desc: "Para mitigar la fuga de talento, cubrir vacantes críticas pendientes y estructurar una selección ágil con garantía de adaptación por 90 días."
+                },
+                payroll: {
+                    name: "Payroll & Compliance (Nómina Externa)",
+                    desc: "Para delegar la liquidación de nómina de forma de manera segura y automatizada ante la DIAN, liberando horas de carga administrativa de tu equipo directivo."
+                },
+                fractional: {
+                    name: "Fractional HR (Dirección de RRHH por horas)",
+                    desc: "Para estructurar políticas estratégicas de clima laboral, onboarding, evaluación del desempeño y manuales de cargos sin incurrir en costos de nómina a tiempo completo."
+                },
+                learning: {
+                    name: "Learning & Development (Capacitación Corporativa)",
+                    desc: "Para capacitar a tus líderes y equipos en habilidades blandas, comunicación asertiva, liderazgo situacional y técnicas de ventas."
+                }
+            };
+
+            const recList = document.getElementById('suggested-services-list');
+            let recommendationHTML = '';
+
+            if (totalAlerts >= 1 && priorityCategory && serviceDetails[priorityCategory]) {
+                const primary = serviceDetails[priorityCategory];
+                recommendationHTML = `
+                    <div class="mb-4">
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-3">
+                            Basado en tus respuestas, el servicio que tiene la **mayor prioridad de implementación** para tu empresa es:
+                        </p>
+                        <div class="p-4 bg-[#F7F4F0] border-l-4 border-beige-premium rounded-r-lg mb-4">
+                            <h5 class="font-extrabold text-institucional text-base md:text-lg mb-1">🚀 ${primary.name}</h5>
+                            <p class="text-sm text-gray-600 leading-relaxed">${primary.desc}</p>
+                        </div>
+                        <p class="text-xs text-gray-400 italic">
+                            *Nota: Aunque otros servicios complementarios pueden ayudarte a balancear tu área de talento, cada empresa es única. En la sesión de diagnóstico gratuita definiremos un plan de acción concreto.
+                        </p>
+                    </div>
+                `;
             } else {
-                ctaBox.classList.add('hidden');
+                recommendationHTML = `
+                    <div>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-3">
+                            Tu gestión humana muestra un estado estable. Te invitamos a agendar una sesión corta preventiva para identificar oportunidades de mejora en la retención y bienestar de tus colaboradores.
+                        </p>
+                    </div>
+                `;
             }
 
+            recList.innerHTML = recommendationHTML;
+            resSection.classList.remove('hidden');
             lucide.createIcons();
+
+            // Smooth scroll to results
+            resSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        window.onload = initChecklist;
+        function agendarLlamadaWhatsApp() {
+            const leadData = JSON.parse(localStorage.getItem('cultulab_lead') || '{}');
+            const totalAlerts = Object.keys(checkedState).filter(k => checkedState[k]).length;
+            const txt = `Hola CultuLab, completé el Diagnóstico de Gestión Humana. Mi nombre es ${leadData.name || ''} de la empresa ${leadData.company || ''}. Registré ${totalAlerts} alertas y deseo agendar mi sesión de diagnóstico gratuita de 15 minutos.`;
+            const encoded = encodeURIComponent(txt);
+            window.open(`https://wa.me/573012699885?text=${encoded}`, '_blank');
+        }
+
+        window.onload = function() {
+            // Verificar si el lead ya fue capturado en visitas previas
+            const savedLead = localStorage.getItem('cultulab_lead');
+            if (savedLead) {
+                isLeadCaptured = true;
+            }
+            initChecklist();
+        };
     </script>
 
 </body>

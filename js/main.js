@@ -13,15 +13,15 @@ function agendarLlamada() {
 }
 
 function cotizarPrograma() {
-    // Contacto por WhatsApp para cotización
+    // Contacto por WhatsApp para cotización de servicios B2B
     const mensaje =
         "Hola CultuLab 👋\n\n" +
-        "Estoy interesado en conocer más sobre sus programas de cultura organizacional y recibir una cotización.\n\n" +
+        "Estoy interesado en conocer más sobre sus servicios de Gestión Humana y recibir una cotización.\n\n" +
         "Información de mi empresa:\n" +
         "- Nombre de la empresa: \n" +
         "- Número de colaboradores: \n" +
         "- Sector: \n" +
-        "- Plan de interés (Conexión / Acción / Evolución): \n\n" +
+        "- Servicio de interés (Reclutamiento / Payroll / Fractional HR / Capacitación): \n\n" +
         "Gracias.";
 
     window.open(`https://wa.me/573012699885?text=${encodeURIComponent(mensaje)}`, '_blank');
@@ -31,12 +31,12 @@ function solicitarPropuestaWhatsApp() {
     // Contacto por WhatsApp para propuesta personalizada
     const mensaje =
         "Hola CultuLab 👋\n\n" +
-        "Me gustaría recibir una propuesta personalizada para fortalecer la cultura organizacional de mi empresa.\n\n" +
+        "Me gustaría recibir una propuesta personalizada para los servicios de Recursos Humanos de mi empresa.\n\n" +
         "Información de mi empresa:\n" +
         "- Nombre: \n" +
         "- Número de colaboradores: \n" +
         "- Sector: \n" +
-        "- Principal desafío: \n\n" +
+        "- Principal desafío de RRHH: \n\n" +
         "Gracias.";
 
     window.open(`https://wa.me/573012699885?text=${encodeURIComponent(mensaje)}`, '_blank');

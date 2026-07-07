@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CultuLab — Arquitectos de Crecimiento Organizacional</title>
+  <meta name="description" content="CultuLab: Reclutamiento con garantía de 60 días y formación virtual de 5 horas. Soluciones premium de Gestión Humana para PYMEs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #0A2647;       /* Azul Institucional */
+      --accent: #D7B47A;        /* Beige Premium */
+      --bg: #F7F4F0;            /* Fondo Principal Claro */
+      --text: #0A2647;          /* Texto Principal (Azul) */
+      --text-muted: #475569;    /* Gris Secundario para Párrafos */
+      --card-bg: #FFFFFF;
+      --border: rgba(10, 38, 71, 0.08);
+      --border-accent: rgba(215, 180, 122, 0.4);
+      --shadow: 0 10px 30px -10px rgba(10, 38, 71, 0.05);
+      --shadow-hover: 0 20px 40px -15px rgba(10, 38, 71, 0.1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, .font-title {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary);
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      background: rgba(247, 244, 240, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-weight: 800; font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .nav-logo::after {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .nav-cta {
+      background: var(--primary); color: #fff;
+      padding: 0.65rem 1.5rem; border-radius: 4px;
+      font-weight: 600; font-size: 0.88rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      letter-spacing: 0.02em;
+    }
+    .nav-cta:hover { 
+      background: #113661; 
+      transform: translateY(-1px); 
+      box-shadow: 0 6px 15px rgba(10, 38, 71, 0.15); 
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 90vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 8rem 2rem 4rem;
+      position: relative; overflow: hidden;
+      text-align: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 30%, rgba(215, 180, 122, 0.08) 0%, transparent 60%);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(215, 180, 122, 0.12); 
+      border: 1px solid var(--border-accent);
+      padding: 0.4rem 1.1rem; border-radius: 4px;
+      font-size: 0.78rem; font-weight: 600; color: #8F6F3A;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 1.8rem;
+      animation: fadeInUp 0.6s ease both;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      font-weight: 800; line-height: 1.15;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      animation: fadeInUp 0.7s 0.1s ease both;
+    }
+    .hero h1 span {
+      position: relative;
+      display: inline-block;
+    }
+    .hero h1 span::after {
+      content: '';
+      position: absolute; bottom: 8px; left: 0; right: 0; height: 8px;
+      background: rgba(215, 180, 122, 0.25);
+      z-index: -1;
+    }
+    .hero p {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--text-muted); max-width: 650px; margin: 0 auto 2.8rem;
+      animation: fadeInUp 0.7s 0.2s ease both;
+    }
+    .hero-btns {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+      animation: fadeInUp 0.7s 0.3s ease both;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff; padding: 0.95rem 2.2rem; border-radius: 4px;
+      font-weight: 600; font-size: 0.95rem; text-decoration: none;
+      transition: all 0.3s ease;
+      letter-spacing: 0.02em;
+      box-shadow: 0 4px 12px rgba(10, 38, 71, 0.1);
+    }
+    .btn-primary:hover { 
+      background: #113661; 
+      transform: translateY(-2px); 
+      box-shadow: 0 8px 20px rgba(10, 38, 71, 0.2); 
+    }
+    .btn-secondary {
+      background: transparent; color: var(--primary);
+      padding: 0.95rem 2.2rem; border-radius: 4px;
+      border: 1.5px solid var(--primary);
+      font-weight: 600; font-size: 0.95rem; text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-secondary:hover { 
+      background: rgba(10, 38, 71, 0.03); 
+      transform: translateY(-2px); 
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 6.5rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: #8F6F3A;
+      margin-bottom: 0.85rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800; line-height: 1.2;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.01em;
+    }
+    .section-sub {
+      color: var(--text-muted); font-size: 1.05rem;
+      max-width: 600px; margin-bottom: 3.5rem;
+    }
+
+    /* ─── PROBLEMA ─── */
+    .problema { background: #EFECE7; }
+    .problema-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem; margin-top: 2.5rem;
+    }
+    .problema-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(10, 38, 71, 0.05);
+      border-radius: 6px; padding: 2.2rem;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+    .problema-card:hover { 
+      transform: translateY(-4px); 
+      box-shadow: var(--shadow-hover); 
+    }
+    .problema-icon { 
+      font-size: 1.8rem; margin-bottom: 1.2rem; 
+      color: var(--accent);
+    }
+    .problema-card h3 { 
+      font-weight: 700; margin-bottom: 0.65rem; font-size: 1.15rem; 
+      letter-spacing: -0.01em;
+    }
+    .problema-card p { color: var(--text-muted); font-size: 0.92rem; }
+
+    /* ─── SERVICIOS ─── */
+    .servicios-wrap {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2.5rem; margin-top: 3rem;
+    }
+    @media (max-width: 768px) { .servicios-wrap { grid-template-columns: 1fr; } }
+
+    .servicio-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px; padding: 3rem 2.5rem;
+      transition: all 0.4s ease;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+    .servicio-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: var(--accent);
+      border-radius: 8px 8px 0 0;
+    }
+    .servicio-card:hover { 
+      transform: translateY(-6px); 
+      border-color: var(--border-accent); 
+      box-shadow: var(--shadow-hover); 
+    }
+
+    .servicio-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.5rem; font-weight: 800;
+      line-height: 1; margin-bottom: 0.5rem;
+      color: var(--primary);
+      opacity: 0.05;
+      position: absolute; top: 2.2rem; right: 2.5rem;
+    }
+
+    .servicio-icon {
+      width: 48px; height: 48px;
+      border-radius: 4px;
+      background: rgba(10, 38, 71, 0.04);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin-bottom: 1.5rem;
+    }
+
+    .servicio-card h3 {
+      font-size: 1.6rem; font-weight: 800; margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+    .servicio-card .tagline { 
+      color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.8rem; 
+      text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500;
+    }
+
+    .servicio-precio {
+      display: inline-flex; align-items: baseline; gap: 0.4rem;
+      margin: 1.5rem 0;
+    }
+    .servicio-precio .monto {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.4rem; font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+    .servicio-precio .detalle { color: var(--text-muted); font-size: 0.88rem; font-weight: 500; }
+
+    .servicio-garantia {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(215, 180, 122, 0.15); 
+      border: 1px solid rgba(215, 180, 122, 0.3);
+      border-radius: 4px; padding: 0.4rem 1rem;
+      font-size: 0.82rem; font-weight: 600; color: #8F6F3A;
+      margin-bottom: 1.8rem;
+    }
+
+    .servicio-lista { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
+    .servicio-lista li {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      font-size: 0.95rem; color: var(--text-muted);
+    }
+    .servicio-lista li::before {
+      content: '✓';
+      flex-shrink: 0;
+      width: 18px; height: 18px;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 0.9rem;
+      margin-top: 1px;
+    }
+
+    .servicio-cta {
+      display: block; text-align: center;
+      margin-top: 2.2rem; padding: 0.95rem 1.5rem;
+      border-radius: 4px; font-weight: 700; font-size: 0.95rem;
+      text-decoration: none; transition: all 0.3s ease;
+      letter-spacing: 0.02em;
+    }
+    .servicio-card.recluta .servicio-cta {
+      background: var(--primary);
+      color: #fff;
+    }
+    .servicio-card.recluta .servicio-cta:hover { background: #113661; transform: translateY(-2px); }
+    .servicio-card.ld .servicio-cta {
+      background: transparent;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+    }
+    .servicio-card.ld .servicio-cta:hover { background: rgba(10, 38, 71, 0.03); transform: translateY(-2px); }
+
+    /* ─── POR QUÉ ─── */
+    .porque { background: #EFECE7; }
+    .porque-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.8rem; margin-top: 2.5rem;
+    }
+    .porque-item {
+      text-align: center; padding: 2.2rem 1.5rem;
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 6px; transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+    .porque-item:hover { transform: translateY(-4px); border-color: var(--border-accent); }
+    .porque-stat {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.6rem; font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .porque-item h4 { font-weight: 700; margin-bottom: 0.5rem; font-size: 1.05rem; }
+    .porque-item p { color: var(--text-muted); font-size: 0.88rem; }
+
+    /* ─── PROCESO ─── */
+    .proceso-steps {
+      display: flex; gap: 0;
+      margin-top: 3.5rem; position: relative;
+      flex-wrap: wrap;
+    }
+    .proceso-step {
+      flex: 1; min-width: 220px;
+      padding: 2rem 1.5rem;
+      position: relative; text-align: center;
+    }
+    .proceso-step:not(:last-child)::after {
+      content: '→';
+      position: absolute; right: -12px; top: 40%; transform: translateY(-50%);
+      font-size: 1.5rem; color: var(--accent); font-weight: 500;
+      z-index: 1;
+    }
+    @media (max-width: 768px) { .proceso-step:not(:last-child)::after { display: none; } }
+    .step-num {
+      width: 44px; height: 44px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1rem; margin: 0 auto 1.2rem;
+    }
+    .proceso-step h4 { font-weight: 700; margin-bottom: 0.5rem; font-size: 1.1rem; }
+    .proceso-step p { color: var(--text-muted); font-size: 0.88rem; }
+
+    /* ─── TESTIMONIOS ─── */
+    .testimonios { background: #EFECE7; }
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem; margin-top: 2.5rem;
+    }
+    .testi-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 6px; padding: 2.2rem;
+      box-shadow: var(--shadow);
+    }
+    .testi-stars { color: var(--accent); font-size: 0.95rem; margin-bottom: 1.1rem; }
+    .testi-card p { color: var(--text-muted); font-size: 0.92rem; font-style: italic; margin-bottom: 1.5rem; line-height: 1.6; }
+    .testi-author { display: flex; align-items: center; gap: 0.9rem; }
+    .testi-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--accent); color: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.8rem;
+    }
+    .testi-author-info strong { display: block; font-size: 0.9rem; font-weight: 700; color: var(--primary); }
+    .testi-author-info span { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* ─── CTA FINAL ─── */
+    .cta-final {
+      background: var(--primary);
+      color: #fff;
+      text-align: center; padding: 6.5rem 2rem;
+      position: relative; overflow: hidden;
+    }
+    .cta-final h2 {
+      color: #fff;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800; margin-bottom: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+    .cta-final p {
+      color: rgba(255,255,255,0.75); font-size: 1.1rem;
+      max-width: 550px; margin: 0 auto 2.8rem;
+    }
+    .cta-final .btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-white {
+      background: var(--accent); color: var(--primary);
+      padding: 1rem 2.4rem; border-radius: 4px;
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-white:hover { 
+      background: #E5C38E;
+      transform: translateY(-2px); 
+    }
+    .btn-outline-white {
+      background: transparent; color: #fff;
+      padding: 1rem 2.4rem; border-radius: 4px;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      font-weight: 600; font-size: 1rem; text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-outline-white:hover { 
+      border-color: #fff; 
+      background: rgba(255,255,255,0.05); 
+      transform: translateY(-2px); 
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #06182E; border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 3rem 2rem; text-align: center;
+      color: #A3B3C2;
+    }
+    .footer-logo {
+      font-weight: 800; font-size: 1.4rem;
+      color: #fff; margin-bottom: 1rem;
+      display: inline-flex; align-items: center; gap: 0.3rem;
+    }
+    .footer-logo::after {
+      content: '';
+      width: 5px; height: 5px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    footer p { font-size: 0.88rem; margin-bottom: 0.4rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0; transform: translateY(20px);
+      transition: all 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav>
+    <div class="nav-logo">CultuLab</div>
+    <a class="nav-cta" href="https://wa.me/573012699885?text=Hola%20CultuLab%2C%20quiero%20saber%20m%C3%A1s%20sobre%20sus%20servicios" target="_blank" rel="noopener">Contactar Consultor →</a>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div style="position:relative;z-index:1;">
+      <div class="hero-badge">✦ Arquitectos de Crecimiento Organizacional</div>
+      <h1>Tu empresa creció.<br /><span>Tus procesos no.</span></h1>
+      <p>Ayudamos a los directores de empresas en Colombia a delegar la carga operativa y estructurar equipos alineados a la estrategia del negocio.</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="#servicios">Ver Servicios Corporativos</a>
+        <a class="btn-secondary" href="#proceso">¿Cómo funciona?</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROBLEMA ─── -->
+  <section class="problema">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-tag">El diagnóstico</span>
+        <h2 class="section-title">¿Cuáles son tus desafíos actuales?</h2>
+        <p class="section-sub">Los dolores más comunes que frenan el crecimiento empresarial y cómo impactan tu operación diaria.</p>
+      </div>
+      <div class="problema-grid">
+        <div class="problema-card reveal">
+          <div class="problema-icon">👥</div>
+          <h3>Alta Rotación de Personal</h3>
+          <p>El costo de reemplazar a un colaborador equivale a 6 o 9 meses de su salario. Un ciclo de contratación ineficiente destruye la rentabilidad.</p>
+        </div>
+        <div class="problema-card reveal">
+          <div class="problema-icon">⏳</div>
+          <h3>Carga Operativa en Selección</h3>
+          <p>Líderes y fundadores pierden hasta el 80% de su tiempo revisando hojas de vida genéricas en lugar de enfocarse en la estrategia del negocio.</p>
+        </div>
+        <div class="problema-card reveal">
+          <div class="problema-icon">📈</div>
+          <h3>Falta de Habilidades Clave</h3>
+          <p>Los equipos no ejecutan al ritmo esperado debido a brechas de comunicación, liderazgo operativo o técnicas de venta no estructuradas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVICIOS ─── -->
+  <section id="servicios">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-tag">Soluciones B2B</span>
+        <h2 class="section-title">Servicios claros y con alcance definido</h2>
+        <p class="section-sub">Modelos de inversión transparentes que generan valor inmediato para tu organización.</p>
+      </div>
+      <div class="servicios-wrap">
+
+        <!-- RECLUTAMIENTO -->
+        <div class="servicio-card recluta reveal">
+          <div class="servicio-num">01</div>
+          <div class="servicio-icon">🔍</div>
+          <h3>Reclutamiento de Talento</h3>
+          <p class="tagline">Talent Acquisition — Foco en afinidad cultural</p>
+          <div class="servicio-precio">
+            <span class="monto">$875.000</span>
+            <span class="detalle">COP por proceso</span>
+          </div>
+          <div class="servicio-garantia">✓ Garantía de 60 días sin costo de reemplazo</div>
+          <ul class="servicio-lista">
+            <li>Levantamiento detallado del perfil con líderes de área</li>
+            <li>Búsqueda activa y headhunting especializado</li>
+            <li>Entrevistas estructuradas bajo metodología STAR</li>
+            <li>Pruebas psicotécnicas completas y perfilación</li>
+            <li>Verificación exhaustiva de antecedentes y referencias</li>
+            <li>Cobro contra éxito (únicamente al contratar)</li>
+          </ul>
+          <a class="servicio-cta" href="https://wa.me/573012699885?text=Hola%20CultuLab%2C%20solicito%20informaci%C3%B3n%20sobre%20Reclutamiento" target="_blank" rel="noopener">Iniciar Selección</a>
+        </div>
+
+        <!-- LEARNING & DEVELOPMENT -->
+        <div class="servicio-card ld reveal">
+          <div class="servicio-num">02</div>
+          <div class="servicio-icon">📖</div>
+          <h3>Learning & Development</h3>
+          <p class="tagline">Formación Virtual Estratégica</p>
+          <div class="servicio-precio">
+            <span class="monto">$1.000.000</span>
+            <span class="detalle">COP por 5 horas virtuales</span>
+          </div>
+          <div class="servicio-garantia">✓ Sesiones en vivo, 100% interactivas</div>
+          <ul class="servicio-lista">
+            <li>Diseño a medida según necesidades operativas</li>
+            <li>Módulo de Liderazgo y Feedback para mandos medios</li>
+            <li>Entrenamiento en Ventas de Alto Impacto</li>
+            <li>Desarrollo de Inteligencia Emocional y Gestión del Estrés</li>
+            <li>Evaluación de aprendizaje posterior al taller</li>
+            <li>Informe ejecutivo de resultados entregado a gerencia</li>
+          </ul>
+          <a class="servicio-cta" href="https://wa.me/573012699885?text=Hola%20CultuLab%2C%20solicito%20informaci%C3%B3n%20sobre%20Learning%20and%20Development" target="_blank" rel="noopener">Cotizar Capacitación</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── POR QUÉ ─── -->
+  <section class="porque">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-tag">Eficiencia Operativa</span>
+        <h2 class="section-title">El impacto directo en tu negocio</h2>
+      </div>
+      <div class="porque-grid">
+        <div class="porque-item reveal">
+          <div class="porque-stat">60 días</div>
+          <h4>Garantía de Reemplazo</h4>
+          <p>Aseguramos la adaptación y desempeño de tus nuevos talentos.</p>
+        </div>
+        <div class="porque-item reveal">
+          <div class="porque-stat">80%</div>
+          <h4>Ahorro de Tiempo</h4>
+          <p>Presentamos la terna final ideal para que decidas con agilidad.</p>
+        </div>
+        <div class="porque-item reveal">
+          <div class="porque-stat">100%</div>
+          <h4>Foco en tu Core</h4>
+          <p>Nos encargamos del proceso operativo mientras te enfocas en facturar.</p>
+        </div>
+        <div class="porque-item reveal">
+          <div class="porque-stat">&lt;5 días</div>
+          <h4>Inicio de Operación</h4>
+          <p>Tiempo de respuesta ágil para el despliegue del servicio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROCESO ─── -->
+  <section id="proceso">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-tag">Metodología</span>
+        <h2 class="section-title">Cómo trabajamos juntos</h2>
+        <p class="section-sub">Un proceso estructurado para garantizar resultados medibles y sin fricciones.</p>
+      </div>
+      <div class="proceso-steps reveal">
+        <div class="proceso-step">
+          <div class="step-num">1</div>
+          <h4>1. Diagnóstico Inicial</h4>
+          <p>Sesión de 15 minutos sin costo para delimitar el alcance y perfilar la vacante o necesidad.</p>
+        </div>
+        <div class="proceso-step">
+          <div class="step-num">2</div>
+          <h4>2. Propuesta Comercial</h4>
+          <p>Envío de propuesta ejecutiva con los entregables detallados y acuerdo de confidencialidad.</p>
+        </div>
+        <div class="proceso-step">
+          <div class="step-num">3</div>
+          <h4>3. Ejecución y Entrega</h4>
+          <p>Presentación de candidatos o desarrollo de los módulos virtuales con acompañamiento continuo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIOS ─── -->
+  <section class="testimonios">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-tag">Casos de Éxito</span>
+        <h2 class="section-title">Empresas que avanzan con nosotros</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p>"Teníamos un gran problema de rotación en mandos medios. Con CultuLab no solo cubrimos el cargo de forma ágil, sino que el acompañamiento inicial garantizó una adaptación completa del equipo."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">MC</div>
+            <div class="testi-author-info">
+              <strong>Miguel C.</strong>
+              <span>Gerente General — Distribuidora Medellín</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p>"La formación virtual para el área de ventas superó nuestras expectativas. Tuvimos herramientas prácticas desde la primera sesión de 5 horas y un impacto directo en el clima de trabajo."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">LP</div>
+            <div class="testi-author-info">
+              <strong>Laura P.</strong>
+              <span>Directora de Gestión — Firma de Servicios</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA FINAL ─── -->
+  <section class="cta-final">
+    <h2>Menos carga operativa.<br />Más crecimiento.</h2>
+    <p>Agenda hoy un diagnóstico rápido y sin costo para evaluar tu estructura de talento.</p>
+    <div class="btns">
+      <a class="btn-white" href="https://wa.me/573012699885?text=Hola%20CultuLab%2C%20deseo%20agendar%20un%20diagn%C3%B3stico%20sin%20costo" target="_blank" rel="noopener">Agendar por WhatsApp</a>
+      <a class="btn-outline-white" href="mailto:cultulab.comercial@gmail.com">Enviar Correo Directo</a>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-logo">CultuLab</div>
+    <p><em>Personas que crecen, empresas que avanzan.</em></p>
+    <p style="margin-top: 1rem;">
+      Contacto: <strong>+57 301 269 9885</strong> &nbsp;|&nbsp; 
+      Email: <strong>cultulab.comercial@gmail.com</strong>
+    </p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.6;">📍 Medellín, Antioquia, Colombia</p>
+  </footer>
+
+  <script>
+    // ─── Intersection Observer para animaciones reveal ───
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

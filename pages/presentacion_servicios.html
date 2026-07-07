@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Presentación Interactiva de Servicios B2B de CultuLab - Soluciones en Gestión Humana en Colombia.">
+    <title>CultuLab B2B - Presentación de Servicios</title>
+
+    <!-- Google Fonts - Montserrat & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Integrado para Máximo Rendimiento y Estética Premium -->
+    <style>
+        :root {
+            --primary: #0f172a; /* Azul Profundo */
+            --primary-light: #1e293b; /* Slate Gray */
+            --accent: #10b981; /* Verde Menta / Esmeralda */
+            --accent-hover: #059669;
+            --bg-light: #f8fafc; /* Gris Claro */
+            --text-dark: #0f172a;
+            --text-muted: #475569; /* Gris Oscuro */
+            --white: #ffffff;
+            --red: #ef4444;
+            --yellow: #f59e0b;
+            --blue: #3b82f6;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header Navigation */
+        .header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e1b4b 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: 2.8rem;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 24px;
+        }
+
+        .tag-hero {
+            background-color: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Sections General */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 48px;
+            font-size: 1.05rem;
+        }
+
+        /* 📋 TEST DE ALERTAS DE RIESGO */
+        .risk-check-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #e2e8f0;
+        }
+
+        .risk-checkbox-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .risk-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px;
+            border-radius: var(--border-radius);
+            background-color: #f8fafc;
+            border: 1px solid #f1f5f9;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .risk-item:hover {
+            border-color: #cbd5e1;
+            background-color: #f1f5f9;
+        }
+
+        .risk-item input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            accent-color: var(--accent);
+            cursor: pointer;
+            margin-top: 2px;
+        }
+
+        .risk-item-label-side {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .risk-item-label {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        .risk-item-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .risk-results {
+            display: none;
+            background-color: rgba(239, 68, 68, 0.05);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            padding: 24px;
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .risk-results h4 {
+            color: var(--red);
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .recommended-services-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .badge-service {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--accent);
+        }
+
+        /* 📁 TABS DE SERVICIOS */
+        .services-tabs-container {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tabs-header {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background-color: #f1f5f9;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 20px 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+            background-color: rgba(16, 185, 129, 0.05);
+        }
+
+        .tab-btn.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+            background-color: var(--white);
+        }
+
+        .tab-content-panel {
+            padding: 40px;
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .tab-content-panel.active {
+            display: block;
+        }
+
+        .service-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .service-layout {
+                grid-template-columns: 1fr;
+            }
+            .tabs-header {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service-details {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .detail-row {
+            display: flex;
+            gap: 16px;
+        }
+
+        .detail-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .icon-red { background-color: rgba(239, 68, 68, 0.1); color: var(--red); }
+        .icon-yellow { background-color: rgba(245, 158, 11, 0.1); color: var(--yellow); }
+        .icon-green { background-color: rgba(16, 185, 129, 0.1); color: var(--accent); }
+        .icon-blue { background-color: rgba(59, 130, 246, 0.1); color: var(--blue); }
+
+        .detail-text h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .detail-text p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        /* Comparador de Costos Panel */
+        .cost-comparison-card {
+            background-color: var(--bg-light);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .cost-box {
+            padding: 16px;
+            border-radius: var(--border-radius);
+            background-color: var(--white);
+            border-left: 4px solid transparent;
+        }
+
+        .cost-box-loser {
+            border-left-color: var(--red);
+        }
+
+        .cost-box-winner {
+            border-left-color: var(--accent);
+            background: linear-gradient(to right, var(--white) 0%, rgba(16, 185, 129, 0.02) 100%);
+        }
+
+        .cost-title {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .cost-box-loser .cost-title { color: var(--red); }
+        .cost-box-winner .cost-title { color: var(--accent); }
+
+        .cost-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .cost-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .badge-guarantee {
+            align-self: center;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+
+
+        /* 🛍️ SIMULADOR DE PROPUESTA (COTIZADOR) */
+        .quote-container {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+        }
+
+        @media (max-width: 900px) {
+            .quote-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .quote-form {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .quote-form-title {
+            font-size: 1.25rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 12px;
+            margin-bottom: 8px;
+        }
+
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-row label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-input {
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+        }
+
+        .service-selector-box {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid #f1f5f9;
+        }
+
+        .service-checkbox-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        .service-checkbox-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .checkbox-label-side {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .checkbox-label-side input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent);
+            cursor: pointer;
+        }
+
+        .service-control-side {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .select-xs {
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-size: 0.85rem;
+            outline: none;
+            background-color: var(--white);
+        }
+
+        .quote-summary-panel {
+            background-color: #0f172a;
+            color: var(--white);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .summary-header {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .summary-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        .summary-row.discount {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .summary-total {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .total-label {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .total-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .total-price-subtext {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            text-align: right;
+        }
+
+        .alert-discount-info {
+            background-color: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: var(--accent);
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        /* 📊 MATRIZ COMPARATIVA DE SOLUCIONES */
+        .matrix-table-container {
+            width: 100%;
+            overflow-x: auto;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid #e2e8f0;
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.92rem;
+        }
+
+        .matrix-table th, .matrix-table td {
+            padding: 18px 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .matrix-table th {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            background-color: #f1f5f9;
+            color: var(--primary);
+        }
+
+        .matrix-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .col-cultulab {
+            background-color: rgba(16, 185, 129, 0.03);
+            border-left: 2px solid rgba(16, 185, 129, 0.2);
+            border-right: 2px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .matrix-table th.col-cultulab {
+            background-color: rgba(16, 185, 129, 0.08);
+            color: var(--accent-hover);
+        }
+
+        .badge-table {
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .badge-table-green { background-color: rgba(16, 185, 129, 0.1); color: var(--accent); }
+        .badge-table-yellow { background-color: rgba(245, 158, 11, 0.1); color: var(--yellow); }
+        .badge-table-red { background-color: rgba(239, 68, 68, 0.1); color: var(--red); }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary);
+            color: #94a3b8;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Utilities */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Navegación -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo-header">
+                <img src="../img/logo.jpg" alt="CultuLab Logo" class="logo-img">
+                <span>CultuLab</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="#test">Alertas</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#cotizador">Cotizador</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <span class="tag-hero">Portafolio de Servicios B2B</span>
+            <h1>Solución Estratégica en Gestión Humana para PYMEs</h1>
+            <p>Conoce nuestras soluciones de nómina y estrategia y diseña el plan modular a la medida de tu presupuesto.</p>
+            <a href="#test" class="btn btn-primary">Iniciar Diagnóstico de Riesgo</a>
+        </div>
+    </section>
+
+    <!-- 📋 SECTION 1: TEST DE ALERTAS DE RIESGO -->
+    <section class="section" id="test">
+        <div class="container">
+            <h2 class="section-title">Test de Alertas de Riesgo Laboral</h2>
+            <p class="section-subtitle">Marca los dolores actuales de tu empresa para ver de inmediato qué soluciones normativas o estratégicas de CultuLab necesitas para proteger tu negocio.</p>
+
+            <div class="risk-check-card">
+                <div class="risk-checkbox-list">
+                    <label class="risk-item" for="risk1">
+                        <input type="checkbox" id="risk1" onchange="evaluateRisks()">
+                        <div class="risk-item-label-side">
+                            <span class="risk-item-label">¿El Gerente General pasa más de 5 horas a la semana resolviendo dudas, chismes o quejas de los empleados?</span>
+                            <p class="risk-item-desc">Refleja desorganización de cargos y falta de liderazgo intermedio capacitado.</p>
+                        </div>
+                    </label>
+                    <label class="risk-item" for="risk2">
+                        <input type="checkbox" id="risk2" onchange="evaluateRisks()">
+                        <div class="risk-item-label-side">
+                            <span class="risk-item-label">¿Tienes temor a cometer un error en liquidaciones y recibir una multa de la UGPP o una demanda de algún empleado?</span>
+                            <p class="risk-item-desc">La normativa laboral colombiana cambia con frecuencia y las fallas manuales acarrean sanciones graves.</p>
+                        </div>
+                    </label>
+                    <label class="risk-item" for="risk3">
+                        <input type="checkbox" id="risk3" onchange="evaluateRisks()">
+                        <div class="risk-item-label-side">
+                            <span class="risk-item-label">¿Se te ha ido personal clave en los primeros 3 a 6 meses de contratación este año?</span>
+                            <p class="risk-item-desc">Indica fallas en el fit cultural del reclutamiento o un proceso de inducción débil.</p>
+                        </div>
+                    </label>
+                    <label class="risk-item" for="risk4">
+                        <input type="checkbox" id="risk4" onchange="evaluateRisks()">
+                        <div class="risk-item-label-side">
+                            <span class="risk-item-label">¿Notas desmotivación o bajo rendimiento en ventas y operaciones, o dificultades de comunicación entre líderes?</span>
+                            <p class="risk-item-desc">Muestra la necesidad urgente de capacitaciones dirigidas a fortalecer habilidades blandas.</p>
+                        </div>
+                    </label>
+                </div>
+
+                <div id="risk-results-panel" class="risk-results">
+                    <h4>⚠️ Alertas de Gestión Humana Activas</h4>
+                    <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 12px;">De acuerdo con tus respuestas, tu empresa está en riesgo de fugas de dinero por ineficiencia de personal. Te sugerimos estructurar:</p>
+                    <div id="recommended-services" class="recommended-services-list">
+                        <!-- Generado dinámicamente -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📁 SECTION 2: PORTAFOLIO DE SERVICIOS -->
+    <section class="section" id="servicios" style="background-color: #f1f5f9;">
+        <div class="container">
+            <h2 class="section-title">Nuestras Soluciones Corporativas</h2>
+            <p class="section-subtitle">Hacemos fácil la administración y la estrategia de tu talento con un modelo modular ajustado al mercado de Colombia.</p>
+
+            <div class="services-tabs-container">
+                <div class="tabs-header">
+                    <button class="tab-btn active" onclick="switchTab(event, 'payroll')">💸 Nómina & Cumplimiento</button>
+                    <button class="tab-btn" onclick="switchTab(event, 'reclutamiento')">👥 Reclutamiento</button>
+                    <button class="tab-btn" onclick="switchTab(event, 'fractional')">🕒 Fractional HR</button>
+                    <button class="tab-btn" onclick="switchTab(event, 'capacitacion')">📚 Formación & L&D</button>
+                </div>
+
+                <!-- Tab: Payroll -->
+                <div id="payroll" class="tab-content-panel active">
+                    <div class="service-layout">
+                        <div class="service-details">
+                            <div class="detail-row">
+                                <div class="detail-icon icon-red">🚨</div>
+                                <div class="detail-text">
+                                    <h4>El Dolor de la Empresa</h4>
+                                    <p>Miedo a multas de la UGPP por fallas en seguridad social, dolores de cabeza parametrizando la Nómina Electrónica ante la DIAN, y pérdida de tiempo administrativo en Excel liquidando horas extras, incapacidades y primas.</p>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon icon-yellow">💼</div>
+                                <div class="detail-text">
+                                    <h4>Cómo lo hacen hoy</h4>
+                                    <p>Lo lleva el contador externo de forma muy básica y manual, o pagan un software complejo que el propio dueño o asistente operativo debe aprender a configurar y transmitir.</p>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon icon-green">✨</div>
+                                <div class="detail-text">
+                                    <h4>Qué hace CultuLab por ti</h4>
+                                    <p>Externalización total: calculamos comisiones, horas extras e incapacidades; generamos y transmitimos la nómina electrónica a la DIAN; liquidamos la planilla PILA y te damos los desprendibles PDF y archivos listos para el pago en tu banco.</p>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon icon-blue">📊</div>
+                                <div class="detail-text">
+                                    <h4>Estadística Garantizada (Colombia)</h4>
+                                    <p>El 80% de las PYMEs auditadas por la UGPP en Colombia reciben sanciones debido a inexactitudes o retrasos en el cálculo de parafiscales y aportes de seguridad social de sus trabajadores.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cost-comparison-card">
+                            <div class="cost-box cost-box-loser">
+                                <div class="cost-title">Por tu cuenta (Riesgo Interno)</div>
+                                <div class="cost-value">$2.500.000 COP/mes</div>
+                                <div class="cost-desc">Costo aproximado de contratar un asistente de nómina de planta con prestaciones sociales + riesgo de multas.</div>
+                            </div>
+                            <div class="cost-box cost-box-winner">
+                                <div class="cost-title">Con CultuLab</div>
+                                <div class="cost-value">$350.000 COP/mes</div>
+                                <div class="cost-desc">Tarifa base fija para empresas de 1 a 10 empleados ($25.000 COP marginal del empleado 11 en adelante).</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Reclutamiento -->
+                <div id="reclutamiento" class="tab-content-panel">
+                    <div class="service-layout">
+                        <div class="service-details">
+                            <div class="detail-row">
+                                <div class="detail-icon icon-red">🚨</div>
+                                <div class="detail-text">
+                                    <h4>El Dolor de la Empresa</h4>
+                                    <p>Contrataciones fallidas por urgencia, perfiles que mienten en su experiencia, candidatos calificados que no van a la entrevista, y puestos desiertos que congelan las ventas o el servicio al cliente.</p>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon icon-yellow">💼</div>
+                                <div class="detail-text">
+                                    <h4>Cómo lo hacen hoy</h4>
+                                    <p>Publican avisos gratis en grupos de Facebook o portales sin filtrar, y contratan bajo "corazonadas" en entrevistas de 15 minutos sin aplicar pruebas técnicas o verificar antecedentes.</p>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon icon-green">✨</div>
+                                <div class="detail-text">
+                                    <h4>Qué hace CultuLab por ti</h4>
+                                    <p>Reclutamiento activo (Headhunting), entrevistas conductuales STAR, aplicación de pruebas psicotécnicas, validación de referencias laborales y antecedentes judiciales. Te entregamos la terna idónea finalista.</p>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon icon-blue">📊</div>
+                                <div class="detail-text">
+                                    <h4>Estadística Garantizada (Colombia)</h4>
+                                    <p>El 50% de las nuevas contrataciones en pequeñas empresas fracasan antes de los 18 meses por mala evaluación de habilidades y falta de adaptación a la cultura interna.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cost-comparison-card">
+                            <div class="cost-box cost-box-loser">
+                                <div class="cost-title">Mala Contratación (Costo Real)</div>
+                                <div class="cost-value">$6.000.000 COP</div>
+                                <div class="cost-desc">Perder a un empleado de sueldo de $2.000.000 COP cuesta de 3 a 6 salarios por inducción perdida, vacante desierta y despido.</div>
+                            </div>
+                            <div class="cost-box cost-box-winner">
+                                <div class="cost-title">Con CultuLab</div>
+                                <div class="cost-value">1.0 a 1.2 Salarios</div>
+                                <div class="cost-desc">Tarifa fija por vacante exitosa. Inversión mínima de $1.200.000 COP.</div>
+                            </div>
+                            <div class="badge-guarantee">🛡️ Garantía de 90 días por escrito</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Fractional HR -->
+                <div id="fractional" class="tab-content-panel">
+                    <div class="service-layout">
+                        <div class="service-details">
+                            <div class="detail-row">
+                                <div class="detail-icon icon-red">🚨</div>
+                                <div class="detail-text">
+                                    <h4>El Dolor de la Empresa</h4>
+                                    <p>Desorganización de funciones (el personal no sabe qué debe hacer), clima organizacional pesado, alta rotación, y riesgo constante de demandas legales por despidos o descargos mal hechos.</p>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon icon-yellow">💼</div>
+                                <div class="detail-text">
+                                    <h4>Cómo lo hacen hoy</h4>
+                                    <p>El gerente general intenta resolver los incendios de personal quitándose horas de su propio tiempo comercial, o delegan el tema de "personas" a la recepcionista o al asistente administrativo.</p>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon icon-green">✨</div>
+                                <div class="detail-text">
+                                    <h4>Qué hace CultuLab por ti</h4>
+                                    <p>Te asignamos un Gerente de Gestión Humana Senior a tiempo parcial (4 u 8 horas a la semana). Él estructurará manuales de cargos, evaluaciones de desempeño, planes de onboarding, y guiará disciplinariamente a la empresa.</p>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon icon-blue">📊</div>
+                                <div class="detail-text">
+                                    <h4>Estadística Garantizada (Colombia)</h4>
+                                    <p>Las empresas que estructuran políticas claras de talento reducen su rotación de personal en un 35% e incrementan la productividad operativa en un 20%.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cost-comparison-card">
+                            <div class="cost-box cost-box-loser">
+                                <div class="cost-title">Gerente RRHH de Planta</div>
+                                <div class="cost-value">$9.000.000 COP/mes</div>
+                                <div class="cost-desc">Salario promedio de un Director Senior ($6.000.000 COP) más aportes legales y prestaciones sociales del 50%.</div>
+                            </div>
+                            <div class="cost-box cost-box-winner">
+                                <div class="cost-title">Con CultuLab Fractional</div>
+                                <div class="cost-value">$1.800.000 COP/mes</div>
+                                <div class="cost-desc">Plan Startup (4h/semana). Plan Crecimiento (8h/semana) a $3.200.000 COP/mes. Cero pasivo prestacional.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: L&D -->
+                <div id="capacitacion" class="tab-content-panel">
+                    <div class="service-layout">
+                        <div class="service-details">
+                            <div class="detail-row">
+                                <div class="detail-icon icon-red">🚨</div>
+                                <div class="detail-text">
+                                    <h4>El Dolor de la Empresa</h4>
+                                    <p>Líderes que mandan en lugar de inspirar, jefes que no saben dar retroalimentación desmotivando al equipo, y fuerza de ventas que se rinde fácilmente ante las objeciones del cliente.</p>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon icon-yellow">💼</div>
+                                <div class="detail-text">
+                                    <h4>Cómo lo hacen hoy</h4>
+                                    <p>No capacitan a su equipo debido a los altos costos de consultores corporativos tradicionales, o les envían videos aburridos de internet que nadie observa.</p>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon icon-green">✨</div>
+                                <div class="detail-text">
+                                    <h4>Qué hace CultuLab por ti</h4>
+                                    <p>Diseñamos y facilitamos talleres interactivos de 4 horas en vivo sobre Liderazgo Situacional, Ventas B2B, Inteligencia Emocional y Bienestar Financiero, con reportes de asimilación e impacto para gerencia.</p>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon icon-blue">📊</div>
+                                <div class="detail-text">
+                                    <h4>Estadística Garantizada (Colombia)</h4>
+                                    <p>Capacitar constantemente al equipo de trabajo aumenta los resultados de cierre comercial en un 20% y eleva la retención de los empleados de alto desempeño.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cost-comparison-card">
+                            <div class="cost-box cost-box-loser">
+                                <div class="cost-title">Consultoras Corporativas</div>
+                                <div class="cost-value">$3.500.000 COP</div>
+                                <div class="cost-desc">Tarifa estándar de mercado por taller cerrado de media jornada con materiales de apoyo e informe.</div>
+                            </div>
+                            <div class="cost-box cost-box-winner">
+                                <div class="cost-title">Con CultuLab</div>
+                                <div class="cost-value">$1.200.000 COP</div>
+                                <div class="cost-desc">Taller individual a medida. O adquiere la suscripción mensual de capacitación por $800.000 COP al mes.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 🛍️ SECTION 4: SIMULADOR DE PROPUESTA (COTIZADOR) -->
+    <section class="section" id="cotizador" style="background-color: #f1f5f9;">
+        <div class="container">
+            <h2 class="section-title">Constructor de Propuesta Modular</h2>
+            <p class="section-subtitle">Selecciona los servicios que deseas cotizar para tu empresa y visualiza los beneficios de la venta cruzada y descuentos por paquete en tiempo real.</p>
+
+            <div class="quote-container">
+                <div class="quote-form">
+                    <h3 class="quote-form-title">🛠️ Datos e Inclusiones</h3>
+                    
+                    <div class="form-row">
+                        <label for="quote-employees">Número de empleados actuales</label>
+                        <input type="number" id="quote-employees" class="form-input" min="1" max="200" value="15" onchange="updateQuote()">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="quote-avg-salary">Salario promedio estimado de vacantes (COP)</label>
+                        <input type="number" id="quote-avg-salary" class="form-input" min="1300000" max="10000000" step="100000" value="2000000" onchange="updateQuote()">
+                    </div>
+
+                    <h3 class="quote-form-title" style="margin-top: 10px;">📦 Selecciona tus Servicios</h3>
+
+                    <div class="service-selector-box">
+                        <!-- Payroll Checkbox -->
+                        <div class="service-checkbox-row">
+                            <label class="checkbox-label-side" for="check-payroll">
+                                <input type="checkbox" id="check-payroll" checked onchange="updateQuote()">
+                                <div>
+                                    <span style="font-weight:600; font-size:0.92rem;">Payroll & Compliance</span>
+                                    <p style="font-size:0.75rem; color:var(--text-muted);">Nómina externa y DIAN.</p>
+                                </div>
+                            </label>
+                            <span style="font-size: 0.85rem; font-weight:700; color:var(--text-muted);" id="price-label-payroll">$ 475.000/mes</span>
+                        </div>
+
+                        <!-- Fractional HR Dropdown -->
+                        <div class="service-checkbox-row">
+                            <label class="checkbox-label-side" for="check-fractional">
+                                <input type="checkbox" id="check-fractional" checked onchange="updateQuote()">
+                                <div>
+                                    <span style="font-weight:600; font-size:0.92rem;">Fractional HR (Director)</span>
+                                    <p style="font-size:0.75rem; color:var(--text-muted);">Gestión humana por horas.</p>
+                                </div>
+                            </label>
+                            <div class="service-control-side">
+                                <select id="select-fractional" class="select-xs" onchange="updateQuote()">
+                                    <option value="startup">Plan Startup (4h)</option>
+                                    <option value="crecimiento">Plan Crecimiento (8h)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Recruitment Dropdown -->
+                        <div class="service-checkbox-row">
+                            <label class="checkbox-label-side" for="check-recruitment">
+                                <input type="checkbox" id="check-recruitment" onchange="updateQuote()">
+                                <div>
+                                    <span style="font-weight:600; font-size:0.92rem;">Reclutamiento de Vacantes</span>
+                                    <p style="font-size:0.75rem; color:var(--text-muted);">Proceso de selección y terna.</p>
+                                </div>
+                            </label>
+                            <div class="service-control-side">
+                                <span style="font-size:0.8rem; color:var(--text-muted);">Cant:</span>
+                                <select id="select-recruitment-qty" class="select-xs" onchange="updateQuote()">
+                                    <option value="1">1 vacante</option>
+                                    <option value="2">2 vacantes</option>
+                                    <option value="3">3+ vacantes (10% Dcto)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Learning Dropdown -->
+                        <div class="service-checkbox-row">
+                            <label class="checkbox-label-side" for="check-learning">
+                                <input type="checkbox" id="check-learning" onchange="updateQuote()">
+                                <div>
+                                    <span style="font-weight:600; font-size:0.92rem;">Capacitaciones (L&D)</span>
+                                    <p style="font-size:0.75rem; color:var(--text-muted);">Talleres interactivos de 4h.</p>
+                                </div>
+                            </label>
+                            <div class="service-control-side">
+                                <select id="select-learning-type" class="select-xs" onchange="updateQuote()">
+                                    <option value="single">1 taller único</option>
+                                    <option value="pack">Paquete 3 (15% Dcto)</option>
+                                    <option value="monthly">Suscripción Anual ($800k/mes)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quote-summary-panel">
+                    <div>
+                        <h3 class="summary-header">Resumen de Inversión</h3>
+                        
+                        <div id="discount-banner" class="alert-discount-info" style="display: none;">
+                            <!-- Banner dinámico -->
+                        </div>
+
+                        <div class="summary-list" id="summary-items">
+                            <!-- Items dinámicos -->
+                        </div>
+                    </div>
+
+                    <div class="summary-total">
+                        <div class="total-row">
+                            <span class="total-label">Suscripción Mensual:</span>
+                            <span id="total-monthly" class="total-price">$ 0</span>
+                        </div>
+                        <div class="total-price-subtext">Precios netos expresados en COP</div>
+                        
+                        <div class="total-row" style="margin-top: 12px; border-top: 1px dashed rgba(255,255,255,0.1); padding-top:12px;">
+                            <span class="total-label" style="font-size:0.9rem; color:#cbd5e1;">Inversión Única / Proyectos:</span>
+                            <span id="total-one-time" style="font-size: 1.3rem; font-weight: 700; color: #cbd5e1;">$ 0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📊 SECTION 5: MATRIZ COMPARATIVA DE SOLUCIONES -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">¿Por qué CultuLab es la mejor opción?</h2>
+            <p class="section-subtitle">Comparamos el modelo tradicional contra las alternativas del mercado para darte tranquilidad.</p>
+
+            <div class="matrix-table-container">
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Director RRHH de Planta</th>
+                            <th>Contador Externo Tradicional</th>
+                            <th class="col-cultulab">Solución CultuLab B2B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 600;">Costo Mensual</td>
+                            <td><span class="badge-table badge-table-red">Alto ($9M - $12M COP)</span></td>
+                            <td><span class="badge-table badge-table-green">Bajo ($300k - $600k COP)</span></td>
+                            <td class="col-cultulab"><span class="badge-table badge-table-green">Modular y Eficiente ($350k - $2M COP)</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">Estrategia y Clima</td>
+                            <td>Excelente (Lidera cultura)</td>
+                            <td>Nula (Solo impuestos y números)</td>
+                            <td class="col-cultulab">Excelente (Diseño de onboarding y cultura)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">Operación de Nómina</td>
+                            <td>Sí (Carga operativa interna)</td>
+                            <td>Manual (Poco soporte tecnológico)</td>
+                            <td class="col-cultulab">Automatizada (DIAN y PILA delegados al 100%)</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">Garantía y Blindaje</td>
+                            <td>Riesgo de despido costoso</td>
+                            <td>No asume riesgos legales</td>
+                            <td class="col-cultulab"><span class="badge-table badge-table-green">Garantía por escrito de 90 días</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 CultuLab S.A.S. - Medellín, Colombia. Todos los derechos reservados.</p>
+            <p>Escríbenos para agendar tu diagnóstico sin costo por <a href="https://wa.me/573012699885" target="_blank">WhatsApp Business +57 301 269 9885</a></p>
+        </div>
+    </footer>
+
+    <!-- Lógica de Interactividad y Calculadoras JavaScript -->
+    <script>
+        // 1. Navegación por Tabs
+        function switchTab(evt, tabId) {
+            const panels = document.querySelectorAll('.tab-content-panel');
+            panels.forEach(panel => panel.classList.remove('active'));
+
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // 2. Evaluador de Alertas del Test de Riesgo
+        function evaluateRisks() {
+            const risk1 = document.getElementById('risk1').checked;
+            const risk2 = document.getElementById('risk2').checked;
+            const risk3 = document.getElementById('risk3').checked;
+            const risk4 = document.getElementById('risk4').checked;
+
+            const resultsPanel = document.getElementById('risk-results-panel');
+            const recommendedContainer = document.getElementById('recommended-services');
+            recommendedContainer.innerHTML = '';
+
+            let count = 0;
+
+            if (risk1) {
+                recommendedContainer.innerHTML += '<span class="badge-service">🕒 Fractional HR</span>';
+                count++;
+            }
+            if (risk2) {
+                recommendedContainer.innerHTML += '<span class="badge-service">💸 Payroll & Compliance</span>';
+                count++;
+            }
+            if (risk3) {
+                recommendedContainer.innerHTML += '<span class="badge-service">👥 Reclutamiento de Talento</span>';
+                count++;
+            }
+            if (risk4) {
+                recommendedContainer.innerHTML += '<span class="badge-service">📚 Formación y Capacitación</span>';
+                count++;
+            }
+
+            if (count > 0) {
+                resultsPanel.style.display = 'block';
+            } else {
+                resultsPanel.style.display = 'none';
+            }
+        }
+
+        // Formateador de moneda COP
+        function formatCOP(number) {
+            return new Intl.NumberFormat('es-CO', {
+                style: 'currency',
+                currency: 'COP',
+                minimumFractionDigits: 0
+            }).format(number);
+        }
+
+
+
+        // 4. Simulador de Cotización Modular con Lógica de Descuentos Reales de CultuLab
+        function updateQuote() {
+            const employees = parseInt(document.getElementById('quote-employees').value) || 0;
+            const avgSalary = parseInt(document.getElementById('quote-avg-salary').value) || 0;
+
+            const checkPayroll = document.getElementById('check-payroll').checked;
+            const checkFractional = document.getElementById('check-fractional').checked;
+            const checkRecruitment = document.getElementById('check-recruitment').checked;
+            const checkLearning = document.getElementById('check-learning').checked;
+
+            const valFractional = document.getElementById('select-fractional').value;
+            const qtyRecruitment = parseInt(document.getElementById('select-recruitment-qty').value);
+            const valLearning = document.getElementById('select-learning-type').value;
+
+            // Precios Base
+            let pricePayroll = 0;
+            let priceFractional = 0;
+            let priceRecruitment = 0;
+            let priceLearning = 0;
+
+            let summaryHtml = '';
+            let discountText = '';
+            let discountAmount = 0;
+
+            // 1. Nómina (Payroll)
+            if (checkPayroll) {
+                const baseLimit = 10;
+                const basePrice = 350000;
+                let marginalCost = 0;
+                
+                if (employees > baseLimit) {
+                    // Si empleados > 30, la tarifa marginal baja de $25k a $20k como beneficio de escala
+                    const rate = employees > 30 ? 20000 : 25000;
+                    marginalCost = (employees - baseLimit) * rate;
+                }
+                pricePayroll = basePrice + marginalCost;
+                
+                // Mostrar precio individual dinámico
+                document.getElementById('price-label-payroll').textContent = formatCOP(pricePayroll) + "/mes";
+            } else {
+                document.getElementById('price-label-payroll').textContent = "-";
+            }
+
+            // 2. Fractional HR
+            if (checkFractional) {
+                if (valFractional === 'startup') {
+                    priceFractional = 1800000;
+                } else if (valFractional === 'crecimiento') {
+                    priceFractional = 3200000;
+                }
+            }
+
+            // APLICAR DESCUENTO COMBO: Fractional + Payroll
+            // "Si contrata Fractional HR + Payroll de forma conjunta, se puede descontar el 50% del Plan Base de nómina (quedando en $175.000 COP/mes el base de nómina)"
+            let payrollBaseDiscount = 0;
+            if (checkPayroll && checkFractional) {
+                payrollBaseDiscount = 175000; // Descuento de $175.000 en la base
+                pricePayroll -= payrollBaseDiscount;
+                discountText += "• <strong>Combo Estratégico:</strong> Se aplicó un 50% de descuento sobre la base de nómina (-$175.000 COP/mes) por contratar Fractional HR.<br>";
+            }
+
+            // 3. Reclutamiento
+            if (checkRecruitment) {
+                // Tarifa base: 1 salario de la vacante seleccionada
+                let recruitmentCostPerVacancy = avgSalary;
+                if (recruitmentCostPerVacancy < 1200000) {
+                    recruitmentCostPerVacancy = 1200000; // Cobro mínimo de ley
+                }
+
+                priceRecruitment = recruitmentCostPerVacancy * qtyRecruitment;
+
+                // Descuento por vacantes simultáneas (>= 3 vacantes = 10% Dcto)
+                if (qtyRecruitment >= 3) {
+                    const discountRec = priceRecruitment * 0.10;
+                    priceRecruitment -= discountRec;
+                    discountText += "• <strong>Escala en Reclutamiento:</strong> Se aplicó 10% de descuento por contratación de 3 o más vacantes simultáneas.<br>";
+                }
+            }
+
+            // 4. Capacitación
+            if (checkLearning) {
+                if (valLearning === 'single') {
+                    priceLearning = 1200000; // Proyecto único
+                } else if (valLearning === 'pack') {
+                    // Paquete 3 talleres con 15% descuento
+                    priceLearning = (1200000 * 3) * 0.85; // Proyecto único
+                    discountText += "• <strong>Paquete L&D:</strong> 15% de descuento en capacitaciones por contratación anticipada de 3 talleres.<br>";
+                } else if (valLearning === 'monthly') {
+                    priceLearning = 800000; // Suscripción mensual
+                }
+            }
+
+            // Llenar el resumen visual
+            if (checkPayroll) {
+                let text = "Payroll & Compliance (" + employees + " emp)";
+                if (payrollBaseDiscount > 0) {
+                    text += " <span style='color:var(--accent); font-weight:600;'>(-50% Base)</span>";
+                }
+                summaryHtml += '<div class="summary-row"><span>' + text + '</span><span>' + formatCOP(pricePayroll) + '/mes</span></div>';
+            }
+
+            if (checkFractional) {
+                const planName = valFractional === 'startup' ? "Startup (4h/sem)" : "Crecimiento (8h/sem)";
+                summaryHtml += '<div class="summary-row"><span>Fractional HR: ' + planName + '</span><span>' + formatCOP(priceFractional) + '/mes</span></div>';
+            }
+
+            // Totales de suscripción mensual
+            const totalMonthly = pricePayroll + priceFractional + (valLearning === 'monthly' ? priceLearning : 0);
+
+            // Totales de inversión única (Reclutamiento y Talleres no recurrentes)
+            const totalOneTime = priceRecruitment + (valLearning !== 'monthly' ? priceLearning : 0);
+
+            if (checkRecruitment) {
+                summaryHtml += '<div class="summary-row"><span>Reclutamiento (' + qtyRecruitment + ' vacantes)</span><span>' + formatCOP(priceRecruitment) + ' (Único)</span></div>';
+            }
+
+            if (checkLearning) {
+                const isRecurrent = valLearning === 'monthly';
+                const label = isRecurrent ? "Suscripción Capacitación" : "Talleres Capacitación (" + (valLearning === 'single' ? "1 taller" : "3 talleres") + ")";
+                summaryHtml += '<div class="summary-row"><span>' + label + '</span><span>' + formatCOP(priceLearning) + (isRecurrent ? '/mes' : ' (Único)') + '</span></div>';
+            }
+
+            // Mostrar/Ocultar Banner de Descuentos
+            const banner = document.getElementById('discount-banner');
+            if (discountText !== '') {
+                banner.innerHTML = discountText;
+                banner.style.display = 'block';
+            } else {
+                banner.style.display = 'none';
+            }
+
+            // Dibujar en pantalla
+            document.getElementById('summary-items').innerHTML = summaryHtml === '' ? '<div class="summary-row"><span>Ningún servicio seleccionado</span><span>-</span></div>' : summaryHtml;
+            document.getElementById('total-monthly').textContent = formatCOP(totalMonthly);
+            document.getElementById('total-one-time').textContent = formatCOP(totalOneTime);
+        }
+
+        // Ejecutar funciones al cargar la página
+        window.onload = function() {
+            updateQuote();
+        };
+    </script>
+</body>
+
+</html>
