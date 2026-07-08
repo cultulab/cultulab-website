@@ -24,7 +24,7 @@ function cotizarPrograma() {
         "- Servicio de interés (Reclutamiento / Capacitación): \n\n" +
         "Gracias.";
 
-    window.open(`https://wa.me/573012699885?text=${encodeURIComponent(mensaje)}`, '_blank');
+    window.open(`https://wa.me/573104086399?text=${encodeURIComponent(mensaje)}`, '_blank');
 }
 
 function solicitarPropuestaWhatsApp() {
@@ -39,7 +39,7 @@ function solicitarPropuestaWhatsApp() {
         "- Principal desafío de RRHH: \n\n" +
         "Gracias.";
 
-    window.open(`https://wa.me/573012699885?text=${encodeURIComponent(mensaje)}`, '_blank');
+    window.open(`https://wa.me/573104086399?text=${encodeURIComponent(mensaje)}`, '_blank');
 }
 
 // La función anterior de descarga de checklist ha sido reemplazada 

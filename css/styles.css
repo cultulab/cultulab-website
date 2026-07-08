@@ -19,10 +19,11 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
+    background: rgba(247, 244, 240, 0.95);
+    backdrop-filter: blur(20px);
     padding: 12px 0;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(10, 38, 71, 0.08);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.02);
     transition: all 0.4s ease;
 }
 
@@ -125,10 +126,7 @@ h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(1.5rem, 4vw, 2.2rem);
     margin-bottom: 2rem;
-    background: linear-gradient(135deg, var(--azul-primario) 0%, #1a7ab4 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--azul-primario);
     font-weight: 800;
     display: inline-block;
 }
@@ -189,49 +187,59 @@ strong {
    BOTONES
    ========================================== */
 .btn {
-    font-family: 'Montserrat', sans-serif;
-    padding: 14px 32px;
+    font-family: 'Inter', sans-serif;
+    padding: 0.95rem 2.2rem;
     border: none;
-    border-radius: 6px;
-    font-size: 1.1rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
     margin: 5px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 12px rgba(10, 38, 71, 0.1);
 }
 
 .btn-primary {
     background-color: var(--azul-primario);
-    color: var(--blanco);
+    color: var(--blanco) !important;
+    border: 2px solid var(--azul-primario);
 }
 
 .btn-primary:hover {
     background-color: var(--azul-hover);
+    border-color: var(--azul-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 78, 141, .3);
+    box-shadow: 0 8px 20px rgba(10, 38, 71, 0.2);
 }
 
 .btn-secondary {
     background-color: transparent;
     color: var(--azul-primario);
-    border: 2px solid var(--azul-primario);
+    border: 1.5px solid var(--azul-primario);
+    box-shadow: none;
 }
 
 .btn-secondary:hover {
-    background-color: var(--azul-primario);
-    color: var(--blanco);
+    background-color: rgba(10, 38, 71, 0.03);
+    color: var(--azul-primario);
+    transform: translateY(-2px);
 }
 
 .btn-accent {
     background-color: var(--beige-secundario);
-    color: var(--blanco);
+    color: var(--blanco) !important;
+    border: 2px solid var(--beige-secundario);
 }
 
 .btn-accent:hover {
     background-color: var(--beige-hover);
+    border-color: var(--beige-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(215, 180, 122, 0.2);
+}
 }
 
 .cta-buttons {
@@ -246,58 +254,73 @@ strong {
    HERO SECTION
    ========================================== */
 .hero {
-    background: linear-gradient(135deg, #0A2647 0%, #163E6E 100%);
-    color: var(--blanco);
-    padding: 100px 0;
+    background: var(--fondo-crema);
+    color: var(--azul-primario);
+    padding: 120px 0 80px 0;
     text-align: center;
     position: relative;
-    box-shadow: 0 4px 20px rgba(10, 38, 71, .2);
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 30%, rgba(215, 180, 122, 0.08) 0%, transparent 60%);
+    pointer-events: none;
 }
 
 .hero h1,
 .hero h2,
 .hero h3 {
-    color: var(--blanco);
+    color: var(--azul-primario) !important;
 }
 
 .hero .slogan {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(215, 180, 122, 0.12);
+    border: 1px solid rgba(215, 180, 122, 0.4);
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
     font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--beige-secundario);
+    color: #8F6F3A !important;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-bottom: 1.8rem;
+    font-family: 'Inter', sans-serif;
 }
 
 .hero p {
     font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     max-width: 850px;
     margin: 0 auto 2rem;
-    color: var(--blanco);
+    color: var(--gris-neutro);
     line-height: 1.7;
 }
 
 .hero .btn-primary {
-    background-color: var(--blanco);
-    color: var(--azul-primario);
-    border: 2px solid var(--blanco);
+    background-color: var(--azul-primario);
+    color: var(--blanco) !important;
+    border: 2px solid var(--azul-primario);
 }
 
 .hero .btn-primary:hover {
-    background-color: transparent;
-    color: var(--blanco);
+    background-color: var(--azul-hover);
+    border-color: var(--azul-hover);
+    color: var(--blanco) !important;
 }
 
 .hero .btn-accent {
     background-color: var(--beige-secundario);
-    color: var(--blanco);
+    color: var(--blanco) !important;
     border: 2px solid var(--beige-secundario);
 }
 
 .hero .btn-accent:hover {
-    background-color: transparent;
-    color: var(--blanco);
+    background-color: var(--beige-hover);
+    border-color: var(--beige-hover);
+    color: var(--blanco) !important;
 }
 
 /* ==========================================
@@ -715,13 +738,13 @@ section:nth-child(even) {
 
 .cta-primario .btn-primary {
     background-color: var(--blanco);
-    color: var(--azul-primario);
+    color: var(--azul-primario) !important;
     border: 2px solid var(--blanco);
 }
 
 .cta-primario .btn-primary:hover {
     background-color: transparent;
-    color: var(--blanco);
+    color: var(--blanco) !important;
 }
 
 .cta-primario .btn-accent {
@@ -1043,4 +1066,171 @@ section:nth-child(even) {
     .valores-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* ==========================================
+   ESTILOS DE LA PRESENTACIÓN COMERCIAL (SERVICIO-CARD)
+   ========================================== */
+.servicio-card {
+  --primary: var(--azul-primario);
+  --accent: var(--azul-secundario);
+  --border: rgba(10, 38, 71, 0.08);
+  --border-accent: rgba(215, 180, 122, 0.4);
+  --shadow: 0 10px 30px -10px rgba(10, 38, 71, 0.05);
+  --shadow-hover: 0 20px 40px -15px rgba(10, 38, 71, 0.1);
+  --text-muted: var(--gris-neutro);
+  --card-bg: var(--blanco);
+
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px; padding: 3rem 2.5rem;
+  transition: all 0.4s ease;
+  position: relative;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+.servicio-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: var(--accent);
+  border-radius: 8px 8px 0 0;
+}
+.servicio-card:hover { 
+  transform: translateY(-6px); 
+  border-color: var(--border-accent); 
+  box-shadow: var(--shadow-hover); 
+}
+
+.servicio-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem; font-weight: 800;
+  line-height: 1; margin-bottom: 0.5rem;
+  color: var(--azul-primario);
+  opacity: 0.05;
+  position: absolute; top: 2.2rem; right: 2.5rem;
+}
+
+.servicio-icon {
+  width: 48px; height: 48px;
+  border-radius: 4px;
+  background: rgba(10, 38, 71, 0.04);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; margin-bottom: 1.5rem;
+}
+
+.servicio-card h3 {
+  font-size: 1.6rem; font-weight: 800; margin-bottom: 0.4rem;
+  letter-spacing: -0.01em;
+  color: var(--azul-primario) !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+}
+.servicio-card .tagline { 
+  color: var(--gris-neutro); font-size: 0.88rem; margin-bottom: 1.8rem; 
+  text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500;
+}
+
+.servicio-precio {
+  display: inline-flex; align-items: baseline; gap: 0.4rem;
+  margin: 1.5rem 0;
+}
+.servicio-precio .monto {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem; font-weight: 800;
+  color: var(--azul-primario);
+  letter-spacing: -0.02em;
+}
+.servicio-precio .detalle { color: var(--gris-neutro); font-size: 0.88rem; font-weight: 500; }
+
+.servicio-garantia {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(215, 180, 122, 0.15); 
+  border: 1px solid rgba(215, 180, 122, 0.3);
+  border-radius: 4px; padding: 0.4rem 1rem;
+  font-size: 0.82rem; font-weight: 600; color: #8F6F3A;
+  margin-bottom: 1.8rem;
+}
+
+.servicio-lista { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
+.servicio-lista li {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  font-size: 0.95rem; color: var(--gris-neutro);
+  text-align: left;
+}
+.servicio-lista li::before {
+  content: '✓';
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  color: var(--azul-secundario);
+  font-weight: 800;
+  font-size: 0.9rem;
+  margin-top: 1px;
+}
+
+.servicio-cta {
+  display: block; text-align: center;
+  margin-top: 2.2rem; padding: 0.95rem 1.5rem;
+  border-radius: 4px; font-weight: 700; font-size: 0.95rem;
+  text-decoration: none; transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+}
+.servicio-card.recluta .servicio-cta {
+  background: var(--azul-primario);
+  color: #fff;
+}
+.servicio-card.recluta .servicio-cta:hover { background: var(--azul-hover); transform: translateY(-2px); }
+.servicio-card.ld .servicio-cta {
+  background: transparent;
+  color: var(--azul-primario);
+  border: 1.5px solid var(--azul-primario);
+}
+.servicio-card.ld .servicio-cta:hover { background: rgba(10, 38, 71, 0.03); transform: translateY(-2px); }
+
+/* ==========================================
+   ESTILOS DE LA SECCIÓN EFICIENCIA OPERATIVA
+   ========================================== */
+.porque {
+  background: var(--fondo-crema);
+  padding: 80px 0;
+}
+.porque-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2.5rem;
+}
+.porque-item {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: var(--blanco);
+  border: 1px solid rgba(10, 38, 71, 0.08);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px -10px rgba(10, 38, 71, 0.05);
+}
+.porque-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(215, 180, 122, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(10, 38, 71, 0.1);
+}
+.porque-stat {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--azul-primario);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.porque-item h4 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  color: var(--azul-primario);
+}
+.porque-item p {
+  color: var(--gris-neutro);
+  font-size: 0.88rem;
+  margin: 0;
 }

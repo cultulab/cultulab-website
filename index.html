@@ -57,7 +57,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="slogan">Personas que crecen, empresas que avanzan</div>
+            <div class="slogan">✦ Arquitectos de Crecimiento Organizacional</div>
             <h1>Fortalece tu cultura organizacional sin que el presupuesto sea una barrera</h1>
             <div class="cta-buttons">
                 <button class="btn btn-primary" onclick="agendarLlamada()">Agenda tu llamada diagnóstico</button>
@@ -227,13 +227,19 @@
             <h2>Nuestros Modelos de Inversión</h2>
             <p class="section-subtitle">Soluciones modulares con tarifas transparentes diseñadas para el crecimiento de tu empresa.</p>
 
-            <div class="grid">
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto;">
                 <!-- Servicio 1: Reclutamiento -->
-                <div class="card plan-card recruitment-card" data-plan="Reclutamiento">
-                    <h3>Búsqueda y Selección</h3>
-                    <p class="plan-badge badge-recruitment">Garantía de 60 días</p>
-                    <p class="section-include-title">¿Qué incluye?</p>
-                    <ul>
+                <div class="servicio-card recluta">
+                    <div class="servicio-num">01</div>
+                    <div class="servicio-icon">🔍</div>
+                    <h3>Reclutamiento de Talento</h3>
+                    <p class="tagline">Talent Acquisition — Foco en afinidad cultural</p>
+                    <div class="servicio-precio">
+                        <span class="monto">$875.000</span>
+                        <span class="detalle">COP por proceso</span>
+                    </div>
+                    <div class="servicio-garantia">✓ Garantía de 60 días sin costo de reemplazo</div>
+                    <ul class="servicio-lista">
                         <li>Levantamiento detallado del perfil con líderes de área</li>
                         <li>Búsqueda activa y headhunting especializado</li>
                         <li>Entrevistas estructuradas bajo metodología STAR</li>
@@ -241,22 +247,21 @@
                         <li>Verificación exhaustiva de antecedentes y referencias</li>
                         <li>Cobro contra éxito (únicamente al contratar)</li>
                     </ul>
-                    <p class="benefit-key key-recruitment">Beneficio clave:</p>
-                    <p>Entrevistas solo a los mejores finalistas y garantía de 60 días sin costo de reemplazo.</p>
-                    
-                    <div class="pricing-box box-recruitment">
-                        <p class="price-value">$875.000</p>
-                        <p class="price-period">COP por proceso</p>
-                        <p class="price-notes">Cobro contra éxito</p>
-                    </div>
+                    <a class="servicio-cta" href="https://wa.me/573104086399?text=Hola%20CultuLab%2C%20solicito%20informaci%C3%B3n%20sobre%20Reclutamiento" target="_blank" rel="noopener">Iniciar Selección</a>
                 </div>
 
-                <!-- Servicio 4: Learning & Development -->
-                <div class="card plan-card learning-card" data-plan="Formación">
-                    <h3>Capacitación</h3>
-                    <p class="plan-badge badge-learning">Habilidades Prácticas</p>
-                    <p class="section-include-title">¿Qué incluye?</p>
-                    <ul>
+                <!-- Servicio 2: Learning & Development -->
+                <div class="servicio-card ld">
+                    <div class="servicio-num">02</div>
+                    <div class="servicio-icon">📖</div>
+                    <h3>Learning & Development</h3>
+                    <p class="tagline">Formación Virtual Estratégica</p>
+                    <div class="servicio-precio">
+                        <span class="monto">$1.000.000</span>
+                        <span class="detalle">COP por 5 horas virtuales</span>
+                    </div>
+                    <div class="servicio-garantia">✓ Sesiones en vivo, 100% interactivas</div>
+                    <ul class="servicio-lista">
                         <li>Diseño a medida según necesidades operativas</li>
                         <li>Módulo de Liderazgo y Feedback para mandos medios</li>
                         <li>Entrenamiento en Ventas de Alto Impacto</li>
@@ -264,14 +269,7 @@
                         <li>Evaluación de aprendizaje posterior al taller</li>
                         <li>Informe ejecutivo de resultados entregado a gerencia</li>
                     </ul>
-                    <p class="benefit-key key-learning">Beneficio clave:</p>
-                    <p>Sesiones en vivo, 100% interactivas y con informes de resultados para gerencia.</p>
-                    
-                    <div class="pricing-box box-learning">
-                        <p class="price-value">$1.000.000</p>
-                        <p class="price-period">COP por 5 horas virtuales</p>
-                        <p class="price-notes">Sesiones en vivo 100% interactivas</p>
-                    </div>
+                    <a class="servicio-cta" href="https://wa.me/573104086399?text=Hola%20CultuLab%2C%20solicito%20informaci%C3%B3n%20sobre%20Learning%20and%20Development" target="_blank" rel="noopener">Cotizar Capacitación</a>
                 </div>
             </div>
 
@@ -279,9 +277,35 @@
                 <p><strong>Nota comercial:</strong> Todas las tarifas están expresadas en Pesos Colombianos (COP). Se pueden estructurar propuestas personalizadas según la combinación de servicios requerida por tu empresa.</p>
             </div>
 
-            <div class="cta-buttons" style="margin-top:3rem">
-                <button class="btn btn-primary" onclick="cotizarPrograma()">Solicitar cotización por WhatsApp</button>
-                <button class="btn btn-secondary" onclick="agendarLlamada()">Agendar llamada con asesor</button>
+        </div>
+    </section>
+
+    <!-- Eficiencia Operativa -->
+    <section class="porque">
+        <div class="container">
+            <span class="section-tag" style="display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #8F6F3A; margin-bottom: 0.85rem;">Eficiencia Operativa</span>
+            <h2 class="section-title" style="display: block; -webkit-text-fill-color: initial; background: none; color: var(--azul-primario);">El impacto directo en tu negocio</h2>
+            <div class="porque-grid">
+                <div class="porque-item">
+                    <div class="porque-stat">60 días</div>
+                    <h4>Garantía de Reemplazo</h4>
+                    <p>Aseguramos la adaptación y desempeño de tus nuevos talentos.</p>
+                </div>
+                <div class="porque-item">
+                    <div class="porque-stat">80%</div>
+                    <h4>Ahorro de Tiempo</h4>
+                    <p>Presentamos la terna final ideal para que decidas con agilidad.</p>
+                </div>
+                <div class="porque-item">
+                    <div class="porque-stat">100%</div>
+                    <h4>Foco en tu Core</h4>
+                    <p>Nos encargamos del proceso operativo mientras te enfocas en facturar.</p>
+                </div>
+                <div class="porque-item">
+                    <div class="porque-stat">&lt;5 días</div>
+                    <h4>Inicio de Operación</h4>
+                    <p>Tiempo de respuesta ágil para el despliegue del servicio.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -417,7 +441,7 @@
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Entregamos indicadores clave de rendimiento (KPIs) específicos por servicio: en Reclutamiento medimos tiempos de cobertura y tasa de retención a 90 días; y en L&D evaluamos el nivel de aprendizaje, asimilación y aplicación práctica posterior al taller.</p>
+                        <p>Entregamos indicadores clave de rendimiento (KPIs) específicos por servicio: en Reclutamiento medimos tiempos de cobertura y tasa de retención a 60 días; y en L&D evaluamos el nivel de aprendizaje, asimilación y aplicación práctica posterior al taller.</p>
                     </div>
                 </div>
 
@@ -473,8 +497,8 @@
         <div class="container">
             <h3>¿Tienes preguntas? Estamos aquí</h3>
             <div class="contacto-channels">
-                <a href="https://wa.me/573012699885" target="_blank" rel="noopener noreferrer">
-                    📲 WhatsApp: 3012699885
+                <a href="https://wa.me/573104086399" target="_blank" rel="noopener noreferrer">
+                    📲 WhatsApp: 3104086399
                 </a>
                 <a href="mailto:cultulab.comercial@gmail.com">
                     📧 Email: cultulab.comercial@gmail.com
@@ -495,7 +519,7 @@
                 <div class="contact-info">
                     <h4 style="color:var(--azul-secundario);margin-bottom:1rem">Contacto</h4>
                     <p>📍 Medellín, Antioquia, Colombia</p>
-                    <p>📞 <a href="https://wa.me/573012699885">+57 301 269 9885</a></p>
+                    <p>📞 <a href="https://wa.me/573104086399">+57 310 408 6399</a></p>
                     <p>📧 <a href="mailto:cultulab.comercial@gmail.com">cultulab.comercial@gmail.com</a></p>
                 </div>
 
@@ -516,7 +540,7 @@
                             rel="noopener noreferrer">Instagram</a>
                     </p>
                     <p style="margin-top:1.5rem">
-                        <a href="https://wa.me/573012699885" target="_blank" rel="noopener noreferrer">💬 WhatsApp
+                        <a href="https://wa.me/573104086399" target="_blank" rel="noopener noreferrer">💬 WhatsApp
                             Business</a>
                     </p>
                 </div>
