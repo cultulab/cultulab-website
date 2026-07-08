@@ -332,7 +332,7 @@
 
         .tabs-header {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             background-color: #f1f5f9;
             border-bottom: 1px solid #e2e8f0;
         }
@@ -807,26 +807,12 @@
                     <label class="risk-item" for="risk1">
                         <input type="checkbox" id="risk1" onchange="evaluateRisks()">
                         <div class="risk-item-label-side">
-                            <span class="risk-item-label">¿El Gerente General pasa más de 5 horas a la semana resolviendo dudas, chismes o quejas de los empleados?</span>
-                            <p class="risk-item-desc">Refleja desorganización de cargos y falta de liderazgo intermedio capacitado.</p>
-                        </div>
-                    </label>
-                    <label class="risk-item" for="risk2">
-                        <input type="checkbox" id="risk2" onchange="evaluateRisks()">
-                        <div class="risk-item-label-side">
-                            <span class="risk-item-label">¿Tienes temor a cometer un error en liquidaciones y recibir una multa de la UGPP o una demanda de algún empleado?</span>
-                            <p class="risk-item-desc">La normativa laboral colombiana cambia con frecuencia y las fallas manuales acarrean sanciones graves.</p>
-                        </div>
-                    </label>
-                    <label class="risk-item" for="risk3">
-                        <input type="checkbox" id="risk3" onchange="evaluateRisks()">
-                        <div class="risk-item-label-side">
                             <span class="risk-item-label">¿Se te ha ido personal clave en los primeros 3 a 6 meses de contratación este año?</span>
                             <p class="risk-item-desc">Indica fallas en el fit cultural del reclutamiento o un proceso de inducción débil.</p>
                         </div>
                     </label>
-                    <label class="risk-item" for="risk4">
-                        <input type="checkbox" id="risk4" onchange="evaluateRisks()">
+                    <label class="risk-item" for="risk2">
+                        <input type="checkbox" id="risk2" onchange="evaluateRisks()">
                         <div class="risk-item-label-side">
                             <span class="risk-item-label">¿Notas desmotivación o bajo rendimiento en ventas y operaciones, o dificultades de comunicación entre líderes?</span>
                             <p class="risk-item-desc">Muestra la necesidad urgente de capacitaciones dirigidas a fortalecer habilidades blandas.</p>
@@ -853,63 +839,12 @@
 
             <div class="services-tabs-container">
                 <div class="tabs-header">
-                    <button class="tab-btn active" onclick="switchTab(event, 'payroll')">💸 Nómina & Cumplimiento</button>
-                    <button class="tab-btn" onclick="switchTab(event, 'reclutamiento')">👥 Reclutamiento</button>
-                    <button class="tab-btn" onclick="switchTab(event, 'fractional')">🕒 Fractional HR</button>
+                    <button class="tab-btn active" onclick="switchTab(event, 'reclutamiento')">👥 Reclutamiento</button>
                     <button class="tab-btn" onclick="switchTab(event, 'capacitacion')">📚 Formación & L&D</button>
                 </div>
 
-                <!-- Tab: Payroll -->
-                <div id="payroll" class="tab-content-panel active">
-                    <div class="service-layout">
-                        <div class="service-details">
-                            <div class="detail-row">
-                                <div class="detail-icon icon-red">🚨</div>
-                                <div class="detail-text">
-                                    <h4>El Dolor de la Empresa</h4>
-                                    <p>Miedo a multas de la UGPP por fallas en seguridad social, dolores de cabeza parametrizando la Nómina Electrónica ante la DIAN, y pérdida de tiempo administrativo en Excel liquidando horas extras, incapacidades y primas.</p>
-                                </div>
-                            </div>
-                            <div class="detail-row">
-                                <div class="detail-icon icon-yellow">💼</div>
-                                <div class="detail-text">
-                                    <h4>Cómo lo hacen hoy</h4>
-                                    <p>Lo lleva el contador externo de forma muy básica y manual, o pagan un software complejo que el propio dueño o asistente operativo debe aprender a configurar y transmitir.</p>
-                                </div>
-                            </div>
-                            <div class="detail-row">
-                                <div class="detail-icon icon-green">✨</div>
-                                <div class="detail-text">
-                                    <h4>Qué hace CultuLab por ti</h4>
-                                    <p>Externalización total: calculamos comisiones, horas extras e incapacidades; generamos y transmitimos la nómina electrónica a la DIAN; liquidamos la planilla PILA y te damos los desprendibles PDF y archivos listos para el pago en tu banco.</p>
-                                </div>
-                            </div>
-                            <div class="detail-row">
-                                <div class="detail-icon icon-blue">📊</div>
-                                <div class="detail-text">
-                                    <h4>Estadística Garantizada (Colombia)</h4>
-                                    <p>El 80% de las PYMEs auditadas por la UGPP en Colombia reciben sanciones debido a inexactitudes o retrasos en el cálculo de parafiscales y aportes de seguridad social de sus trabajadores.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="cost-comparison-card">
-                            <div class="cost-box cost-box-loser">
-                                <div class="cost-title">Por tu cuenta (Riesgo Interno)</div>
-                                <div class="cost-value">$2.500.000 COP/mes</div>
-                                <div class="cost-desc">Costo aproximado de contratar un asistente de nómina de planta con prestaciones sociales + riesgo de multas.</div>
-                            </div>
-                            <div class="cost-box cost-box-winner">
-                                <div class="cost-title">Con CultuLab</div>
-                                <div class="cost-value">$350.000 COP/mes</div>
-                                <div class="cost-desc">Tarifa base fija para empresas de 1 a 10 empleados ($25.000 COP marginal del empleado 11 en adelante).</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Tab: Reclutamiento -->
-                <div id="reclutamiento" class="tab-content-panel">
+                <div id="reclutamiento" class="tab-content-panel active">
                     <div class="service-layout">
                         <div class="service-details">
                             <div class="detail-row">
@@ -950,62 +885,15 @@
                             </div>
                             <div class="cost-box cost-box-winner">
                                 <div class="cost-title">Con CultuLab</div>
-                                <div class="cost-value">1.0 a 1.2 Salarios</div>
-                                <div class="cost-desc">Tarifa fija por vacante exitosa. Inversión mínima de $1.200.000 COP.</div>
+                                <div class="cost-value">$875.000 COP</div>
+                                <div class="cost-desc">Tarifa fija por proceso exitoso. Cobro contra éxito.</div>
                             </div>
-                            <div class="badge-guarantee">🛡️ Garantía de 90 días por escrito</div>
+                            <div class="badge-guarantee">🛡️ Garantía de 60 días por escrito</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tab: Fractional HR -->
-                <div id="fractional" class="tab-content-panel">
-                    <div class="service-layout">
-                        <div class="service-details">
-                            <div class="detail-row">
-                                <div class="detail-icon icon-red">🚨</div>
-                                <div class="detail-text">
-                                    <h4>El Dolor de la Empresa</h4>
-                                    <p>Desorganización de funciones (el personal no sabe qué debe hacer), clima organizacional pesado, alta rotación, y riesgo constante de demandas legales por despidos o descargos mal hechos.</p>
-                                </div>
-                            </div>
-                            <div class="detail-row">
-                                <div class="detail-icon icon-yellow">💼</div>
-                                <div class="detail-text">
-                                    <h4>Cómo lo hacen hoy</h4>
-                                    <p>El gerente general intenta resolver los incendios de personal quitándose horas de su propio tiempo comercial, o delegan el tema de "personas" a la recepcionista o al asistente administrativo.</p>
-                                </div>
-                            </div>
-                            <div class="detail-row">
-                                <div class="detail-icon icon-green">✨</div>
-                                <div class="detail-text">
-                                    <h4>Qué hace CultuLab por ti</h4>
-                                    <p>Te asignamos un Gerente de Gestión Humana Senior a tiempo parcial (4 u 8 horas a la semana). Él estructurará manuales de cargos, evaluaciones de desempeño, planes de onboarding, y guiará disciplinariamente a la empresa.</p>
-                                </div>
-                            </div>
-                            <div class="detail-row">
-                                <div class="detail-icon icon-blue">📊</div>
-                                <div class="detail-text">
-                                    <h4>Estadística Garantizada (Colombia)</h4>
-                                    <p>Las empresas que estructuran políticas claras de talento reducen su rotación de personal en un 35% e incrementan la productividad operativa en un 20%.</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="cost-comparison-card">
-                            <div class="cost-box cost-box-loser">
-                                <div class="cost-title">Gerente RRHH de Planta</div>
-                                <div class="cost-value">$9.000.000 COP/mes</div>
-                                <div class="cost-desc">Salario promedio de un Director Senior ($6.000.000 COP) más aportes legales y prestaciones sociales del 50%.</div>
-                            </div>
-                            <div class="cost-box cost-box-winner">
-                                <div class="cost-title">Con CultuLab Fractional</div>
-                                <div class="cost-value">$1.800.000 COP/mes</div>
-                                <div class="cost-desc">Plan Startup (4h/semana). Plan Crecimiento (8h/semana) a $3.200.000 COP/mes. Cero pasivo prestacional.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Tab: L&D -->
                 <div id="capacitacion" class="tab-content-panel">
@@ -1047,10 +935,10 @@
                                 <div class="cost-value">$3.500.000 COP</div>
                                 <div class="cost-desc">Tarifa estándar de mercado por taller cerrado de media jornada con materiales de apoyo e informe.</div>
                             </div>
-                            <div class="cost-box cost-box-winner">
+                             <div class="cost-box cost-box-winner">
                                 <div class="cost-title">Con CultuLab</div>
-                                <div class="cost-value">$1.200.000 COP</div>
-                                <div class="cost-desc">Taller individual a medida. O adquiere la suscripción mensual de capacitación por $800.000 COP al mes.</div>
+                                <div class="cost-value">$1.000.000 COP</div>
+                                <div class="cost-desc">Por bloque de 5 horas virtuales. Talleres interactivos en vivo y a medida.</div>
                             </div>
                         </div>
                     </div>
@@ -1071,52 +959,18 @@
                 <div class="quote-form">
                     <h3 class="quote-form-title">🛠️ Datos e Inclusiones</h3>
                     
-                    <div class="form-row">
-                        <label for="quote-employees">Número de empleados actuales</label>
-                        <input type="number" id="quote-employees" class="form-input" min="1" max="200" value="15" onchange="updateQuote()">
-                    </div>
 
-                    <div class="form-row">
-                        <label for="quote-avg-salary">Salario promedio estimado de vacantes (COP)</label>
-                        <input type="number" id="quote-avg-salary" class="form-input" min="1300000" max="10000000" step="100000" value="2000000" onchange="updateQuote()">
-                    </div>
+
+
 
                     <h3 class="quote-form-title" style="margin-top: 10px;">📦 Selecciona tus Servicios</h3>
 
                     <div class="service-selector-box">
-                        <!-- Payroll Checkbox -->
-                        <div class="service-checkbox-row">
-                            <label class="checkbox-label-side" for="check-payroll">
-                                <input type="checkbox" id="check-payroll" checked onchange="updateQuote()">
-                                <div>
-                                    <span style="font-weight:600; font-size:0.92rem;">Payroll & Compliance</span>
-                                    <p style="font-size:0.75rem; color:var(--text-muted);">Nómina externa y DIAN.</p>
-                                </div>
-                            </label>
-                            <span style="font-size: 0.85rem; font-weight:700; color:var(--text-muted);" id="price-label-payroll">$ 475.000/mes</span>
-                        </div>
-
-                        <!-- Fractional HR Dropdown -->
-                        <div class="service-checkbox-row">
-                            <label class="checkbox-label-side" for="check-fractional">
-                                <input type="checkbox" id="check-fractional" checked onchange="updateQuote()">
-                                <div>
-                                    <span style="font-weight:600; font-size:0.92rem;">Fractional HR (Director)</span>
-                                    <p style="font-size:0.75rem; color:var(--text-muted);">Gestión humana por horas.</p>
-                                </div>
-                            </label>
-                            <div class="service-control-side">
-                                <select id="select-fractional" class="select-xs" onchange="updateQuote()">
-                                    <option value="startup">Plan Startup (4h)</option>
-                                    <option value="crecimiento">Plan Crecimiento (8h)</option>
-                                </select>
-                            </div>
-                        </div>
 
                         <!-- Recruitment Dropdown -->
                         <div class="service-checkbox-row">
                             <label class="checkbox-label-side" for="check-recruitment">
-                                <input type="checkbox" id="check-recruitment" onchange="updateQuote()">
+                                <input type="checkbox" id="check-recruitment" checked onchange="updateQuote()">
                                 <div>
                                     <span style="font-weight:600; font-size:0.92rem;">Reclutamiento de Vacantes</span>
                                     <p style="font-size:0.75rem; color:var(--text-muted);">Proceso de selección y terna.</p>
@@ -1137,15 +991,15 @@
                             <label class="checkbox-label-side" for="check-learning">
                                 <input type="checkbox" id="check-learning" onchange="updateQuote()">
                                 <div>
-                                    <span style="font-weight:600; font-size:0.92rem;">Capacitaciones (L&D)</span>
-                                    <p style="font-size:0.75rem; color:var(--text-muted);">Talleres interactivos de 4h.</p>
+                                     <span style="font-weight:600; font-size:0.92rem;">Capacitaciones (L&D)</span>
+                                     <p style="font-size:0.75rem; color:var(--text-muted);">Sesiones virtuales en vivo.</p>
                                 </div>
                             </label>
                             <div class="service-control-side">
                                 <select id="select-learning-type" class="select-xs" onchange="updateQuote()">
-                                    <option value="single">1 taller único</option>
-                                    <option value="pack">Paquete 3 (15% Dcto)</option>
-                                    <option value="monthly">Suscripción Anual ($800k/mes)</option>
+                                    <option value="5">5 horas virtuales</option>
+                                    <option value="10">10 horas (10% Dcto)</option>
+                                    <option value="15">15 horas (15% Dcto)</option>
                                 </select>
                             </div>
                         </div>
@@ -1167,15 +1021,10 @@
 
                     <div class="summary-total">
                         <div class="total-row">
-                            <span class="total-label">Suscripción Mensual:</span>
-                            <span id="total-monthly" class="total-price">$ 0</span>
+                            <span class="total-label">Inversión del Proyecto:</span>
+                            <span id="total-one-time" class="total-price">$ 0</span>
                         </div>
-                        <div class="total-price-subtext">Precios netos expresados en COP</div>
-                        
-                        <div class="total-row" style="margin-top: 12px; border-top: 1px dashed rgba(255,255,255,0.1); padding-top:12px;">
-                            <span class="total-label" style="font-size:0.9rem; color:#cbd5e1;">Inversión Única / Proyectos:</span>
-                            <span id="total-one-time" style="font-size: 1.3rem; font-weight: 700; color: #cbd5e1;">$ 0</span>
-                        </div>
+                        <div class="total-price-subtext">Precios netos expresados en COP. Cobro contra éxito en reclutamiento.</div>
                     </div>
                 </div>
             </div>
@@ -1193,35 +1042,35 @@
                     <thead>
                         <tr>
                             <th>Característica</th>
-                            <th>Director RRHH de Planta</th>
-                            <th>Contador Externo Tradicional</th>
-                            <th class="col-cultulab">Solución CultuLab B2B</th>
+                            <th>Agencias de Selección Tradicionales</th>
+                            <th>Plataformas E-learning Estáticas</th>
+                            <th class="col-cultulab">Enfoque CultuLab B2B</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="font-weight: 600;">Costo Mensual</td>
-                            <td><span class="badge-table badge-table-red">Alto ($9M - $12M COP)</span></td>
-                            <td><span class="badge-table badge-table-green">Bajo ($300k - $600k COP)</span></td>
-                            <td class="col-cultulab"><span class="badge-table badge-table-green">Modular y Eficiente ($350k - $2M COP)</span></td>
+                            <td style="font-weight: 600;">Evaluación del Talento</td>
+                            <td>Solo técnica (Hojas de vida)</td>
+                            <td>No aplica (Auto-formación)</td>
+                            <td class="col-cultulab"><span class="badge-table badge-table-green">Filtro técnico + Fit cultural STAR</span></td>
                         </tr>
                         <tr>
-                            <td style="font-weight: 600;">Estrategia y Clima</td>
-                            <td>Excelente (Lidera cultura)</td>
-                            <td>Nula (Solo impuestos y números)</td>
-                            <td class="col-cultulab">Excelente (Diseño de onboarding y cultura)</td>
+                            <td style="font-weight: 600;">Metodología de Capacitación</td>
+                            <td>Talleres teóricos costosos</td>
+                            <td>Videos grabados (Bajo engagement)</td>
+                            <td class="col-cultulab"><span class="badge-table badge-table-green">100% Interactiva, en vivo y a medida</span></td>
                         </tr>
                         <tr>
-                            <td style="font-weight: 600;">Operación de Nómina</td>
-                            <td>Sí (Carga operativa interna)</td>
-                            <td>Manual (Poco soporte tecnológico)</td>
-                            <td class="col-cultulab">Automatizada (DIAN y PILA delegados al 100%)</td>
+                            <td style="font-weight: 600;">Garantía en Procesos</td>
+                            <td>Corto plazo (30 a 60 días)</td>
+                            <td>Sin garantía</td>
+                            <td class="col-cultulab"><span class="badge-table badge-table-green">Hasta 90 días de reemplazo sin costo</span></td>
                         </tr>
                         <tr>
-                            <td style="font-weight: 600;">Garantía y Blindaje</td>
-                            <td>Riesgo de despido costoso</td>
-                            <td>No asume riesgos legales</td>
-                            <td class="col-cultulab"><span class="badge-table badge-table-green">Garantía por escrito de 90 días</span></td>
+                            <td style="font-weight: 600;">Modelo de Cobro</td>
+                            <td>Comisiones altas (15% - 20% anual)</td>
+                            <td>Licencias mensuales por usuario</td>
+                            <td class="col-cultulab"><span class="badge-table badge-table-green">Tarifas fijas transparentes por proyecto</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1255,8 +1104,6 @@
         function evaluateRisks() {
             const risk1 = document.getElementById('risk1').checked;
             const risk2 = document.getElementById('risk2').checked;
-            const risk3 = document.getElementById('risk3').checked;
-            const risk4 = document.getElementById('risk4').checked;
 
             const resultsPanel = document.getElementById('risk-results-panel');
             const recommendedContainer = document.getElementById('recommended-services');
@@ -1265,18 +1112,10 @@
             let count = 0;
 
             if (risk1) {
-                recommendedContainer.innerHTML += '<span class="badge-service">🕒 Fractional HR</span>';
-                count++;
-            }
-            if (risk2) {
-                recommendedContainer.innerHTML += '<span class="badge-service">💸 Payroll & Compliance</span>';
-                count++;
-            }
-            if (risk3) {
                 recommendedContainer.innerHTML += '<span class="badge-service">👥 Reclutamiento de Talento</span>';
                 count++;
             }
-            if (risk4) {
+            if (risk2) {
                 recommendedContainer.innerHTML += '<span class="badge-service">📚 Formación y Capacitación</span>';
                 count++;
             }
@@ -1301,74 +1140,23 @@
 
         // 4. Simulador de Cotización Modular con Lógica de Descuentos Reales de CultuLab
         function updateQuote() {
-            const employees = parseInt(document.getElementById('quote-employees').value) || 0;
-            const avgSalary = parseInt(document.getElementById('quote-avg-salary').value) || 0;
-
-            const checkPayroll = document.getElementById('check-payroll').checked;
-            const checkFractional = document.getElementById('check-fractional').checked;
             const checkRecruitment = document.getElementById('check-recruitment').checked;
             const checkLearning = document.getElementById('check-learning').checked;
 
-            const valFractional = document.getElementById('select-fractional').value;
             const qtyRecruitment = parseInt(document.getElementById('select-recruitment-qty').value);
             const valLearning = document.getElementById('select-learning-type').value;
 
             // Precios Base
-            let pricePayroll = 0;
-            let priceFractional = 0;
             let priceRecruitment = 0;
             let priceLearning = 0;
 
             let summaryHtml = '';
             let discountText = '';
-            let discountAmount = 0;
 
-            // 1. Nómina (Payroll)
-            if (checkPayroll) {
-                const baseLimit = 10;
-                const basePrice = 350000;
-                let marginalCost = 0;
-                
-                if (employees > baseLimit) {
-                    // Si empleados > 30, la tarifa marginal baja de $25k a $20k como beneficio de escala
-                    const rate = employees > 30 ? 20000 : 25000;
-                    marginalCost = (employees - baseLimit) * rate;
-                }
-                pricePayroll = basePrice + marginalCost;
-                
-                // Mostrar precio individual dinámico
-                document.getElementById('price-label-payroll').textContent = formatCOP(pricePayroll) + "/mes";
-            } else {
-                document.getElementById('price-label-payroll').textContent = "-";
-            }
-
-            // 2. Fractional HR
-            if (checkFractional) {
-                if (valFractional === 'startup') {
-                    priceFractional = 1800000;
-                } else if (valFractional === 'crecimiento') {
-                    priceFractional = 3200000;
-                }
-            }
-
-            // APLICAR DESCUENTO COMBO: Fractional + Payroll
-            // "Si contrata Fractional HR + Payroll de forma conjunta, se puede descontar el 50% del Plan Base de nómina (quedando en $175.000 COP/mes el base de nómina)"
-            let payrollBaseDiscount = 0;
-            if (checkPayroll && checkFractional) {
-                payrollBaseDiscount = 175000; // Descuento de $175.000 en la base
-                pricePayroll -= payrollBaseDiscount;
-                discountText += "• <strong>Combo Estratégico:</strong> Se aplicó un 50% de descuento sobre la base de nómina (-$175.000 COP/mes) por contratar Fractional HR.<br>";
-            }
-
-            // 3. Reclutamiento
+            // 1. Reclutamiento
             if (checkRecruitment) {
-                // Tarifa base: 1 salario de la vacante seleccionada
-                let recruitmentCostPerVacancy = avgSalary;
-                if (recruitmentCostPerVacancy < 1200000) {
-                    recruitmentCostPerVacancy = 1200000; // Cobro mínimo de ley
-                }
-
-                priceRecruitment = recruitmentCostPerVacancy * qtyRecruitment;
+                // Tarifa plana establecida: $875.000 COP por vacante
+                priceRecruitment = 875000 * qtyRecruitment;
 
                 // Descuento por vacantes simultáneas (>= 3 vacantes = 10% Dcto)
                 if (qtyRecruitment >= 3) {
@@ -1378,48 +1166,36 @@
                 }
             }
 
-            // 4. Capacitación
+            // 2. Capacitación
             if (checkLearning) {
-                if (valLearning === 'single') {
-                    priceLearning = 1200000; // Proyecto único
-                } else if (valLearning === 'pack') {
-                    // Paquete 3 talleres con 15% descuento
-                    priceLearning = (1200000 * 3) * 0.85; // Proyecto único
-                    discountText += "• <strong>Paquete L&D:</strong> 15% de descuento en capacitaciones por contratación anticipada de 3 talleres.<br>";
-                } else if (valLearning === 'monthly') {
-                    priceLearning = 800000; // Suscripción mensual
+                if (valLearning === '5') {
+                    priceLearning = 1000000;
+                } else if (valLearning === '10') {
+                    // 10 horas con 10% de descuento
+                    priceLearning = 2000000 * 0.90;
+                    discountText += "• <strong>Paquete L&D:</strong> 10% de descuento en capacitaciones por contratación de 10 horas.<br>";
+                } else if (valLearning === '15') {
+                    // 15 horas con 15% de descuento
+                    priceLearning = 3000000 * 0.85;
+                    discountText += "• <strong>Paquete L&D:</strong> 15% de descuento en capacitaciones por contratación de 15 horas.<br>";
                 }
             }
 
             // Llenar el resumen visual
-            if (checkPayroll) {
-                let text = "Payroll & Compliance (" + employees + " emp)";
-                if (payrollBaseDiscount > 0) {
-                    text += " <span style='color:var(--accent); font-weight:600;'>(-50% Base)</span>";
-                }
-                summaryHtml += '<div class="summary-row"><span>' + text + '</span><span>' + formatCOP(pricePayroll) + '/mes</span></div>';
-            }
-
-            if (checkFractional) {
-                const planName = valFractional === 'startup' ? "Startup (4h/sem)" : "Crecimiento (8h/sem)";
-                summaryHtml += '<div class="summary-row"><span>Fractional HR: ' + planName + '</span><span>' + formatCOP(priceFractional) + '/mes</span></div>';
-            }
-
-            // Totales de suscripción mensual
-            const totalMonthly = pricePayroll + priceFractional + (valLearning === 'monthly' ? priceLearning : 0);
-
-            // Totales de inversión única (Reclutamiento y Talleres no recurrentes)
-            const totalOneTime = priceRecruitment + (valLearning !== 'monthly' ? priceLearning : 0);
-
             if (checkRecruitment) {
                 summaryHtml += '<div class="summary-row"><span>Reclutamiento (' + qtyRecruitment + ' vacantes)</span><span>' + formatCOP(priceRecruitment) + ' (Único)</span></div>';
             }
 
             if (checkLearning) {
-                const isRecurrent = valLearning === 'monthly';
-                const label = isRecurrent ? "Suscripción Capacitación" : "Talleres Capacitación (" + (valLearning === 'single' ? "1 taller" : "3 talleres") + ")";
-                summaryHtml += '<div class="summary-row"><span>' + label + '</span><span>' + formatCOP(priceLearning) + (isRecurrent ? '/mes' : ' (Único)') + '</span></div>';
+                const label = "Capacitación (" + valLearning + " horas virtuales)";
+                summaryHtml += '<div class="summary-row"><span>' + label + '</span><span>' + formatCOP(priceLearning) + ' (Único)</span></div>';
             }
+
+            // Totales de suscripción mensual (Ahora todo es por proyecto/inversión única)
+            const totalMonthly = 0;
+
+            // Totales de inversión única (Reclutamiento y Horas de capacitación)
+            const totalOneTime = priceRecruitment + (checkLearning ? priceLearning : 0);
 
             // Mostrar/Ocultar Banner de Descuentos
             const banner = document.getElementById('discount-banner');
@@ -1432,7 +1208,6 @@
 
             // Dibujar en pantalla
             document.getElementById('summary-items').innerHTML = summaryHtml === '' ? '<div class="summary-row"><span>Ningún servicio seleccionado</span><span>-</span></div>' : summaryHtml;
-            document.getElementById('total-monthly').textContent = formatCOP(totalMonthly);
             document.getElementById('total-one-time').textContent = formatCOP(totalOneTime);
         }
 

@@ -21,7 +21,7 @@ function cotizarPrograma() {
         "- Nombre de la empresa: \n" +
         "- Número de colaboradores: \n" +
         "- Sector: \n" +
-        "- Servicio de interés (Reclutamiento / Payroll / Fractional HR / Capacitación): \n\n" +
+        "- Servicio de interés (Reclutamiento / Capacitación): \n\n" +
         "Gracias.";
 
     window.open(`https://wa.me/573012699885?text=${encodeURIComponent(mensaje)}`, '_blank');

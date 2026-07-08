@@ -261,56 +261,11 @@
                 icon: 'search',
                 title: 'Tiempo excesivo en procesos de selección',
                 question: '¿Los líderes de área o gerencia dedican más de 10 horas al mes a filtrar hojas de vida y realizar entrevistas no efectivas?',
-                study: 'Investigaciones de Glassdoor demuestran que el tiempo promedio para cubrir una vacante profesional es de 24 días, restando enfoque estratégico a los directores de área.',
+                study: 'Investigaciones de Glassdoor demostraron que el tiempo promedio para cubrir una vacante profesional es de 24 días, restando enfoque estratégico a los directores de área.',
                 service: 'Reclutamiento de Talento'
             },
             {
                 id: 'q3',
-                category: 'payroll',
-                icon: 'file-text',
-                title: 'Liquidación de nómina manual o informal',
-                question: '¿Gestionamos la nómina en hojas de cálculo o dependemos de un tercero sin automatización de nómina electrónica integrada ante la DIAN?',
-                study: 'La DIAN sanciona fuertemente los errores y demoras en el reporte de nómina electrónica. Un sistema automatizado elimina el riesgo de sanciones tributarias al 100%.',
-                service: 'Payroll & Compliance'
-            },
-            {
-                id: 'q4',
-                category: 'payroll',
-                icon: 'shield-alert',
-                title: 'Inconsistencias en pagos de seguridad social',
-                question: '¿Hemos tenido errores o demoras en la liquidación de horas extras, novedades de seguridad social o planillas PILA?',
-                study: 'El Workforce Institute señala que el 49% de los trabajadores colombianos buscarían otro empleo tras solo dos errores en el pago de su nómina.',
-                service: 'Payroll & Compliance'
-            },
-            {
-                id: 'q5',
-                category: 'fractional',
-                icon: 'briefcase',
-                title: 'Ausencia de onboarding y roles claros',
-                question: '¿Carecemos de un proceso estructurado de inducción (onboarding) y de manuales de cargos actualizados para cada colaborador?',
-                study: 'Un estudio de Gallup descubrió que las empresas con un onboarding sólido aumentan la retención de nuevos talentos en un 82% y la productividad en más de un 70%.',
-                service: 'Fractional HR'
-            },
-            {
-                id: 'q6',
-                category: 'fractional',
-                icon: 'award',
-                title: 'Falta de dirección estratégica en RRHH',
-                question: '¿Tomamos decisiones de personal de manera puramente reactiva (ante renuncias o crisis) por no contar con un Director de RRHH experto?',
-                study: 'Un Director de RRHH de tiempo completo cuesta más de $9.000.000 COP al mes. El Fractional HR te brinda esa misma dirección estratégica por solo una fracción del costo.',
-                service: 'Fractional HR'
-            },
-            {
-                id: 'q7',
-                category: 'fractional',
-                icon: 'trending-up',
-                title: 'Falta de evaluación de desempeño o clima',
-                question: '¿Carecemos de herramientas de medición de clima laboral y de sistemas formales de evaluación de rendimiento y feedback?',
-                study: 'Harvard Business Review indica que las empresas que evalúan el desempeño de manera estructurada y continua incrementan su rentabilidad operativa en un 15% anual.',
-                service: 'Fractional HR'
-            },
-            {
-                id: 'q8',
                 category: 'learning',
                 icon: 'message-square',
                 title: 'Problemas de comunicación y clima',
@@ -319,7 +274,7 @@
                 service: 'Learning & Development (L&D)'
             },
             {
-                id: 'q9',
+                id: 'q4',
                 category: 'learning',
                 icon: 'users',
                 title: 'Líderes sin formación en habilidades blandas',
@@ -328,7 +283,7 @@
                 service: 'Learning & Development (L&D)'
             },
             {
-                id: 'q10',
+                id: 'q5',
                 category: 'learning',
                 icon: 'dollar-sign',
                 title: 'Brechas en habilidades comerciales y ventas',
@@ -471,8 +426,6 @@
             // Recopilar categorías específicas con alertas
             const alertsByCategory = {
                 reclutamiento: questions.filter(q => q.category === 'reclutamiento' && checkedState[q.id]).length,
-                payroll: questions.filter(q => q.category === 'payroll' && checkedState[q.id]).length,
-                fractional: questions.filter(q => q.category === 'fractional' && checkedState[q.id]).length,
                 learning: questions.filter(q => q.category === 'learning' && checkedState[q.id]).length
             };
 
@@ -490,14 +443,6 @@
                 reclutamiento: {
                     name: "Reclutamiento y Selección de Talento",
                     desc: "Para mitigar la fuga de talento, cubrir vacantes críticas pendientes y estructurar una selección ágil con garantía de adaptación por 90 días."
-                },
-                payroll: {
-                    name: "Payroll & Compliance (Nómina Externa)",
-                    desc: "Para delegar la liquidación de nómina de forma de manera segura y automatizada ante la DIAN, liberando horas de carga administrativa de tu equipo directivo."
-                },
-                fractional: {
-                    name: "Fractional HR (Dirección de RRHH por horas)",
-                    desc: "Para estructurar políticas estratégicas de clima laboral, onboarding, evaluación del desempeño y manuales de cargos sin incurrir en costos de nómina a tiempo completo."
                 },
                 learning: {
                     name: "Learning & Development (Capacitación Corporativa)",
