@@ -18,6 +18,9 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Configuración de captura de leads (WhatsApp + hoja de Google) -->
+    <script src="../js/leads-config.js"></script>
+
     <style>
         body {
             font-family: 'Inter', -apple-system, sans-serif;
@@ -99,7 +102,7 @@
                     </div>
                     <div class="flex-1">
                         <div class="inline-block bg-[#F7F4F0] text-institucional text-xs font-bold px-3 py-1 rounded-full mb-2 uppercase tracking-wide border border-gray-100">
-                            🎁 Recurso Gratuito para Empresas
+                            Recurso gratuito para empresas
                         </div>
                         <h1 class="text-3xl font-extrabold text-institucional mb-2 leading-tight">
                             Diagnóstico de Gestión Humana y Clima Laboral
@@ -173,10 +176,24 @@
                         </div>
                         <div>
                             <label class="block text-xs font-bold uppercase text-institucional mb-1">Celular / WhatsApp</label>
-                            <input type="tel" id="lead-phone" required placeholder="Ej. 3012699885" 
+                            <input type="tel" id="lead-phone" required placeholder="Ej. 3001112233" 
                                    class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-beige-premium text-sm">
                         </div>
-                        <button type="submit" 
+                        <div class="flex items-start gap-3 pt-2">
+                            <input type="checkbox" id="lead-habeas" required
+                                   class="mt-1 w-4 h-4 shrink-0 accent-[#0A2647] cursor-pointer">
+                            <label for="lead-habeas" class="text-xs text-gray-500 leading-relaxed cursor-pointer">
+                                Autorizo a <strong>CultuLab S.A.S.</strong> a tratar mis datos personales para
+                                contactarme sobre este diagnóstico y sus servicios de Gestión Humana, conforme a la
+                                Ley 1581 de 2012 y a su
+                                <a href="privacidad.html" target="_blank"
+                                   class="text-institucional font-semibold underline hover:opacity-70">Política de
+                                    Tratamiento de Datos</a>.
+                                Puedo solicitar la eliminación de mis datos en cualquier momento escribiendo a
+                                cultulab.comercial@gmail.com.
+                            </label>
+                        </div>
+                        <button type="submit"
                                 class="w-full bg-institucional text-white py-4 rounded-xl font-bold hover:opacity-90 transition border border-beige-premium mt-6">
                             Ver Resultados ➔
                         </button>
@@ -190,7 +207,7 @@
                     <div class="bg-institucional p-2 rounded-lg border border-beige-premium">
                         <i data-lucide="microscope" class="w-6 h-6 text-beige-premium"></i>
                     </div>
-                    🔍 Interpretación de Resultados
+                    Interpretación de resultados
                 </h2>
 
                 <div id="interpretation-box" class="rounded-xl p-6 border mb-6 shadow-sm">
@@ -217,10 +234,10 @@
                 <div id="cta-box" class="bg-institucional rounded-2xl p-6 md:p-8 text-white shadow-lg relative overflow-hidden border border-beige-premium">
                     <div class="relative z-10">
                         <p class="text-xl font-bold mb-4 flex items-center gap-2 text-beige-premium">
-                            💡 La rotación no aparece de la nada.
+                            La rotación no aparece de la nada.
                         </p>
                         <p class="mb-6 text-gray-200 leading-relaxed text-base">
-                            Más allá del número de alertas, lo importante es cómo afecta esto a la rentabilidad de tu negocio. Agendemos una sesión estratégica gratuita de 15 minutos en donde analizaremos estos resultados.
+                            Más allá del número de alertas, lo importante es cómo afecta esto a la rentabilidad de tu negocio. Agendemos la llamada diagnóstico gratuita de 30 minutos y revisamos juntos estos resultados.
                         </p>
                         <button onclick="agendarLlamadaWhatsApp()"
                                 class="bg-white text-institucional font-extrabold py-4 px-8 rounded-xl shadow-md hover:bg-gray-50 transition-transform hover:scale-105 active:scale-95 flex items-center gap-3">
@@ -252,7 +269,7 @@
                 icon: 'user-plus',
                 title: 'Dificultad para cubrir vacantes clave',
                 question: '¿Hemos tenido puestos vacantes por más de 30 días, o personas contratadas que se retiran antes de cumplir 90 días en la empresa?',
-                study: 'La Society for Human Resource Management (SHRM) revela que el costo real de reemplazar a un empleado equivale a entre el 50% y el 75% de su salario anual en tiempo de inducción, pérdida de productividad y costos de selección.',
+                study: 'Reemplazar a un colaborador cuesta entre el 30% y el 50% de su salario anual, sumando el proceso de selección, la inducción y la productividad que se pierde mientras el puesto está vacío.',
                 service: 'Reclutamiento de Talento'
             },
             {
@@ -289,6 +306,51 @@
                 title: 'Brechas en habilidades comerciales y ventas',
                 question: '¿El equipo comercial o de atención al cliente presenta dificultades para cerrar ventas, asertividad o manejo de la frustración?',
                 study: 'McKinsey demuestra que los equipos comerciales bajo formación continua logran un incremento sostenido de hasta el 18% en cumplimiento de cuotas de ventas.',
+                service: 'Learning & Development (L&D)'
+            },
+            {
+                id: 'q6',
+                category: 'reclutamiento',
+                icon: 'alert-triangle',
+                title: 'Contrataciones que no resultaron',
+                question: '¿Hemos contratado a alguien que en la práctica no sabía hacer lo que decía su hoja de vida, o que no encajó con el equipo?',
+                study: 'Una contratación fallida no cuesta solo el salario pagado. Cuesta el tiempo de quien lo entrenó, la productividad del área mientras estuvo, y volver a abrir el proceso desde cero.',
+                service: 'Reclutamiento de Talento'
+            },
+            {
+                id: 'q7',
+                category: 'reclutamiento',
+                icon: 'clipboard-list',
+                title: 'Selección sin proceso estructurado',
+                question: '¿Contratamos principalmente por recomendación o por urgencia, sin entrevistas estructuradas ni pruebas que respalden la decisión?',
+                study: 'Cuando la decisión depende de la impresión de una sola conversación, el resultado es una apuesta. Un proceso estructurado no garantiza aciertos, pero sí reduce mucho los errores caros.',
+                service: 'Reclutamiento de Talento'
+            },
+            {
+                id: 'q8',
+                category: 'reclutamiento',
+                icon: 'shield-check',
+                title: 'Vinculación sin verificación',
+                question: '¿Vinculamos personas sin verificar referencias laborales reales, antecedentes judiciales o la validez de sus títulos y tarjetas profesionales?',
+                study: 'En sectores regulados como salud, transporte o manejo de dinero, vincular a alguien sin verificar traslada el riesgo legal y reputacional directamente a la empresa.',
+                service: 'Reclutamiento de Talento'
+            },
+            {
+                id: 'q9',
+                category: 'learning',
+                icon: 'compass',
+                title: 'Ingreso sin inducción definida',
+                question: '¿Los colaboradores nuevos aprenden sobre la marcha, preguntándole al compañero de al lado, sin un proceso de inducción documentado?',
+                study: 'Las primeras semanas definen si alguien se queda. Sin inducción, la persona tarda más en ser productiva y aumenta la probabilidad de que renuncie en los primeros meses.',
+                service: 'Learning & Development (L&D)'
+            },
+            {
+                id: 'q10',
+                category: 'learning',
+                icon: 'calendar-x',
+                title: 'Sin formación en el último año',
+                question: '¿Ha pasado más de un año desde la última capacitación formal para nuestro equipo, más allá del entrenamiento técnico del día a día?',
+                study: 'La formación es una de las razones que más pesan cuando alguien decide quedarse o buscar otra cosa. Un equipo que no aprende nada nuevo en un año es un equipo que ya está mirando afuera.',
                 service: 'Learning & Development (L&D)'
             }
         ];
@@ -328,7 +390,7 @@
                         </div>
                         <div class="bg-[#F7F4F0] border-l-4 border-beige-premium p-4 rounded-r-lg">
                             <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
-                                <span class="text-institucional font-bold">📌 Respaldo del Estudio:</span> ${q.study}
+                                <span class="text-institucional font-bold">Por qué importa:</span> ${q.study}
                             </p>
                         </div>
                     </div>
@@ -360,13 +422,85 @@
             const company = document.getElementById('lead-company').value;
             const email = document.getElementById('lead-email').value;
             const phone = document.getElementById('lead-phone').value;
+            const habeas = document.getElementById('lead-habeas').checked;
 
-            if (name && company && email && phone) {
-                // Guardar en localStorage para evitar re-preguntar
-                localStorage.setItem('cultulab_lead', JSON.stringify({ name, company, email, phone }));
+            if (name && company && email && phone && habeas) {
+                const lead = { name, company, email, phone, habeas: true };
+
+                // Guardar en localStorage para no volver a preguntar en esta visita
+                localStorage.setItem('cultulab_lead', JSON.stringify(lead));
                 isLeadCaptured = true;
+
+                // 1) Respaldo: enviar el lead a la hoja de Google (no pierde nada)
+                enviarLeadAlRespaldo(lead);
+
                 cerrarModal();
                 mostrarResultadosFisicos();
+
+                // 2) Conversión inmediata: abrir WhatsApp con el mensaje ya escrito
+                const cfg = window.CULTULAB_LEADS || {};
+                if (cfg.abrirWhatsAppAlEnviar !== false) {
+                    agendarLlamadaWhatsApp(true);
+                }
+            }
+        }
+
+        // Arma el resumen del diagnóstico para WhatsApp y para el respaldo
+        function resumenDiagnostico() {
+            const marcadas = questions.filter(q => checkedState[q.id]);
+            const total = marcadas.length;
+            const porServicio = {};
+            marcadas.forEach(q => { porServicio[q.service] = (porServicio[q.service] || 0) + 1; });
+            const prioridad = Object.keys(porServicio)
+                .sort((a, b) => porServicio[b] - porServicio[a])[0] || 'Sin alertas';
+            return {
+                totalAlertas: total,
+                alertas: marcadas.map(q => q.title),
+                servicioPrioritario: prioridad
+            };
+        }
+
+        // Envía el lead al Web App de Google Apps Script.
+        // Si no está configurado, no rompe nada: solo avisa por consola.
+        function enviarLeadAlRespaldo(lead) {
+            const cfg = window.CULTULAB_LEADS || {};
+            const url = cfg.webhookUrl;
+
+            if (!url || url === 'PENDIENTE' || url.indexOf('http') !== 0) {
+                console.warn('[CultuLab] Captura de leads NO configurada. Este lead no quedó guardado en ninguna parte. Ver GUIA_CAPTURA_LEADS.md');
+                return;
+            }
+
+            const r = resumenDiagnostico();
+            const payload = {
+                fecha: new Date().toISOString(),
+                nombre: lead.name,
+                empresa: lead.company,
+                correo: lead.email,
+                telefono: lead.phone,
+                totalAlertas: r.totalAlertas,
+                alertas: r.alertas.join(' | '),
+                servicioPrioritario: r.servicioPrioritario,
+                origen: 'Diagnóstico de Gestión Humana',
+                autorizaDatos: 'SÍ — Ley 1581 de 2012'
+            };
+
+            // Se envía como GET con parámetros en la URL.
+            // Es el método más resistente: no lo bloquea CORS, funciona incluso
+            // abriendo la página como archivo local, y no necesita permisos extra.
+            try {
+                const params = Object.keys(payload)
+                    .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(String(payload[k]).slice(0, 600)))
+                    .join('&');
+
+                const beacon = new Image();
+                beacon.onerror = function () {
+                    // Apps Script no devuelve una imagen, así que este error es lo esperado.
+                    console.info('[CultuLab] Lead enviado al respaldo.');
+                };
+                beacon.src = url + '?' + params;
+            } catch (err) {
+                console.error('[CultuLab] Error enviando el lead:', err);
             }
         }
 
@@ -380,7 +514,7 @@
             const icon = document.getElementById('interpretation-icon');
             const iconBox = document.getElementById('interpretation-box');
 
-            scoreCount.innerText = `${totalAlerts} Alertas Detectadas`;
+            scoreCount.innerText = `${totalAlerts} de ${questions.length} alertas detectadas`;
 
             let config = {
                 level: 'Cultura Estable',
@@ -392,7 +526,7 @@
                 desc: 'Tu organización muestra señales positivas y estables. Mantén el monitoreo continuo para prevenir el desgaste cultural.'
             };
 
-            if (totalAlerts >= 3 && totalAlerts <= 6) {
+            if (totalAlerts >= 3 && totalAlerts <= 5) {
                 config = {
                     level: 'Riesgo Medio',
                     color: 'text-yellow-600',
@@ -402,7 +536,7 @@
                     rec: 'Intervención estratégica necesaria',
                     desc: 'Se detectan algunas señales de alerta en la gestión del talento. Es momento de actuar antes de que afecten la productividad.'
                 };
-            } else if (totalAlerts > 6) {
+            } else if (totalAlerts > 5) {
                 config = {
                     level: 'Prioridad Alta',
                     color: 'text-red-600',
@@ -442,7 +576,7 @@
             const serviceDetails = {
                 reclutamiento: {
                     name: "Reclutamiento y Selección de Talento",
-                    desc: "Para mitigar la fuga de talento, cubrir vacantes críticas pendientes y estructurar una selección ágil con garantía de adaptación por 90 días."
+                    desc: "Para mitigar la fuga de talento, cubrir vacantes críticas pendientes y estructurar una selección ágil con garantía de 60 días y un reemplazo sin costo."
                 },
                 learning: {
                     name: "Learning & Development (Capacitación Corporativa)",
@@ -458,10 +592,10 @@
                 recommendationHTML = `
                     <div class="mb-4">
                         <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-3">
-                            Basado en tus respuestas, el servicio que tiene la **mayor prioridad de implementación** para tu empresa es:
+                            Basado en tus respuestas, el servicio que tiene la <strong>mayor prioridad de implementación</strong> para tu empresa es:
                         </p>
                         <div class="p-4 bg-[#F7F4F0] border-l-4 border-beige-premium rounded-r-lg mb-4">
-                            <h5 class="font-extrabold text-institucional text-base md:text-lg mb-1">🚀 ${primary.name}</h5>
+                            <h5 class="font-extrabold text-institucional text-base md:text-lg mb-1">${primary.name}</h5>
                             <p class="text-sm text-gray-600 leading-relaxed">${primary.desc}</p>
                         </div>
                         <p class="text-xs text-gray-400 italic">
@@ -487,12 +621,28 @@
             resSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        function agendarLlamadaWhatsApp() {
+        function agendarLlamadaWhatsApp(automatico) {
+            const cfg = window.CULTULAB_LEADS || {};
+            const numero = cfg.whatsapp || '573104086399';
+            const duracion = cfg.duracionLlamada || '30 minutos';
+
             const leadData = JSON.parse(localStorage.getItem('cultulab_lead') || '{}');
-            const totalAlerts = Object.keys(checkedState).filter(k => checkedState[k]).length;
-            const txt = `Hola CultuLab, completé el Diagnóstico de Gestión Humana. Mi nombre es ${leadData.name || ''} de la empresa ${leadData.company || ''}. Registré ${totalAlerts} alertas y deseo agendar mi sesión de diagnóstico gratuita de 15 minutos.`;
+            const r = resumenDiagnostico();
+
+            let txt = `Hola CultuLab, completé el Diagnóstico de Gestión Humana.\n\n`;
+            txt += `Nombre: ${leadData.name || ''}\n`;
+            txt += `Empresa: ${leadData.company || ''}\n`;
+            txt += `Correo: ${leadData.email || ''}\n`;
+            txt += `Teléfono: ${leadData.phone || ''}\n\n`;
+            txt += `Alertas detectadas: ${r.totalAlertas}\n`;
+            if (r.alertas.length) {
+                txt += r.alertas.map(a => `• ${a}`).join('\n') + '\n';
+            }
+            txt += `Prioridad: ${r.servicioPrioritario}\n\n`;
+            txt += `Quiero agendar la llamada diagnóstico gratuita de ${duracion}.`;
+
             const encoded = encodeURIComponent(txt);
-            window.open(`https://wa.me/573104086399?text=${encoded}`, '_blank');
+            window.open(`https://wa.me/${numero}?text=${encoded}`, '_blank');
         }
 
         window.onload = function() {

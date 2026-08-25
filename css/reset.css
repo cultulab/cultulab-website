@@ -74,7 +74,7 @@ select {
 
 /* Focus styles for accessibility */
 :focus {
-  outline: 2px solid #004e8d;
+  outline: 2px solid #0A2647;
   outline-offset: 2px;
 }
 
@@ -85,7 +85,7 @@ select {
 
 /* Restore focus styles for keyboard navigation */
 :focus-visible {
-  outline: 2px solid #004e8d;
+  outline: 2px solid #0A2647;
   outline-offset: 2px;
 }
 
@@ -378,12 +378,12 @@ select {
 
 /* Selection styles */
 ::selection {
-  background-color: rgba(0, 78, 141, 0.2);
+  background-color: rgba(10, 38, 71, 0.2);
   color: inherit;
 }
 
 ::-moz-selection {
-  background-color: rgba(0, 78, 141, 0.2);
+  background-color: rgba(10, 38, 71, 0.2);
   color: inherit;
 }
 
@@ -438,7 +438,7 @@ html, body {
   position: absolute;
   top: -40px;
   left: 6px;
-  background: #004e8d;
+  background: #0A2647;
   color: white;
   padding: 8px;
   text-decoration: none;

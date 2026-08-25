@@ -25,17 +25,28 @@
 
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Google Analytics Config -->
+    <!-- Google Analytics
+         El ID se define en UN SOLO lugar: js/analytics-config.js → googleAnalyticsId
+         Mientras siga en 'G-XXXXXXXXXX' no se carga nada y no se mide nada.
+         Instrucciones para obtenerlo: GUIA_GOOGLE_ANALYTICS.md -->
+    <script src="js/analytics-config.js"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX', {
-            'debug_mode': true // Cambiar a false en producción
-        });
+        (function () {
+            var id = (window.CULTULAB_ANALYTICS_CONFIG || {}).googleAnalyticsId;
+            if (!id || id.indexOf('X') !== -1) {
+                console.warn('[CultuLab] Google Analytics NO configurado. No se está midiendo tráfico. Ver GUIA_GOOGLE_ANALYTICS.md');
+                return;
+            }
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function () { dataLayer.push(arguments); };
+            gtag('js', new Date());
+            gtag('config', id, { 'debug_mode': !!window.CULTULAB_ANALYTICS_CONFIG.debug });
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+            document.head.appendChild(s);
+        })();
     </script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 </head>
 
 <body>
@@ -158,7 +169,7 @@
                         <svg viewBox="0 0 24 24">
                             <path
                                 d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-                                fill="#004e8d" />
+                                fill="#0A2647" />
                         </svg>
                     </div>
                     <h4>Diagnóstico Profundo</h4>
@@ -173,7 +184,7 @@
                         <svg viewBox="0 0 24 24">
                             <path
                                 d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
-                                fill="#004e8d" />
+                                fill="#0A2647" />
                         </svg>
                     </div>
                     <h4>Plan a Medida</h4>
@@ -187,7 +198,7 @@
                     <div class="card-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"
-                                fill="#004e8d" />
+                                fill="#0A2647" />
                         </svg>
                     </div>
                     <h4>Ejecución e Impacto</h4>
@@ -201,9 +212,9 @@
     <!-- Lead Magnet Section -->
     <section class="lead-magnet">
         <div class="magnet-content">
-            <h3>🎁 Recurso Gratuito: Diagnóstico de Gestión Humana</h3>
-            <p>¿No estás seguro de cuál es el principal desafío en tu equipo? Realiza nuestro cuestionario interactivo para identificar alertas críticas en reclutamiento y capacitación.</p>
-            <a href="pages/checklist.html" class="btn btn-accent">Realizar Diagnóstico de Gestión Humana</a>
+            <h3>Recurso gratuito: Diagnóstico de Gestión Humana</h3>
+            <p>Diez preguntas, tres minutos. Al terminar sabrás en qué frente está tu mayor riesgo hoy: en cómo contratas o en cómo desarrollas a tu equipo.</p>
+            <a href="pages/checklist.html" class="btn btn-accent">Hacer el diagnóstico</a>
         </div>
     </section>
 
@@ -233,29 +244,31 @@
                 <!-- Servicio 1: Reclutamiento -->
                 <div class="servicio-card recluta">
                     <div class="servicio-num">01</div>
-                    <div class="servicio-icon">🔍</div>
+                    <div class="servicio-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A2647" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="7" r="3.4"/><path d="M3.6 19.2a6.8 6.8 0 0 1 10.6-5.6"/><circle cx="16.8" cy="16.8" r="3.6"/><path d="m19.5 19.5 2.2 2.2"/></svg></div>
                     <h3>Reclutamiento de Talento</h3>
                     <p class="tagline">Talent Acquisition — Foco en afinidad cultural</p>
                     <div class="servicio-precio">
-                        <span class="monto">$875.000</span>
-                        <span class="detalle">COP por proceso</span>
+                        <span class="monto">Desde $875.000</span>
+                        <span class="detalle">COP por persona contratada</span>
                     </div>
-                    <div class="servicio-garantia">✓ Garantía de 60 días sin costo de reemplazo</div>
+                    <div class="servicio-garantia">✓ Garantía de 60 días: un reemplazo sin costo</div>
                     <ul class="servicio-lista">
                         <li>Levantamiento detallado del perfil con líderes de área</li>
                         <li>Búsqueda activa y headhunting especializado</li>
                         <li>Entrevistas estructuradas bajo metodología STAR</li>
                         <li>Pruebas psicotécnicas completas y perfilación</li>
                         <li>Verificación exhaustiva de antecedentes y referencias</li>
-                        <li>Cobro contra éxito (únicamente al contratar)</li>
+                        <li>Entre 2 y 3 finalistas, según la exigencia del perfil</li>
+                        <li>Cobro contra éxito: pagas al elegir a tu candidato</li>
                     </ul>
+                    <p class="servicio-nota-precio" style="font-size:0.8rem;line-height:1.5;color:#64748b;margin:0 0 1.1rem;padding-top:0.9rem;border-top:1px solid rgba(10,38,71,0.08);">Tarifa fija para perfiles operativos, administrativos y profesionales. Los cargos de dirección y los perfiles altamente especializados se cotizan a la medida según el nivel del cargo.</p>
                     <a class="servicio-cta" href="https://wa.me/573104086399?text=Hola%20CultuLab%2C%20solicito%20informaci%C3%B3n%20sobre%20Reclutamiento" target="_blank" rel="noopener">Iniciar Selección</a>
                 </div>
 
                 <!-- Servicio 2: Learning & Development -->
                 <div class="servicio-card ld">
                     <div class="servicio-num">02</div>
-                    <div class="servicio-icon">📖</div>
+                    <div class="servicio-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A2647" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.6C10.4 5.2 8.2 4.6 5 4.6c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1 3.2 0 5.4.6 7 2"/><path d="M12 6.6c1.6-1.4 3.8-2 7-2 .6 0 1 .4 1 1v12c0 .6-.4 1-1 1-3.2 0-5.4.6-7 2"/><path d="M12 6.6v14"/></svg></div>
                     <h3>Learning & Development</h3>
                     <p class="tagline">Formación Virtual Estratégica</p>
                     <div class="servicio-precio">
@@ -276,39 +289,9 @@
             </div>
 
             <div class="precios-nota">
-                <p><strong>Nota comercial:</strong> Todas las tarifas están expresadas en Pesos Colombianos (COP). Se pueden estructurar propuestas personalizadas según la combinación de servicios requerida por tu empresa.</p>
+                <p><strong>Nota comercial:</strong> Todas las tarifas están expresadas en Pesos Colombianos (COP). En reclutamiento, la tarifa depende del nivel del cargo: los perfiles operativos, administrativos y profesionales van a tarifa fija, y los cargos de dirección o altamente especializados se cotizan a la medida. Para abrir cualquier proceso se acuerda un anticipo que se descuenta del honorario. Se pueden estructurar propuestas personalizadas según la combinación de servicios requerida por tu empresa.</p>
             </div>
 
-        </div>
-    </section>
-
-    <!-- Eficiencia Operativa -->
-    <section class="porque">
-        <div class="container">
-            <span class="section-tag" style="display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #8F6F3A; margin-bottom: 0.85rem;">Eficiencia Operativa</span>
-            <h2 class="section-title" style="display: block; -webkit-text-fill-color: initial; background: none; color: var(--azul-primario);">El impacto directo en tu negocio</h2>
-            <div class="porque-grid">
-                <div class="porque-item">
-                    <div class="porque-stat">60 días</div>
-                    <h4>Garantía de Reemplazo</h4>
-                    <p>Aseguramos la adaptación y desempeño de tus nuevos talentos.</p>
-                </div>
-                <div class="porque-item">
-                    <div class="porque-stat">80%</div>
-                    <h4>Ahorro de Tiempo</h4>
-                    <p>Presentamos la terna final ideal para que decidas con agilidad.</p>
-                </div>
-                <div class="porque-item">
-                    <div class="porque-stat">100%</div>
-                    <h4>Foco en tu Core</h4>
-                    <p>Nos encargamos del proceso operativo mientras te enfocas en facturar.</p>
-                </div>
-                <div class="porque-item">
-                    <div class="porque-stat">&lt;5 días</div>
-                    <h4>Inicio de Operación</h4>
-                    <p>Tiempo de respuesta ágil para el despliegue del servicio.</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -381,29 +364,51 @@
         </div>
     </section>
 
-    <!-- Casos de Éxito -->
+    <!-- Compromiso por escrito -->
     <section class="casos-exito" style="background:#f8f9fa">
         <div class="container">
-            <h2>Empresas que ya están fortaleciendo su cultura</h2>
-            <p class="section-subtitle">Historias reales de equipos que decidieron invertir en su gente.</p>
+            <h2>Lo que asumimos por contrato</h2>
+            <p class="section-subtitle">No te pedimos que confíes en nuestra palabra. Estas condiciones quedan
+                firmadas antes de empezar.</p>
 
             <div class="grid">
                 <div class="card testimonio">
-                    <p>"Reducimos la rotación en un 40% en seis meses. El equipo se siente escuchado y eso cambió todo.
-                        CultuLab nos ayudó a estructurar lo que sabíamos que necesitábamos pero no sabíamos cómo
-                        implementar."</p>
-                    <cite>Laura G., Gerente de Talento Humano<br>Empresa de Tecnología</cite>
+                    <span class="compromiso-tag">Reclutamiento</span>
+                    <p>El honorario se paga cuando eliges a tu candidato, no antes. Para abrir el proceso cubres
+                        únicamente el costo de búsqueda, que se descuenta del honorario. Cada persona que vincules
+                        es un proceso: si de una misma terna eliges a dos, se facturan dos.</p>
+                    <cite>Qué pagas y cuándo</cite>
                 </div>
                 <div class="card testimonio">
-                    <p>"Antes el bienestar era solo un día del trabajador. Ahora es parte de nuestra cultura. Los
-                        talleres de finanzas personales fueron un hit y nuestros números de compromiso subieron un 35%."
-                    </p>
-                    <cite>Andrés M., CEO<br>Retail - 45 colaboradores</cite>
+                    <span class="compromiso-tag">Reclutamiento</span>
+                    <p>Si la persona que elegiste se retira o no se adapta dentro de los primeros 60 días,
+                        la reemplazamos sin costo. Un reemplazo por proceso, con las condiciones del cargo
+                        sin modificar.</p>
+                    <cite>Garantía de 60 días</cite>
                 </div>
                 <div class="card testimonio">
-                    <p>"Finalmente tenemos una estrategia clara de retención. Y lo mejor: funciona. La inversión se paga
-                        sola cuando dejas de gastar en reclutar cada mes."</p>
-                    <cite>Carla P., Directora de Operaciones<br>Logística - 80 colaboradores</cite>
+                    <span class="compromiso-tag">Reclutamiento</span>
+                    <p>Recibes los informes psicoprofesionales, las pruebas psicotécnicas y la verificación de
+                        antecedentes de cada finalista. Decides con la misma información que tenemos nosotros.</p>
+                    <cite>Entregables verificables</cite>
+                </div>
+                <div class="card testimonio">
+                    <span class="compromiso-tag">Capacitación</span>
+                    <p>Las cinco horas son con facilitador en vivo y grupo interactivo. No entregamos videos
+                        pregrabados ni plataformas de autoestudio. Si no es en vivo, no se cobra.</p>
+                    <cite>Siempre en vivo</cite>
+                </div>
+                <div class="card testimonio">
+                    <span class="compromiso-tag">Capacitación</span>
+                    <p>El programa se construye sobre los casos reales de tu empresa, no sobre una plantilla
+                        genérica. Antes del taller levantamos contigo las situaciones que necesitas resolver.</p>
+                    <cite>Contenido sobre tu operación</cite>
+                </div>
+                <div class="card testimonio">
+                    <span class="compromiso-tag">Capacitación</span>
+                    <p>Al cierre recibes evaluación de aprendizaje, asistencia por participante e informe
+                        ejecutivo de resultados. Sabes qué se llevó tu equipo, no solo que asistió.</p>
+                    <cite>Informe a gerencia</cite>
                 </div>
             </div>
         </div>
@@ -412,19 +417,23 @@
     <!-- Prueba Social -->
     <section class="prueba-social">
         <div class="container">
-            <h3>Resultados que hablan por sí solos</h3>
+            <h3>Nuestro estándar de servicio</h3>
             <div class="grid">
                 <div class="card estadistica">
-                    <h4 class="counter" data-target="-35" data-suffix="%">-35%</h4>
-                    <p>Reducción promedio de rotación en empresas que completan nuestro programa anual</p>
+                    <h4 class="counter" data-target="5" data-prefix="&lt;" data-suffix=" días">&lt;5 días</h4>
+                    <p>Desde que firmas hasta que tu vacante está publicada y en búsqueda activa</p>
                 </div>
                 <div class="card estadistica">
-                    <h4 class="counter" data-target="42" data-prefix="+" , data-suffix="%">+42%</h4>
-                    <p>Aumento en índices de compromiso medidos antes y después de la intervención</p>
+                    <h4 class="counter" data-target="3" data-prefix="2 a " data-suffix=" finalistas">2 a 3 finalistas</h4>
+                    <p>Evaluados, verificados y aptos para el cargo. Tu única decisión es cuál de ellos</p>
                 </div>
                 <div class="card estadistica">
-                    <h4 class="counter" data-target="9" data-suffix=" de 10">9 de 10</h4>
-                    <p>Clientes renuevan su programa al año siguiente porque ven resultados reales</p>
+                    <h4 class="counter" data-target="80" data-suffix="%">80%</h4>
+                    <p>Del tiempo que tu equipo dedicaría a filtrar hojas de vida y agendar entrevistas</p>
+                </div>
+                <div class="card estadistica">
+                    <h4 class="counter" data-target="60" data-suffix=" días">60 días</h4>
+                    <p>De garantía sobre cada contratación, con un reemplazo sin costo adicional</p>
                 </div>
             </div>
         </div>
@@ -453,7 +462,7 @@
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Ambos. Diseñamos un modelo flexible según la ubicación de tu equipo. Prestamos talleres 100% virtuales interactivos para equipos remotos y presenciales en las principales ciudades de Colombia.</p>
+                        <p>100% virtuales y en vivo. Somos una operación digital: trabajamos con equipos de toda Colombia sin costos de desplazamiento ni logística. Cada programa son 5 horas en vivo con nuestro facilitador, no un video grabado. Tu equipo participa desde donde esté.</p>
                     </div>
                 </div>
 
@@ -500,10 +509,10 @@
             <h3>¿Tienes preguntas? Estamos aquí</h3>
             <div class="contacto-channels">
                 <a href="https://wa.me/573104086399" target="_blank" rel="noopener noreferrer">
-                    📲 WhatsApp: 3104086399
+                    WhatsApp: 310 408 6399
                 </a>
                 <a href="mailto:cultulab.comercial@gmail.com">
-                    📧 Email: cultulab.comercial@gmail.com
+                    Email: cultulab.comercial@gmail.com
                 </a>
             </div>
             <p style="margin-top:1rem;color:var(--gris-neutro)">Respondemos en menos de 24 horas. Estamos para ayudarte
@@ -520,9 +529,9 @@
             <div class="footer-content">
                 <div class="contact-info">
                     <h4 style="color:var(--azul-secundario);margin-bottom:1rem">Contacto</h4>
-                    <p>📍 Medellín, Antioquia, Colombia</p>
-                    <p>📞 <a href="https://wa.me/573104086399">+57 310 408 6399</a></p>
-                    <p>📧 <a href="mailto:cultulab.comercial@gmail.com">cultulab.comercial@gmail.com</a></p>
+                    <p>Operación 100% virtual · Toda Colombia</p>
+                    <p><a href="https://wa.me/573104086399">+57 310 408 6399</a></p>
+                    <p><a href="mailto:cultulab.comercial@gmail.com">cultulab.comercial@gmail.com</a></p>
                 </div>
 
                 <div class="quick-links">
@@ -542,7 +551,7 @@
                             rel="noopener noreferrer">Instagram</a>
                     </p>
                     <p style="margin-top:1.5rem">
-                        <a href="https://wa.me/573104086399" target="_blank" rel="noopener noreferrer">💬 WhatsApp
+                        <a href="https://wa.me/573104086399" target="_blank" rel="noopener noreferrer">WhatsApp
                             Business</a>
                     </p>
                 </div>
@@ -558,7 +567,7 @@
                 <a href="pages/cookies.html">Política de Cookies</a>
             </div>
 
-            <p style="margin-top:1.5rem;font-size:.9rem;opacity:.9">© 2025 CultuLab. Todos los derechos reservados.</p>
+            <p style="margin-top:1.5rem;font-size:.9rem;opacity:.9">© 2026 CultuLab. Todos los derechos reservados.</p>
             <p style="font-size:.85rem;opacity:.8;margin-top:.5rem">Fortaleciendo la cultura organizacional de empresas
                 en Colombia</p>
         </div>

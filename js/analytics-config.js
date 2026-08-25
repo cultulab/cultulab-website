@@ -1,4 +1,7 @@
 // analytics-config.js
+// ⬇️ ÚNICO LUGAR donde se cambia el ID de Google Analytics.
+//    Reemplaza 'G-XXXXXXXXXX' por tu ID real (empieza por G- y son 10 caracteres).
+//    Paso a paso: ver GUIA_GOOGLE_ANALYTICS.md en la raíz del sitio.
 window.CULTULAB_ANALYTICS_CONFIG = {
     googleAnalyticsId: 'G-XXXXXXXXXX',
     facebookPixelId: 'XXXXXXXXXXXXXXX',
